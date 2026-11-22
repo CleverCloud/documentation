@@ -200,7 +200,7 @@ Here is a non-exhaustive summary:
 | Go                     | `os.Getenv("MY_VAR")`                                 |
 | Haskell                | `Os.Getenv["MY_VAR"]`                                 |
 | Node.js                | `process.env["MY_VAR"]`                               |
-| Java WAR               | `System.getProperties().getProperty("MY_VAR")`        |
+| Java                   | `System.getenv("MY_VAR")`                             |
 | PHP                    | `getenv("MY_VAR")`                                    |
 | Play Framework 1       | `${MY_VAR}` in `application.conf`                     |
 | Play Framework 2 and 3 | `${?MY_VAR}` in `application.conf`                    |

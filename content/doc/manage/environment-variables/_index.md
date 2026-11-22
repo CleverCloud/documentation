@@ -218,7 +218,7 @@ Here is a non-exhaustive summary:
   {{< card link="/developers/doc/deploy/applications/elixir" title="Elixir" icon="simple:elixir" >}}
   {{< card link="/developers/doc/deploy/applications/golang" title="Go" icon="simple:go" >}}
   {{< card link="/developers/doc/deploy/applications/haskell" title="Haskell" icon="simple:haskell" >}}
-  {{< card link="/developers/doc/deploy/applications/java/java-war/#environment-injection" title="Java WAR/EAR" icon="java" >}}
+  {{< card link="/developers/doc/deploy/applications/java/#environment-variables" title="Java" icon="java" >}}
   {{< card link="/developers/doc/deploy/applications/nodejs/#environment-injection" title="Node.js" icon="simple:nodedotjs" >}}
   {{< card link="/developers/doc/deploy/applications/php/apache/#environment-injection" title="PHP" icon="php" >}}
   {{< card link="/developers/doc/deploy/applications/scala/play-framework-1/#configuration-for-clever-cloud" title="Play Framework 1" icon="playframework" >}}
@@ -231,4 +231,4 @@ Here is a non-exhaustive summary:
 {{< /cards >}}
 
 > [!NOTE] Build time
-> Variables are also available during the build, as with [Java WAR](/doc/deploy/applications/java/java-war/#environment-injection), [Play 1](/doc/deploy/applications/scala/play-framework-1/#configuration-for-clever-cloud), [Play 2 and 3](/doc/deploy/applications/scala/play-framework-2/#application-secret), or [Scala](/doc/deploy/applications/scala/#mandatory-needs) applications.
+> Variables are also available during the build, as with [Java](/doc/deploy/applications/java/#environment-variables), [Play 1](/doc/deploy/applications/scala/play-framework-1/#configuration-for-clever-cloud), [Play 2 and 3](/doc/deploy/applications/scala/play-framework-2/#application-secret), or [Scala](/doc/deploy/applications/scala/#mandatory-needs) applications.

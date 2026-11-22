@@ -119,6 +119,7 @@ OVHcloud
 Pagefind
 Payara
 PDFlib
+Pekko
 Percona
 pico
 pnpm
@@ -138,6 +139,7 @@ runtime's
 runtimes
 rustup
 sbt
+Scaladoc
 scalers
 Scaleway
 SCMs

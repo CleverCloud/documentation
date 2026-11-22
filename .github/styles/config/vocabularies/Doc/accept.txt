@@ -1,4 +1,5 @@
 Actix
+Akka
 allowlist
 allowlists
 APIs

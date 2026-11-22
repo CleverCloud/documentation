@@ -198,7 +198,7 @@ nmap --script ssl-enum-ciphers -p 443 example.com
 The load balancers handle TLS and forward requests in plain HTTP: the port of your server doesn't tell the protocol of the client. With [Force HTTPS](/doc/manage/#force-https), enabled by default, each request that reaches your application through the load balancers came over HTTPS. Otherwise, read the headers that the load balancers add: see [Get the protocol](/doc/network/load-balancers/#get-the-protocol).
 
 > [!NOTE] Play Framework
-> To use `request.secure` instead of the header, configure your `application.conf`. Add `XForwardedSupport=all` with Play Framework 1, or `trustxforwarded=true` with Play Framework 2 before 2.4. For later versions, see the [Play Framework 2 page](/doc/deploy/applications/scala/play-framework-2/).
+> Play sees the HTTP connection of the load balancer: `request.secure` is `false`. Rely on Force HTTPS or on the headers of the load balancers, as the [Play Framework 1](/doc/deploy/applications/scala/play-framework-1/#https) and [Play Framework 2 and 3](/doc/deploy/applications/scala/play-framework-2/#https) pages explain.
 
 {{% /details %}}
 

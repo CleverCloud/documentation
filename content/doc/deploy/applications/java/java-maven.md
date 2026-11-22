@@ -2,14 +2,14 @@
 type: docs
 linkTitle: Maven
 title: Maven
-description: Deploy Java applications using Maven build system on Clever Cloud with automatic dependency management and build lifecycle
+description: Build Java applications with Maven on Clever Cloud, with the Maven Wrapper, profiles, a settings file, and the goal or the JAR to start
 keywords:
 - java
 - maven
-- build-system
-- dependencies
-- deployment
-- lifecycle
+- maven wrapper
+- mvnw
+- pom.xml
+- spring boot
 aliases:
 - /deploy/application/java/java-maven
 - /doc/applications/java/java-maven
@@ -20,67 +20,71 @@ aliases:
 
 ## Overview
 
-Clever Cloud offers you to run your Java Maven projects. You can deploy this kind of project without changing your code, but running it on Clever Cloud needs specific environment variables or configuration files, to add parameters like your targeted container for instance.
+[Maven](https://maven.apache.org) builds a Java project from its `pom.xml` file, which declares the dependencies, the plugins, and the packaging of the project. Clever Cloud builds it with `mvn package`, then starts the JAR it produces or a goal of Maven. The [Java page](/doc/deploy/applications/java/) describes what all Java applications share: the Java version, the memory, the variables, and the caches.
 
-Note: Clever Cloud passes the port of your application as the `http.port` system property: `8080`, or `9000` with [Request Flow](/doc/manage/request-flow/). Your application listens on `0.0.0.0`, on this port. [Learn more about the port of your application](/doc/manage/#listen-on-the-right-port).
+## Create your Maven application
 
-Maven is essentially a project management and comprehension tool and as such provides a way to help with managing:
-
-- Builds
-- Documentation
-- Reporting
-- Dependencies
-- SCMs
-- Releases
-- Distribution
-
-## Configure your Java application
-
-### About Cargo
-
-To run your app, you can, for example, use plugins like cargo ([Find it here](https://codehaus-cargo.github.io/cargo/Maven+3+Plugin.html)). Your application must listen on the port of the `http.port` system property.
-
-{{% include "shared/java-versions" %}}
-
-{{< runtimes_versions java >}}
-
-(`graalvm-ce` for GraalVM 21.0.0.2, based on OpenJDK 11.0)
-
-### Mandatory configuration
-
-Unless you set `CC_RUN_COMMAND`, define the goal that starts your application in `CC_MAVEN_DEPLOY_GOAL`, for example `CC_MAVEN_DEPLOY_GOAL="spring-boot:run"` for a Spring Boot application with `spring-boot-maven-plugin`. The former `MAVEN_DEPLOY_GOAL` name remains supported as an alias.
-
-### Build goal
-
-By default, Clever Cloud builds your application with `mvn package`. To use another goal, set `CC_MAVEN_BUILD_GOAL`, for example `CC_MAVEN_BUILD_GOAL="clean install -DskipTests"`.
-
-To build with Ant, a `clevercloud/maven.json` file is the only way: set `ant` in `build.type`, and the target in `build.goal`.
-
-### Custom Maven settings
-
-To use your own Maven configuration, such as credentials for a private repository or a mirror, commit a `clevercloud/settings.xml` file. Clever Cloud copies it to `~/.m2/settings.xml` before the build. This applies to every Java build, whatever the build system, so dependencies Maven resolves on behalf of another tool use it too.
-
-### Specifying a profile
-
-To activate a Maven profile, set it in `CC_MAVEN_PROFILES`, such as `CC_MAVEN_PROFILES="prod"`, or add `-P` to a goal, such as `CC_MAVEN_BUILD_GOAL="-Pprod package"` for the build.
-
- {{% include "shared/new-relic" %}}
-
-{{% include "shared/java-env-injection" %}}
-
-## Custom run command
-
-If you need to run a custom command you can specify it through the `CC_RUN_COMMAND` environment variable. This will override the default `maven run` we use to run your application.
-
-Example:
+To create a new Maven application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](/doc/tools/cli/):
 
 ```bash
-CC_RUN_COMMAND="java -jar somefile.jar <options>"
+clever create --type maven
 ```
+
+## Build with Maven
+
+On a new build, Clever Cloud runs the pre-build [hook](/doc/manage/build-hooks/), then the `package` phase of Maven:
+
+```bash
+mvn package
+```
+
+To run other goals, set them in `CC_MAVEN_BUILD_GOAL`, such as `clean package -DskipTests`. When your project holds the `mvnw` script of the [Maven Wrapper](https://maven.apache.org/wrapper/), executable, Clever Cloud runs it instead of `mvn`. The build then uses the version of Maven your project sets.
+
+### Profiles
+
+To activate a [profile](https://maven.apache.org/guides/introduction/introduction-to-profiles.html) of your `pom.xml`, set its ID in `CC_MAVEN_PROFILES`. Clever Cloud adds it to the Maven commands:
+
+```bash
+clever env set CC_MAVEN_PROFILES production
+```
+
+### Settings and private repositories
+
+Commit your own Maven settings, such as a mirror or the credentials of a private repository, in `clevercloud/settings.xml` at the root of your repository. Clever Cloud copies this file to `~/.m2/settings.xml` before the build, whatever the build tool. Read a password from an environment variable, such as `${env.REPOSITORY_PASSWORD}`, to keep it out of your repository:
+
+```xml {filename="clevercloud/settings.xml"}
+<settings>
+  <servers>
+    <server>
+      <id>company</id>
+      <username>deploy</username>
+      <password>${env.REPOSITORY_PASSWORD}</password>
+    </server>
+  </servers>
+  <mirrors>
+    <mirror>
+      <id>company</id>
+      <url>https://maven.example.com/repository/public</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+  </mirrors>
+</settings>
+```
+
+## Start your application
+
+Set the JAR that `mvn package` builds in `CC_JAR_PATH`, as the [Java page](/doc/deploy/applications/java/#start-command) explains. A pattern works, as long as it matches a single file: Spring Boot keeps the original JAR as `.jar.original`, which `target/*.jar` doesn't match.
+
+```bash
+clever env set CC_JAR_PATH "target/*.jar"
+```
+
+You can also start a goal of Maven, set in `CC_MAVEN_DEPLOY_GOAL`, such as `spring-boot:run`. Maven then stays in memory, and Spring Boot starts your application in another JVM, which keeps its default heap: prefer a JAR.
 
 ## Go Further
 
 {{< cards >}}
-  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
-  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+  {{< card link="/developers/doc/deploy/applications/java" title="Java" subtitle="Java version, memory, variables, caches, and tasks" icon="java" >}}
+  {{< card link="/developers/doc/deploy/applications/java/java-gradle" title="Gradle" subtitle="Build with Gradle or its wrapper, and start a JAR or a task" icon="simple:gradle" >}}
+  {{< card link="/developers/doc/deploy/applications/java/java-war" title="WAR and EAR" subtitle="Deploy a WAR or an EAR in Tomcat, Jetty, WildFly, or Payara" icon="java" >}}
 {{< /cards >}}

@@ -123,7 +123,7 @@ On some runtimes, Clever Cloud starts the web server and sets its port, Request 
 
 - [FrankenPHP](/doc/deploy/applications/frankenphp/), [PHP with Apache](/doc/deploy/applications/php/), and [Static](/doc/deploy/applications/static/)
 - [Java](/doc/deploy/applications/java/), which receives the port as the `http.port` system property
-- [Python](/doc/deploy/applications/python/) with its supported backends, and [Ruby](/doc/deploy/applications/ruby/)
+- [Python](/doc/deploy/applications/python/pip/) with its supported backends, and [Ruby](/doc/deploy/applications/ruby/)
 
 If you replace the server with `CC_RUN_COMMAND`, your command starts the HTTP server: the rule of this section applies to it. On Static, a custom Caddyfile also sets its own address: listen on `:{$PORT}`. In a Python application without uv, Nginx stays in front of your command: it must listen on port `9000`, so set `PORT=9000` even without Request Flow.
 

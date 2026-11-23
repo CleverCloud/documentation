@@ -79,7 +79,7 @@ The example uses SQLite for demonstration purposes. Local application files are 
 
 For an existing uv project, commit `pyproject.toml` and `uv.lock`, then adapt the module in `CC_PYTHON_UV_RUN_COMMAND` to your ASGI application. Configure hosts, secrets, static files and databases through [environment variables](/doc/manage/environment-variables/) rather than committing production values.
 
-Projects using `requirements.txt` instead of uv use the [legacy Python deployment mode](/doc/deploy/applications/python/#select-the-python-backend). Set `CC_PYTHON_MODULE` to the WSGI or ASGI module expected by the selected backend.
+Projects using `requirements.txt` instead of uv use the [pip mode](/doc/deploy/applications/python/pip/#select-the-server). Set `CC_PYTHON_MODULE` to the WSGI or ASGI module expected by the selected backend.
 
 ## Learn more
 

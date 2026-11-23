@@ -2,31 +2,27 @@
 type: docs
 linkTitle: Extensions
 title: PHP extensions
-description: Available and on-demand PHP extensions on Clever Cloud, with activation instructions and phpinfo links
+description: Default and on-demand PHP extensions of PHP with Apache applications on Clever Cloud, how to enable or disable them, and the phpinfo of each PHP version
 keywords:
-- php extensions
 - apcu
-- xdebug
-- opcache
 - grpc
 - opentelemetry
+- php extensions
+- phpinfo
+- xdebug
 aliases:
 - /doc/applications/php/extensions
 ---
 
 ## Available extensions and modules
 
-With PHP 8.2 to 8.5, Clever Cloud PHP with Apache applications enable the following extensions by default:
+[PHP applications](/doc/deploy/applications/php/) load these extensions by default with PHP 8.2 and later, besides core ones such as `json`:
 
-`amqp`, `bcmath`, `bz2`, `calendar`, `ctype`, `curl`, `dba`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `iconv`, `imagick`, `intl`, `ldap`, `mbstring`, `mcrypt`, `memcache`, `memcached`, `mongodb`, `mysqli`, `odbc`, `opcache`, `openssl`, `pcntl`, `pdo_mysql`, `pdo_odbc`, `pdo_pgsql`, `pdo_sqlite`, `pgsql`, `phar`, `posix`, `readline`, `redis`, `session`, `shmop`, `soap`, `sockets`, `sodium`, `solr`, `sqlite3`, `ssh2`, `sysvmsg`, `sysvsem`, `sysvshm`, `tidy`, `tokenizer`, `xml`, `xsl`, `zip`, `zlib`.
+`amqp`, `bcmath`, `bz2`, `calendar`, `ctype`, `curl`, `dba`, `dom`, `exif`, `fileinfo`, `filter`, `ftp`, `gd`, `gettext`, `gmp`, `iconv`, `imagick`, `intl`, `ldap`, `mbstring`, `mcrypt`, `memcache`, `memcached`, `mongodb`, `mysqli`, `mysqlnd`, `odbc`, `opcache`, `openssl`, `pcntl`, `pdo`, `pdo_mysql`, `pdo_odbc`, `pdo_pgsql`, `pdo_sqlite`, `pgsql`, `phar`, `posix`, `readline`, `redis`, `session`, `shmop`, `simplexml`, `soap`, `sockets`, `sodium`, `solr`, `sqlite3`, `ssh2`, `sysvmsg`, `sysvsem`, `sysvshm`, `tidy`, `tokenizer`, `xml`, `xmlreader`, `xmlwriter`, `xsl`, `zip`, `zlib`.
 
-You can also enable the following extensions on demand:
+Before PHP 8.4, the Internet Message Access Protocol (IMAP) and Pspell extensions load by default too.
 
-`apcu`, `blackfire`, `elastic_apm_agent`, `event`, `excimer`, `gnupg`, `grpc`, `imap`, `mailparse`, `maxminddb`, `newrelic`, `oauth`, `opentelemetry`, `PDFlib`, `pdo_sqlsrv`, `protobuf`, `pspell`, `rdkafka`, `sqlsrv`, `tideways`, `uploadprogress`, `xdebug`, `yaml`
-
-Other extensions are only available with older PHP versions: `geos`, `ioncube` and `pcs` (up to PHP 7.4), `scoutapm` and `uopz` (up to PHP 8.3), `sqreen` (up to PHP 8.0) and `xmlrpc` (PHP 8.0 and 8.1).
-
-You can check extensions and versions by viewing the `phpinfo()` for:
+To check the extensions of a PHP version, and their own versions, see its `phpinfo()`:
 
 - [PHP 5.6](https://php56info.cleverapps.io)
 - [PHP 7.1](https://php71info.cleverapps.io)
@@ -40,126 +36,55 @@ You can check extensions and versions by viewing the `phpinfo()` for:
 - [PHP 8.4](https://php84info.cleverapps.io)
 - [PHP 8.5](https://php85info.cleverapps.io)
 
-If you have a request about extensions, contact [Clever Cloud Support](https://console.clever-cloud.com/ticket-center-choice).
-
 ## Enable specific extensions
 
-Some extensions need to be enabled explicitly. To do so, set the corresponding environment variable:
+Other extensions load only when you set their variable to `true`, such as the agents of application performance monitoring (APM) tools:
 
-- APCu: set `ENABLE_APCU` to `true`.
+```bash
+clever env set ENABLE_APCU true
+```
 
-    APCu is an in-memory key-value store for PHP. Keys are of type string and values can be any PHP variables.
+Each extension of this table loads with its own variable, after a restart of your application:
 
-- Elastic APM Agent: set `ENABLE_ELASTIC_APM_AGENT` to `true` (default if `ELASTIC_APM_SERVER_URL` is defined).
+| Extension                                                                                           | Variable                             | Use                                                |
+| --------------------------------------------------------------------------------------------------- | ------------------------------------ | -------------------------------------------------- |
+| [APCu](https://www.php.net/manual/en/book.apcu.php)                                                 | `ENABLE_APCU`                        | In-memory cache of PHP values                      |
+| [Blackfire](/doc/observability/blackfire/)                                                          | `ENABLE_BLACKFIRE`                   | Profiling and performance monitoring               |
+| [Couchbase](https://docs.couchbase.com/php-sdk/current/hello-world/overview.html)                   | `ENABLE_COUCHBASE`                   | Couchbase client, up to PHP 8.2                    |
+| [Elastic APM](https://www.elastic.co/docs/reference/apm/agents/php)                                 | `ENABLE_ELASTIC_APM_AGENT`           | Traces and errors sent to Elastic APM              |
+| [Event](https://www.php.net/manual/en/book.event.php)                                               | `ENABLE_EVENT`                       | Scheduling of I/O, time, and signal events         |
+| [Excimer](https://www.mediawiki.org/wiki/Excimer)                                                   | `ENABLE_EXCIMER`                     | Sampling profiler and timers                       |
+| [GnuPG](https://www.php.net/manual/en/book.gnupg.php)                                               | `ENABLE_GNUPG`                       | OpenPGP encryption and signatures                  |
+| [gRPC](https://grpc.io/docs/languages/php/)                                                         | `ENABLE_GRPC`                        | gRPC client                                        |
+| [IMAP](https://www.php.net/manual/en/book.imap.php)                                                 | `ENABLE_IMAP`                        | Mailbox client, on demand starting with PHP 8.4    |
+| [Mailparse](https://www.php.net/manual/en/book.mailparse.php)                                       | `ENABLE_MAILPARSE`                   | Parsing of email messages                          |
+| [MaxMind DB](https://pecl.php.net/package/maxminddb)                                                | `ENABLE_MAXMINDDB`                   | Reader of MaxMind DB files, such as GeoIP          |
+| [OAuth](https://www.php.net/manual/en/book.oauth.php)                                               | `ENABLE_OAUTH`                       | OAuth 1.0 consumer and provider                    |
+| [OpenTelemetry](https://opentelemetry.io/docs/zero-code/php/)                                       | `ENABLE_OPENTELEMETRY`               | Automatic instrumentation for OpenTelemetry        |
+| [PDFlib](https://www.pdflib.com/products/pdflib-family/)                                            | `ENABLE_PDFLIB`                      | Generation of PDF files, with a commercial license |
+| [Protobuf](https://protobuf.dev/reference/php/php-generated/)                                       | `ENABLE_PROTOBUF`                    | Faster Protocol Buffers                            |
+| [Pspell](https://www.php.net/manual/en/book.pspell.php)                                             | `ENABLE_PSPELL`                      | Spell checking, on demand starting with PHP 8.4    |
+| [rdkafka](https://pecl.php.net/package/rdkafka)                                                     | `ENABLE_RDKAFKA`                     | Kafka client                                       |
+| [Scout APM](https://scoutapm.com/docs/php)                                                          | `ENABLE_SCOUTAPM`                    | Monitoring agent, up to PHP 8.3                    |
+| [SQL Server](https://learn.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server) | `ENABLE_SQLSRV`, `ENABLE_PDO_SQLSRV` | SQL Server drivers                                 |
+| [uopz](https://www.php.net/manual/en/book.uopz.php)                                                 | `ENABLE_UOPZ`                        | Test utilities, up to PHP 8.3                      |
+| [Uploadprogress](https://pecl.php.net/package/uploadprogress)                                       | `ENABLE_UPLOADPROGRESS`              | Progress of file uploads                           |
+| [Xdebug](https://xdebug.org)                                                                        | `ENABLE_XDEBUG`                      | Debugger and profiler                              |
+| [YAML](https://www.php.net/manual/en/book.yaml.php)                                                 | `ENABLE_YAML`                        | YAML parser and emitter                            |
 
-    Elastic APM agent is Elastic's APM agent extension for PHP. The PHP agent enables you to trace the execution of operations in your application, sending performance metrics and errors to the Elastic APM server. **Warning**: This extension is available starting PHP 7.2.
+Setting `ELASTIC_APM_SERVER_URLS`, or `ELASTIC_APM_SERVER_URL`, enables the Elastic APM agent too, unless `ENABLE_ELASTIC_APM_AGENT` is `false`. [New Relic](/doc/observability/new-relic/) loads with `NEW_RELIC_LICENSE_KEY`, and Tideways with `CC_TIDEWAYS_API_KEY` and `CC_TIDEWAYS_SERVICE`.
 
-- Event: set `ENABLE_EVENT` to `true`.
-
-    Event is an extension to schedule I/O, time and signal based events.
-
-- Excimer: set `ENABLE_EXCIMER` to `true`.
-
-    Excimer is an extension that provides a low-overhead interrupting timer and sampling profiler.
-
-- GEOS (up to PHP 7.4): set `ENABLE_GEOS` to `true`.
-
-    GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology Suite (JTS).
-
-- GnuPG: set `ENABLE_GNUPG` to `true`.
-
-    GnuPG is an extension that provides methods to interact with GNU Privacy Guard (OpenPGP implementation).
-
-- gRPC: set `ENABLE_GRPC` to `true`.
-
-    gRPC is an extension for the high performance, open source, general RPC framework layered over HTTP/2.
-
-- IonCube (up to PHP 7.4): set `ENABLE_IONCUBE` to `true`.
-
-    IonCube is a tool to obfuscate PHP code. It's often used by paying Prestashop and WordPress plugins.
-
-- IMAP (starting with PHP 8.4, enabled by default with older versions): set `ENABLE_IMAP` to `true`.
-
-    IMAP is an extension to operate with the IMAP protocol, as well as the NNTP, POP3, and local mailbox access methods.
-
-- Mailparse: set `ENABLE_MAILPARSE` to `true`.
-
-    Mailparse is an extension for parsing and working with email messages. It can deal with RFC 822 and RFC 2045 (MIME) compliant messages.
-
-- MaxMind DB: set `ENABLE_MAXMINDDB` to `true`.
-
-    Extension for reading MaxMind DB files. MaxMind DB is a binary file format that stores data indexed by IP address subnets (IPv4 or IPv6).
-
-- Mongo: set `ENABLE_MONGO` to `true`.
-
-    MongoDB is a NoSQL Database. This extension allows to use it from PHP. **Warning**: this extension is now superseded by the `mongodb` extension. It is provided for backward compatibility.
-
-- NewRelic: set `ENABLE_NEWRELIC` to `true`.
-
-    Newrelic Agent for PHP. Newrelic is a software analytics tool.
-
-- OAuth: set `ENABLE_OAUTH` to `true`.
-
-    OAuth consumer extension. OAuth is an authorization protocol built on top of HTTP.
-
-- OpenTelemetry: set `ENABLE_OPENTELEMETRY` to `true`.
-
-    OpenTelemetry is an extension to facilitate the generation, export, collection of telemetry data such as traces, metrics, and logs.
-
-- PCS (up to PHP 7.4): set `ENABLE_PCS` to `true`.
-
-    PCS provides a fast and easy way to mix C and PHP code in your PHP extension.
-
-- PDFlib: set `ENABLE_PDFlib` to `true`.
-
-    PDFlib is a commercial library for generating PDF files. It provides a PHP extension to create and manipulate PDF documents.
-
-- Protobuf: set `ENABLE_PROTOBUF` to `true`.
-
-    Protobuf is an extension for the language-neutral, platform-neutral extensible mechanism for serializing structured data.
-
-- Pspell (starting with PHP 8.4, enabled by default with older versions): set `ENABLE_PSPELL` to `true`.
-
-    Pspell is an extension to check the spelling of words and offer suggestions.
-
-- Rdkafka: set `ENABLE_RDKAFKA` to `true`.
-
-    PHP-rdkafka is a thin librdkafka binding providing a working PHP 5 / PHP 7 Kafka client.
-
-- Scout APM (up to PHP 8.3): set `ENABLE_SCOUTAPM` to `true`.
-
-    The Scout APM extension to provide additional capabilities to application monitoring over just using the base PHP userland library.
-
-- SQL Server: set `ENABLE_SQLSRV` or `ENABLE_PDO_SQLSRV` to `true`.
-
-    These extensions enable drivers that rely on the Microsoft ODBC Driver to handle the low-level communication with SQL Server. The `SQLSRV` extension provides a procedural interface while the `PDO_SQLSRV` extension implements PDO for accessing data in all editions of SQL Server 2012 and later (including Azure SQL DB).
-
-- Sqreen (up to PHP 8.0): the Sqreen agent is started automatically after adding the environment variables (`SQREEN_API_APP_NAME` and `SQREEN_API_TOKEN`).
-
-- Tideways: set `ENABLE_TIDEWAYS` to `true`.
-
-    Tideways is an extension that provides profiling and monitoring capabilities for PHP applications.
-
-- Uopz (up to PHP 8.3): set `ENABLE_UOPZ` to `true`.
-
-    The uopz extension is focused on providing utilities to aid with unit testing PHP code.
-
-- Uploadprogress: set `ENABLE_UPLOADPROGRESS` to `true`.
-
-    The uploadprogress extension is used to track the progress of a file download.
-
-- XDebug: set `ENABLE_XDEBUG` to `true`.
-
-    XDebug is a debugger and profiler tool for PHP.
-
-- XML RPC (PHP 8.0 and 8.1): set `ENABLE_XMLRPC` to `true`.
-
-    XML-RPC is an extension for server and client bindings
-
-- YAML: set `ENABLE_YAML` to `true`.
-
-    YAML is an extension providing a YAML-1.1 parser and emitter
+For another extension, [contact the support team](https://console.clever-cloud.com/ticket-center-choice).
 
 ## Disable extensions
 
-You can use `DISABLE_<extension_name>=true` in your [environment variables](/doc/manage/environment-variables/reference/) to disable an extension.
+To disable an extension loaded by default, set `DISABLE_<EXTENSION>` to `true`, such as `DISABLE_IMAGICK`. It works for `amqp`, `imagick`, `mcrypt`, `memcache`, `memcached`, `mongodb`, `opcache`, `redis`, `solr`, and `ssh2`: PHP includes the others.
+
+## Go Further
+
+{{< cards >}}
+  {{< card link="/developers/doc/deploy/applications/php" title="PHP with Apache" subtitle="PHP version, settings, memory, variables, caches, and tasks" icon="php" >}}
+  {{< card link="/developers/doc/deploy/applications/php/apache" title="Apache" subtitle="Configure the web server with .htaccess, authentication, and timeouts" icon="feather" >}}
+  {{< card link="/developers/doc/deploy/applications/php/composer" title="Composer" subtitle="Install dependencies, choose Composer, reach private repositories" icon="php" >}}
+  {{< card link="/developers/doc/deploy/applications/php/sessions-emails" title="Sessions and emails" subtitle="Store sessions on an FS Bucket or Materia KV, send emails" icon="mail" >}}
+{{< /cards >}}

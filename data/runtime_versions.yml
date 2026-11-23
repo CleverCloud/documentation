@@ -154,6 +154,8 @@ python:
   eol_source: https://devguide.python.org/versions/#python-release-cycle
   default:
     - 3
+  python3:
+    - "3.13"
   accepted:
     - 2
     - 3

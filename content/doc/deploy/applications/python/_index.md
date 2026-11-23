@@ -2,22 +2,23 @@
 type: docs
 linkTitle: Python
 title: Python application runtime
-description: Deploy Python 2 and 3 applications with uv support, Django, Flask, various frameworks, and configurable runtime settings
+description: Build and deploy Python applications on Clever Cloud with uv or pip, from a FastAPI or Flask application to Django with Celery, with the Python version of your choice
 keywords:
 - django
 - fastapi
 - flask
+- gunicorn
 - pip
+- python
 - python app hosting
-- python cloud
-- uv deployment
-- uv native support
+- uv
 aliases:
 - /applications/python
 - /deploy/application/python/python_apps
 - /doc/applications/python
 - /doc/deploy/application/python
 - /doc/deploy/application/python/python-apps
+- /doc/deploy/application/python/python/
 - /doc/deploy/application/python/python_apps
 - /doc/deploy/application/python/tutorials/python-flask-sample-app
 - /doc/en/python-hosting
@@ -28,147 +29,108 @@ aliases:
 - /doc/python/python_apps
 - /doc/reference/python
 - /python
-- /doc/deploy/application/python/python/
 - /python/python_apps
 ---
 
 ## Overview
 
-Python is a programming language that lets you work more quickly and integrate your systems more efficiently.
+[Python](https://www.python.org) is a dynamically typed language, used for web applications, APIs, and data processing. Clever Cloud installs the dependencies of your project with [uv](/doc/deploy/applications/python/uv/) or [pip](/doc/deploy/applications/python/pip/), then starts your application. It works with frameworks such as [Django](https://www.djangoproject.com), [FastAPI](https://fastapi.tiangolo.com), or [Flask](https://flask.palletsprojects.com).
 
 ## Create your Python application
 
-To create a new Python application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](https://github.com/CleverCloud/clever-tools):
+To create a new Python application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](/doc/tools/cli/):
 
 ```bash
 clever create --type python
 ```
 
-- [Learn more about Clever Tools](/doc/tools/cli/)
-- [Learn more about Clever Cloud application deployment](/doc/getting-started/)
+The [getting started guide](/doc/getting-started/) describes each step of the creation of an application.
 
 ## Configure your Python application
 
 ### Mandatory needs
 
-Python apps can be launched in a variety of ways. To select which module you want to start, use the `CC_PYTHON_MODULE` environment variable.
+Clever Cloud deploys a Python application in one of two modes, from the files of your project and its variables:
 
-```bash
-CC_PYTHON_MODULE="mymodule:app"
+- **uv**: with a `uv.lock` file and `CC_PYTHON_UV_RUN_COMMAND`, your application starts its own web server
+- **pip**: otherwise, pip installs `requirements.txt`, and Clever Cloud starts a server behind NGINX
+
+Prefer [uv](/doc/deploy/applications/python/uv/): your project sets its dependencies, its Python version, and its server. The [pip mode](/doc/deploy/applications/python/pip/) suits projects with a `requirements.txt` file and an application module, served by uWSGI, Gunicorn, Uvicorn, or Daphne.
+
+For instance, a minimal [FastAPI](https://fastapi.tiangolo.com) application, which listens on `0.0.0.0` and on [the port in `PORT`](/doc/manage/#listen-on-the-right-port):
+
+```toml {filename="pyproject.toml"}
+[project]
+name = "hello"
+version = "1.0.0"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.165",
+    "uvicorn>=0.54",
+]
 ```
 
-The module (without .py) must be importable, that is, be in `PYTHONPATH`. You should point to a WSGI-capable object.
+```python {filename="main.py"}
+import os
 
-For example, with *Flask*, this is the name of your main server file, followed by your Flask object: `server:app`, if you have a `server.py` file at the root of your project with a Flask `app` object inside.
+import uvicorn
+from fastapi import FastAPI
 
-You can also use `CC_RUN_COMMAND` to launch a Python application with a custom command. Nginx then stays in front of your command, so it must listen on port `9000`, even without [Request Flow](/doc/manage/request-flow/). If your command reads `PORT`, set `PORT=9000`.
+app = FastAPI()
 
-- [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)
+
+@app.get("/")
+def hello():
+    return {"message": "Hello from FastAPI on Clever Cloud"}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", "8080")))
+```
+
+Run `uv lock` to create `uv.lock`, commit it, then set the command that starts your application:
+
+```bash
+clever env set CC_PYTHON_UV_RUN_COMMAND "uv run --no-dev python main.py"
+```
+
+To try it locally, run `uv run python main.py`: it listens on port 8080. Your application reads its [environment variables](/doc/manage/environment-variables/) with `os.environ`, such as the credentials of the add-ons linked to it, or your own settings.
+
+A [Clever Task](#python-applications-as-clever-tasks) doesn't need a web server.
 
 ### Python version
 
-The default version of Python on Clever Cloud is the latest supported from branch `3.x`. If you want to use Python `2.x`, set `CC_PYTHON_VERSION` to `2`, it will default to Python 2.7. Other supported values are:
+Clever Cloud uses Python {{< runtime_version python python3 >}} by default, `{{< runtime_version python >}}` in `CC_PYTHON_VERSION`. To use another version, set one of these values:
 
 {{< runtimes_versions python >}}
 
-### Build phase
+In the uv mode, the version of a `.python-version` file, such as the one `uv python pin` writes, takes precedence. uv uses the Python of the image when it provides this version, and otherwise downloads it during the build.
 
-#### Dependencies
+### Caches
 
-If you do not have a `requirements.txt` file to commit you can obtain it via the command `pip freeze > requirements.txt` (or `pip3 freeze > requirements.txt` if you use Python 3.x) at the root of your project folder in your terminal.
-
-For example, if you want to install *PostgreSQL* without using the `pip freeze` command above, create a `requirements.txt` file at the root of your application folder:
-
-```txt
-psycopg2>=2.7 --no-binary psycopg2
-```
-
-> [!NOTE]
-> Using `psycopg2>=2.7 --no-binary psycopg2` is recommended to avoid WSGI issues.
-
-You can define a custom `requirements.txt` file with the environment variable `CC_PIP_REQUIREMENTS_FILE` for example: `CC_PIP_REQUIREMENTS_FILE=config/production.txt`.
-
-### Cached dependencies
-
-#### Enabling dependencies caching
-
-You can enable dependencies caching by adding the `CC_CACHE_DEPENDENCIES=true` [environment variable](/doc/manage/environment-variables/) in your application. It is enabled by default only for rust and haskell applications.
-
-#### Disabling dependencies caching
-
-You can disable dependencies caching completely by removing the `CC_CACHE_DEPENDENCIES` environment variable from the Clever Cloud console, in the **Environment variables** menu of your application.
-
-Or by setting it to `CC_CACHE_DEPENDENCIES=false`
-
-To fully remove cached dependencies, you have to rebuild your application from scratch.
-
-You can select "rebuild and restart" from the Clever Cloud console or launch `clever restart --without-cache` with the Clever Tools CLI.
-
-#### Use setup.py
-
-Execution of a single `setup.py` goal is supported. Usually, this would be to execute custom tasks after the installation of dependencies.
-
-The goal will be launched after the dependencies from `requirements.txt` have been installed.
-
-To execute a goal, define the environment variable `CC_PYTHON_SETUP_PY_GOAL="<your goal>"`.
-
-- [Learn more about Deployment hooks](/doc/manage/build-hooks/)
-
-#### Django manage.py tasks
-
-Clever Cloud runs [manage.py](https://docs.djangoproject.com/en/stable/ref/django-admin/) tasks during the build, after pip installs the dependencies from `requirements.txt` and before the web server starts. Declare them with the `CC_PYTHON_MANAGE_TASKS` environment variable, as a comma-separated list. Each entry becomes a `python manage.py` call, so it can carry its own options:
+After a successful build of an application, Clever Cloud keeps a build cache of the commit, with the installed dependencies. Restarting the application without a code change reuses it and skips the build. To build again from scratch, restart without the cache (rebuild):
 
 ```bash
-CC_PYTHON_MANAGE_TASKS="migrate, collectstatic --noinput"
+clever restart --without-cache
 ```
 
-A task exiting with an error stops the build.
+A new commit downloads the dependencies again: `CC_CACHE_DEPENDENCIES` doesn't keep the packages of pip or uv between commits.
 
-> [!NOTE]
-> These tasks belong to the legacy deployment mode. [Native uv deployments](/doc/deploy/applications/python/uv/) don't run them.
+## Python applications as Clever Tasks
 
-### Select the Python backend
+A Python application can run as a [Clever Task](/doc/deploy/tasks/), such as a job or a migration. Clever Cloud installs its dependencies, then runs `CC_RUN_COMMAND` instead of starting a web server. The task stops when this command ends.
 
-Currently, `daphne`, `gunicorn`, `uvicorn` and `uwsgi` are supported for Python backends. If not specified, the default backend is `uwsgi`.
-
-To select one, set the `CC_PYTHON_BACKEND` environment variable with either `daphne`, `gunicorn`, `uvicorn` or `uwsgi`.
-
-Contact the support if you need another backend.
-
-- [Learn more about the configuration of Python servers](/doc/deploy/applications/python/pip/)
-
-> [!NOTE]
-> Backend selection only applies to the legacy deployment mode (without `uv.lock`). [Native uv deployments](/doc/deploy/applications/python/uv/) manage their own HTTP server.
-
-### Using the Gevent loop engine
-
-Whether you use uwsgi or gunicorn, you can enable the Gevent loop engine.
-
-To do so, add the `CC_PYTHON_USE_GEVENT` environment variable to your application, with the `true` value.
-
-## Celery apps
-
-Celery apps are supported out of the box. To deploy a celery app, use the `CC_PYTHON_CELERY_MODULE` environment variable:
+Configure Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks). In the uv mode, set `CC_PYTHON_UV_RUN_COMMAND` too. A task doesn't run it, but it activates the uv mode: this example repeats the command of the task.
 
 ```bash
-CC_PYTHON_CELERY_MODULE="mymodule"
+clever create --type python --task "uv run --no-dev python job.py"
+clever env set CC_PYTHON_UV_RUN_COMMAND "uv run --no-dev python job.py"
+clever deploy # or clever restart if there is no code change
 ```
-
-> [!WARNING]
-> Celery needs to be defined as a dependency in your requirements.txt. Otherwise the deployment will be aborted if Celery support is enabled.
-
-You can also activate beat with `CC_PYTHON_CELERY_USE_BEAT=true` and provide a given log dir for celery with `CC_PYTHON_CELERY_LOGFILE="/path/to/logdir"`.
-
-The `CC_PYTHON_CELERY_LOGFILE` path is relative to the application's path.
-
-> [!WARNING]
-> There is a bug in versions <4.2 of Celery. You need to add the `CELERY_TIMEZONE = 'UTC'` environment variable. The bug is documented here: [https://github.com/celery/celery/issues/4184](https://github.com/celery/celery/issues/4184).
-
-{{% include "shared/new-relic" %}}
 
 ## Go Further
 
 {{< cards >}}
-  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
-  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+  {{< card link="/developers/doc/deploy/applications/python/pip" title="pip" subtitle="Install with pip, and serve a WSGI or ASGI module behind NGINX" icon="server" >}}
+  {{< card link="/developers/doc/deploy/applications/python/uv" title="uv" subtitle="Install with uv, and start your own web server" icon="simple:uv" >}}
 {{< /cards >}}

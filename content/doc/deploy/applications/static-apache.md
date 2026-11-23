@@ -1,15 +1,16 @@
 ---
 type: docs
 linkTitle: Static with Apache
-title: Static with Apache
-description: Deploy static files and SPAs using Apache HTTP server with .htaccess support, redirections, and access control capabilities
+title: Static with Apache runtime
+description: Deploy static websites and single-page applications on Clever Cloud with Apache and .htaccess files, a build hook, cache headers, and Git, FTP, or SFTP
 keywords:
-- apache server
+- apache
+- ftp
 - htaccess
+- sftp
+- single page application
+- spa
 - static apache hosting
-- static apache cloud
-- single page applications
-- spa deployment
 - static files
 aliases:
 - /doc/applications/static-apache
@@ -17,89 +18,129 @@ aliases:
 
 ## Overview
 
-If you only need to serve static files without executing any code on the backend, for instance for a javascript Single Page Application (SPA), you can create a static application.
+Static with Apache serves the files of your website with [Apache](https://httpd.apache.org) 2.4. Use it when your website relies on `.htaccess` files, to rewrite URLs, set headers, or control access, or to send your files over [FTP](#deploy-with-ftp) instead of Git. Its instances start with the `nano` size.
 
-This runtime is based on apache, so shares a lot with the [PHP runtime](/doc/deploy/applications/php). This means you can use `.htaccess` files for redirection or access control.
+For other static websites, prefer the [Static](/doc/deploy/applications/static/) runtime. Unlike Static with Apache, it:
 
-{{% include "shared/env-injection" %}}
+- Starts with the smaller `pico` instance size
+- Serves your files with Static Web Server or Caddy, instead of Apache
+- Runs your build command, or the one of the static site generator it detects, such as Hugo or Astro
 
-Application deployment on Clever Cloud is via **Git or FTP**.
+## Create your Static with Apache application
 
-## FTP Deployment
+To create a new Static with Apache application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](/doc/tools/cli/):
 
-Make sure you have [Filezilla](https://filezilla-project.org/) or an other FTP software installed in your machine.
+```bash
+clever create --type static-apache
+```
 
-When you chose to deploy your application via FTP at the application creation, the system creates a free [FS Bucket](/doc/deploy/storage/fs-bucket) with an ID matching your application's ID.
+The [getting started guide](/doc/getting-started/) describes each step of the creation of an application.
 
-Find the FTP credentials in the configuration tab of this particular FS Bucket.
+## Configure your Static with Apache application
 
-Just follow the instructions of your FTP Software to send code to Clever Cloud.
+### Mandatory needs
 
-⚠️ **An FTP application automatically starts once you create the application, even if you don't send any code yet.**
+A Static with Apache application serves the `index.html` file at the root of the webroot, the folder of your website, as its home page. Its other pages, styles, and images sit next to it, as in this minimal website:
 
-## Serving index.html for SPA (Single Page Application) routers
+```html {filename="index.html"}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello</title>
+  </head>
+  <body>
+    <h1>Hello from Clever Cloud</h1>
+  </body>
+</html>
+```
 
-When you work with an SPA framework like React, Vue.js, Angular…, you're using client side routing. This means when you click on a link going to `/the-page`, your browser doesn't make an HTTP request for `/the-page`. Instead, the client side router highjacks the clicks on links, changes the DOM to display the page and ask the browser to change the URL in the address bar to `/the-page`.
+The webroot is the root of your repository, or the folder set in `CC_WEBROOT`. Set its path from the root of your repository, starting with a `/` and without `..`. For instance, to serve the `dist` folder that the build of your website writes:
 
-What happens if you try to refresh the page? If you do this, the browser will try to make an HTTP request for `/the-page`. In most situations, SPA only have one HTML document at the root called `index.html`. This is why, you'll probably get a 404 error.
+```bash
+clever env set CC_WEBROOT /dist
+```
 
-To fix this, most people using SPA frameworks configure their HTTP server to serve the `index.html` for all unkown requests. By this we mean for all requests that don't have a matching file on disk to serve.
+Apache serves every file of the webroot: keep notes, scripts, configuration files, and secrets out of it. Without `CC_WEBROOT`, it serves your whole repository, with its source code and its configuration: set this variable to keep them private.
 
-To do this with our static applications, you need a `.htaccess` file like this at the root of your project:
+### Build phase
 
-```ApacheConf
+Clever Cloud doesn't detect any build tool: build your website in the pre-build or the post-build [hook](/doc/manage/build-hooks/). For instance, to build a single-page application (SPA) with Vite, and serve the folder it writes:
+
+```bash
+clever env set CC_POST_BUILD_HOOK "npm ci && npm run build"
+clever env set CC_WEBROOT /dist
+```
+
+The image includes Node.js and npm, and `CC_NODE_VERSION` sets the version of Node.js, such as `24`. To install another tool, declare it in a [`mise.toml` file](/doc/manage/mise/): Clever Cloud installs it before the build. For instance, [Pagefind](https://pagefind.app), which indexes your website for its search:
+
+```toml {filename="mise.toml"}
+[tools]
+"github:Pagefind/pagefind" = "1.6.0"
+```
+
+### Serve a single-page application
+
+An SPA handles its routes in the browser: when a visitor reloads a page such as `/account`, Apache finds no file to serve. To answer with `index.html` instead, add these rules to the `.htaccess` file at the root of the webroot:
+
+```apache {filename="public/.htaccess"}
 RewriteEngine On
-
-# If an existing asset or directory is requested, serve it
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
-RewriteRule ^ - [L]
-
-# If the requested resource doesn't exist, use index.html
-RewriteRule ^ /index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.[a-z0-9]+$ [NC]
+RewriteRule ^ index.html [L]
 ```
 
-## Prerendering with Prerender.io
+The paths that end with an extension keep their `404` error, such as a missing `app.js` file, or a route with a dot, such as `/users/jane.doe`. With a build, put the `.htaccess` file in the folder that it copies unchanged, such as `public` for Vite.
 
-When you use a SPA framework, you are using Client side rendering. One of the problem with this method is a poor SEO as search engine crawlers have more difficulty reading the content of this type of application. To minimize this issue, prerendering can be a solution.
+### Set cache headers
 
-If you want to Prerender your application on Clever Cloud, one solution is to use [Prerender.io](https://prerender.io/). To use it with our static applications, you need a `.htaccess` file like this at the root of your project:
+Apache compresses its HTML, CSS, and JavaScript answers with gzip. To let browsers keep the files that Vite names after their content, in the `assets` folder, and check the pages at each visit, add these directives to your `.htaccess` file:
 
-```ApacheConf
-<IfModule mod_headers.c>
-    RequestHeader set X-Prerender-Token "<PRERENDER_TOKEN>"
-    RequestHeader set X-Prerender-Version "prerender-apache@2.0.0"
-</IfModule>
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    <IfModule mod_proxy_http.c>
-        RewriteCond %{HTTP_USER_AGENT} googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora\ link\ preview|showyoubot|outbrain|pinterest\/0\.|pinterestbot|slackbot|vkShare|W3C_Validator|whatsapp|redditbot|applebot|flipboard|tumblr|bitlybot|skypeuripreview|nuzzel|discordbot|google\ page\ speed|qwantify|bitrix\ link\ preview|xing-contenttabreceiver|google-inspectiontool|chrome-lighthouse|telegrambot [NC,OR]
-        RewriteCond %{QUERY_STRING} _escaped_fragment_
-        RewriteCond %{REQUEST_URI} ^(?!.*?(\.js|\.css|\.xml|\.less|\.png|\.jpg|\.jpeg|\.gif|\.pdf|\.doc|\.txt|\.ico|\.rss|\.zip|\.mp3|\.rar|\.exe|\.wmv|\.doc|\.avi|\.ppt|\.mpg|\.mpeg|\.tif|\.wav|\.mov|\.psd|\.ai|\.xls|\.mp4|\.m4a|\.swf|\.dat|\.dmg|\.iso|\.flv|\.m4v|\.torrent|\.ttf|\.woff|\.svg))
-
-        RewriteRule ^(index\.html|index\.php)?(.*) http://service.prerender.io/%{REQUEST_SCHEME}://%{HTTP_HOST}$2 [P,END]
-    </IfModule>
-</IfModule>
+```apache {filename="public/.htaccess"}
+<If "%{REQUEST_URI} =~ m#^/assets/#">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</If>
+<FilesMatch "\.html$">
+  Header set Cache-Control "no-cache"
+</FilesMatch>
 ```
 
-You can find your `PRERENDER_TOKEN` on your [Prerender.io account](https://prerender.io/).
+### Prerender your pages at build time
 
-You can verify your configuration work using [this guide](https://docs.prerender.io/docs/how-to-test-your-site-after-you-have-successfully-validated-your-prerender-integration).
+Google and Bing run the JavaScript of an SPA, but social network previews and some AI crawlers don't, and get an empty page. Prerender your routes at build time instead, with the static output of your framework, such as Astro, Nuxt `generate`, or SvelteKit `adapter-static`.
 
-## Apache Configuration with `CC_WEBROOT`
+The build then writes an `index.html` file for each route, which Apache serves, while your SPA rules answer the other paths. A route such as `/about` becomes a folder: to keep HTTPS when Apache adds its trailing slash, see the [Apache page](/doc/deploy/applications/php/apache/#redirections-of-folders).
 
-If you set the `CC_WEBROOT = /<web-folder>` environment variable, make sure you put your `.htaccess` file at the root of your `/<web-folder>`. This is where Apache will look for directives when you deploy an application in a Static runtime.
+### Other Apache settings
 
-If you don't set the [`CC_WEBROOT`](/doc/manage/environment-variables/reference/#php) environment variable, the root of your project is the root of your web server.
+The [Apache page](/doc/deploy/applications/php/apache/) applies to Static with Apache too. It explains how to ask for a password with `CC_HTTP_BASIC_AUTH`, remove headers, or raise the size limit of the request headers with `CC_APACHE_HEADERS_SIZE`.
 
-## Static Site Generators (SSG) guides {#-static-site-generators-ssg-guides}
+### Caches
 
-{{% include "shared/static-guides" %}}
+After a successful build of an application, Clever Cloud keeps a build cache of the commit, with the whole folder of your application. Restarting the application without a code change reuses it and skips the build. To build again from scratch, restart without the cache (rebuild):
+
+```bash
+clever restart --without-cache
+```
+
+Clever Cloud doesn't keep the dependencies of your hooks between commits: they install them again at each new commit.
+
+## Deploy with FTP
+
+To send your files over FTP instead of Git, create the application from the [Console](https://console.clever-cloud.com), and choose FTP as its deployment method. Clever Cloud then creates an [FS Bucket](/doc/deploy/storage/fs-bucket/) add-on with the ID of your application, which holds its files.
+
+The **Dashboard** of this add-on, in the Console, shows the host, the user, and the password of the bucket. Connect to it with an SFTP client, or with an FTP client over TLS (FTPS), as the [FS Bucket page](/doc/deploy/storage/fs-bucket/#access-your-files) explains.
+
+Send your files to the root of the bucket, or to the folder set in `CC_WEBROOT`. The application doesn't start on its own: once your files are on the bucket, start it from the Console, or with `clever restart`. Apache then serves each new or changed file right away, without a new deployment.
+
+You can't move an FTP application to another region, nor delete its FS Bucket on its own: deleting the application deletes its bucket.
 
 ## Go Further
 
 {{< cards >}}
+  {{< card link="/developers/doc/deploy/applications/php/apache" title="Apache" subtitle="Configure the web server with .htaccess, authentication, and timeouts" icon="feather" >}}
+  {{< card link="/developers/doc/deploy/storage/fs-bucket" title="FS Buckets" subtitle="Reach the files of an FTP application, over FTP or SFTP" icon="fsbucket" >}}
   {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+  {{< card link="/developers/doc/deploy/applications/static" title="Static" subtitle="Build a website with a static site generator, and serve it" icon="static" >}}
 {{< /cards >}}

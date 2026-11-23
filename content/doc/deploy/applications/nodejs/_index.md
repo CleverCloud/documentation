@@ -1,17 +1,16 @@
 ---
 type: docs
 linkTitle: Node.js & Bun
-title: Node.js & Bun runtime
-description: Deploy JavaScript applications on Clever Cloud with Node.js runtime and npm, or alternative tools like Bun, Deno, pnpm or Yarn
+title: Node.js application runtime
+description: Build and deploy Node.js applications on Clever Cloud with npm, pnpm, or Yarn, from JavaScript or TypeScript, with the Node.js version of your choice
 keywords:
+- bun
+- express
+- javascript
 - nodejs app hosting
 - nodejs cloud
-- javascript
-- bun app hosting
-- bun cloud
-- deno app hosting
-- deno cloud
 - npm
+- package.json
 - pnpm
 - typescript
 - yarn
@@ -41,145 +40,151 @@ aliases:
 
 ## Overview
 
-Clever Cloud allows you to deploy any JavaScript and TypeScript application. We do support **any stable version of Node.js**. Learn more about [Node.js release schedule](https://nodejs.org/en/about/previous-releases). This page explains how to set up your application to run it on our service.
+[Node.js](https://nodejs.org) is a JavaScript runtime, which also runs TypeScript. Clever Cloud installs the dependencies of your project with npm, pnpm, or Yarn, then starts it from its `package.json` file. It works with frameworks such as [Express](https://expressjs.com), [Hono](https://hono.dev), or [NestJS](https://nestjs.com).
 
-## Create your Node.js & Bun application
+[Bun](https://bun.com) is another JavaScript runtime, compatible with Node.js, and a package manager. When it finds a `bun.lock` file, Clever Cloud installs and starts your project with Bun, as the [Bun page](/doc/deploy/applications/nodejs/bun/) explains. For Meteor, see the [Meteor.js page](/doc/deploy/applications/meteor/).
 
-To create a new Node.js & Bun application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](https://github.com/CleverCloud/clever-tools):
+## Create your Node.js application
+
+To create a new Node.js application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](/doc/tools/cli/):
 
 ```bash
 clever create --type node
 ```
 
-- [Learn more about Clever Tools](/doc/tools/cli/)
-- [Learn more about Clever Cloud application deployment](/doc/getting-started/)
+The [getting started guide](/doc/getting-started/) describes each step of the creation of an application.
 
-## Configure your Node.js & Bun application
+## Configure your Node.js application
 
 ### Mandatory needs
 
-Be sure that:
+A Node.js application needs:
 
-- You listen on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port)
-- You have a `package.json` file
-- Your `package.json` either has a **scripts.start** or a **main** field
-- The folder `/node_modules` is mentioned in your `.gitignore` file
-- You enable production mode by setting the [environment variable](/doc/manage/environment-variables/) `NODE_ENV=production`
+- A `package.json` file, at the root of the project or of the folder set in `CC_APP_FOLDER`
+- A start script or a `main` field in this file, to [start your application](#start-command)
+- A web server listening on `0.0.0.0`, on [the port in `PORT`](/doc/manage/#listen-on-the-right-port)
 
-### Memory management
+The `package.json` file describes your project: its dependencies, its scripts, and the Node.js version it needs. The lock file of your package manager, such as `package-lock.json` for npm, sets the exact version of each dependency. Commit it, and add `node_modules/` to your `.gitignore` file: Clever Cloud installs these dependencies itself, during the build.
 
-`NODE_OPTIONS` is automatically configured with `--max-old-space-size` set to 3/4 of the instance's available memory. If you already set `NODE_OPTIONS` with a `max-old-space-size` value, it is not overridden. If `NODE_OPTIONS` is set without `max-old-space-size`, the flag is appended to your existing value.
+For instance, a minimal [Express](https://expressjs.com) application:
 
-### Build phase
+```json {filename="package.json"}
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
+```
 
-During the build phase, Clever Cloud will install your application dependencies with the selected package manager.
+```js {filename="server.js"}
+import express from 'express';
+
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello from Node.js on Clever Cloud');
+});
+
+app.listen(process.env.PORT ?? 8080, '0.0.0.0');
+```
+
+To try it locally, run `npm install`, then `npm start`: it listens on port 8080. A [Clever Task](#nodejs-applications-as-clever-tasks) doesn't need a web server.
 
 ### About package.json
 
-A valid `package.json` file should look like the following:
+Clever Cloud reads these fields of your `package.json` file:
 
-```json
+- `dependencies` and `devDependencies`: the packages to install, as [development dependencies](#development-dependencies) explains
+- `engines.node`: the [Node.js version](#set-nodejs-version), when `CC_NODE_VERSION` isn't set
+- `main`: the file that `node` starts, when there's no start script
+- `packageManager`: the version of [pnpm or Yarn](#pnpm-and-yarn)
+- `scripts.start`: the command that starts your application
+
+Without a start script or a `main` field, the deployment logs `Error: No main or start script`, then fails when the [health check](/doc/manage/healthcheck/) times out.
+
+npm also runs the [lifecycle scripts](https://docs.npmjs.com/cli/using-npm/scripts) of your project, such as `postinstall` after the installation, and `prestart` before `npm start`.
+
+### Build phase
+
+On a new build, Clever Cloud runs the pre-build [hook](/doc/manage/build-hooks/), then installs the dependencies with the package manager of the first lock file it finds:
+
+1. `yarn.lock`: [Yarn](#pnpm-and-yarn), with `yarn install`
+2. `pnpm-lock.yaml`: [pnpm](#pnpm-and-yarn), with `pnpm install --prod`
+3. `bun.lock`: [Bun](/doc/deploy/applications/nodejs/bun/), with `bun install --omit dev`
+
+Without any of them, Clever Cloud runs `npm install`.
+
+Clever Cloud doesn't run your `build` script. To build your application, such as to compile TypeScript, run it in the post-build hook:
+
+```bash
+clever env set CC_POST_BUILD_HOOK "npm run build"
+```
+
+A hook runs from the root of your repository: with `CC_APP_FOLDER`, start it with `cd` to this folder.
+
+Build tools, such as `tsc` or Vite, are often development dependencies, which pnpm and Bun skip, as well as npm and Yarn 1 with `NODE_ENV=production`. To build your application, [install them](#development-dependencies).
+
+### Package managers
+
+To choose the package manager or the command that installs the dependencies, set `CC_NODE_BUILD_TOOL`:
+
+- `bun`: [Bun](/doc/deploy/applications/nodejs/bun/), which also starts your application
+- `custom`: the command set in `CC_CUSTOM_BUILD_TOOL`
+- `npm` or `npm-install`: `npm install`, the default
+- `npm-ci`: `npm ci`, which installs the versions of `package-lock.json`
+- `pnpm`: `pnpm install --prod`, which also starts your application
+- `yarn-berry`: `yarn install`, which also starts your application
+
+This setting takes precedence over the lock files. A custom command can chain the installation and the build:
+
+```bash
+clever env set CC_NODE_BUILD_TOOL custom
+clever env set CC_CUSTOM_BUILD_TOOL "npm ci --include=dev && npm run build"
+```
+
+The `yarn` and `yarn2` values select Yarn 1 and Yarn 2, which their developers no longer maintain: the deployment logs a warning.
+
+### pnpm and Yarn
+
+Clever Cloud installs pnpm, and Yarn 3 or 4, with [Corepack](https://github.com/nodejs/corepack), which sets their version from the `packageManager` field:
+
+```json {filename="package.json"}
 {
-  "name" : "myApp",
-  "version" : "0.1.0",
-  "main" : "myApp.js",
+  "packageManager": "pnpm@12.21.0"
 }
 ```
 
-or
+With a `yarn.lock` file, Clever Cloud uses Yarn 1, unless this field sets Yarn 3 or 4, such as `yarn@4.19.0`, whose Plug'n'Play mode works.
 
-```json
+### TypeScript
+
+Starting with version 22.18, Node.js runs TypeScript files, after removing their types. Start a file of your project with `node`, without a build:
+
+```json {filename="package.json"}
 {
-  "name" : "myApp",
-  "version" : "0.1.0",
-  "scripts" : {
-    "start" : "node myApp.js"
+  "scripts": {
+    "start": "node src/server.ts"
   }
 }
 ```
 
-You can use additional scripts as an alternative to [Clever Cloud hooks](/doc/manage/build-hooks/#when-hooks-run); see [the npm documentation](https://docs.npmjs.com/cli/using-npm/scripts#npm-install). For example, `scripts.preinstall`, `scripts.install` and `scripts.postinstall` are executed during the build phase if defined. `scripts.prestart` and `scripts.poststart` are executed before and after the `scripts.start` command. Thus, your `package.json` can look like this:
+This mode only supports the [TypeScript syntax it can erase](https://nodejs.org/api/typescript.html), such as types. For an `enum` or a `namespace`, compile your project with [TypeScript](https://www.typescriptlang.org): run `tsc` in the [post-build hook](#build-phase), then start the file it writes, such as `node dist/server.js`.
 
-```json
-{
-  "name" : "myApp",
-  "version" : "0.1.0",
-  "scripts" : {
-    "preinstall": "./download.sh",  // during build phase, before dependencies installation
-    "postinstall": "./cleanup.sh",  // during build phase, after dependencies installation
-    "prestart": "./prepare.sh",     // during run phase, before the start command
-    "start" : "node myApp.js",
-  }
-}
-```
+The `paths` aliases of `tsconfig.json` need a bundler. [Bun](/doc/deploy/applications/nodejs/bun/) runs TypeScript without these limits, and without a build. [Mise](/doc/manage/mise/) also lets you install [Deno](https://deno.com), another TypeScript runtime. Use it to run an application on the [Linux runtime](/doc/deploy/applications/linux/) or to build a static site, as in the [Lume guide](/guides/static-sites/lume/).
 
-### Dependencies
-
-If you need some modules you can easily add some with the *dependencies* field in your `package.json`. Here is an example:
-
-```json {linenos=table}
-{
-  "name" : { … },
-  "engines": { … },
-  "dependencies": {
-    "express": "5.x",
-    "socket.io": "4.8.x",
-    "underscore": "1.13.7"
-  }
-}
-```
-
-If your application has private dependencies, you can add a [private SSH key](/doc/manage/#private-ssh-key).
-
-- [Use private repositories](#use-private-repositories)
-- [Manage Development Dependencies](#development-dependencies)
-
-## Supported package managers
-
-Clever Cloud supports any package manager compatible with Node.js ecosystem. The [environment variable](/doc/manage/environment-variables/) `CC_NODE_BUILD_TOOL` allows you to define which one you want to use to install dependencies during the build phase:
-
-- `bun`: uses [Bun](https://bun.sh) as a package manager and as a runtime
-- `npm` or `npm-install`: default, uses [npm install](https://docs.npmjs.com/cli/install)
-- `npm-ci`: uses [npm clean-install](https://docs.npmjs.com/cli/ci)
-- `pnpm`: uses [pnpm](https://pnpm.io)
-- `yarn-berry`: uses [Yarn](https://yarnpkg.com/)
-- `custom`: use another package manager, defined with `CC_CUSTOM_BUILD_TOOL`
-
-> [!NOTE] Yarn 1.x and 2.x deprecation
-> `yarn` and `yarn2` are still valid values but the Yarn team no longer maintains 1.x and 2.x branches. Use `yarn-berry` instead.
-
-### What about Deno?
-
-Deno is not natively supported on Clever Cloud, but you can get it [using Mise](/doc/manage/environment-variables/reference#install-tools-with-mise-package-manager), by setting a `mise.toml` file with the following content:
-
-```toml {filename="mise.toml"}
-[tools]
-deno = "latest"
-```
-
-Then it will be installed during deployment. You can replace `latest` with a specific version.
-
-- [Lume with Deno guide](/guides/static-sites/lume/)
-
-### Automatic detection
-
-If a lock file exists in your application's main folder, the corresponding package manager is set. Detection priority is:
-
-1. `yarn.lock` → if `packageManager` in `package.json` starts with `yarn@3` or `yarn@4`, `yarn-berry` is used; otherwise falls back to deprecated `yarn` (1.x)
-2. `pnpm-lock.yaml` → `pnpm` is used for build/run
-3. `bun.lock` → `bun` is used for build/run
-
-To overwrite this behavior, either delete the lock file or set the `CC_NODE_BUILD_TOOL` environment variable.
-
-## Version management
-
-### Set Node.js version
+### Node.js version {#set-nodejs-version}
 
 Each image includes a Node.js version installed with `nvm`: the latest long-term support (LTS) release when Clever Cloud built the image. Your application uses it when it doesn't request another version.
 
 {{< runtimes_versions node >}}
 
-To request a version, set the `CC_NODE_VERSION` environment variable or the `engines.node` field in your `package.json`. Both accept a version or a [semantic versioning range](https://github.com/npm/node-semver#ranges), such as `26`, `24.22`, `24.22.2`, or `>=24`. A partial version is a range: `26` matches any 26.x release, `24.22` any 24.22.x release. Clever Cloud ignores and deletes any `.nvmrc` file during deployment.
+To request a version, set `CC_NODE_VERSION`, as Clever Cloud ignores and deletes `.nvmrc` files. It accepts a version or a [semantic versioning range](https://github.com/npm/node-semver#ranges), such as `26`, `24.22`, `24.22.2`, or `>=24`. A partial version is a range: `26` matches any 26.x release, `24.22` any 24.22.x release.
 
 During the build phase, Clever Cloud resolves the requested version in this order:
 
@@ -187,127 +192,117 @@ During the build phase, Clever Cloud resolves the requested version in this orde
 2. Otherwise, Clever Cloud installs with `nvm` the latest Node.js release that matches the request
 3. If no release matches, the deployment fails
 
-For example, with Node.js 26.13.1 in the image, `26` and `>=24` both resolve to 26.13.1, while `24` installs the latest 24.x release. An open range such as `>=24` doesn't select the latest release: it keeps the included version as long as this version matches. The included version changes with image updates, from one patch release to the next and from one LTS branch to the next. Set a major version, such as `26`, to stay on the same branch across image updates. `engines.node` follows the same rules, so a broad compatibility range in `package.json` also selects the version.
+For example, with Node.js 26.13.1 in the image, `26` and `>=24` both resolve to 26.13.1, while `24` installs the latest 24.x release. An open range such as `>=24` doesn't select the latest release: it keeps the included version as long as this version matches.
 
-> [!NOTE] `CC_NODE_VERSION` takes precedence from December 1, 2026
-> When you set both, `engines.node` in `package.json` takes precedence over `CC_NODE_VERSION`, for legacy reasons. From December 1, 2026, `CC_NODE_VERSION` takes precedence, and `engines.node` only applies when this variable isn't set. If your application sets both to different values, align them or remove `CC_NODE_VERSION` to keep the version `engines.node` selects.
+Image updates can move the included version to a new patch release or LTS branch: set a major version, such as `26`, to stay on one.
 
-### Bun version
+Without `CC_NODE_VERSION`, Clever Cloud reads the `engines.node` field of your `package.json`, with the same rules. Prefer the variable: it makes the version you deploy explicit, while `engines.node` describes the versions your package supports.
 
-If you use Bun, your application is deployed with the latest available version on Clever Cloud (`{{< runtime_version bun >}}`). To customise the Bun cache directory, set `CC_BUN_INSTALL_CACHE_DIR`.
+### Start command
 
-Bun includes a [native S3 client](https://bun.sh/docs/api/s3) that works with [Cellar](/doc/deploy/storage/cellar/#using-sdks), the Clever Cloud S3-compatible object storage service, with no external dependency required.
+Clever Cloud starts your application from the folder of your project, with the first of these commands that applies:
 
-- [Learn more about Bun native Clever Cloud add-ons support with examples](https://github.com/CleverCloud/bun-addons-examples)
+1. `CC_RUN_COMMAND`, when you set it
+2. `npm start`, which runs the start script of your `package.json` file
+3. `node` and the file of the `main` field, such as `node server.js`
 
-### pnpm and Yarn versions
+With pnpm, or Yarn 3 or 4, Clever Cloud runs the start script or the `main` file through them, such as `pnpm start` or `yarn node server.js`.
 
-To load a specific version, set the `packageManager` field in your `package.json` file. For example, to use `pnpm@10.14.0`:
+### Memory
 
-```json
+Clever Cloud sets the heap size of Node.js to three quarters of the memory available to your application, such as 644 MB on `XS`. It adds this `--max-old-space-size` option to the `NODE_OPTIONS` you set, unless your value already holds one.
+
+To set your own value, put `--` before it, so that Clever Tools doesn't read it as an option:
+
+```bash
+clever env set NODE_OPTIONS -- "--max-old-space-size=512"
+```
+
+### Development dependencies
+
+Clever Cloud doesn't set `NODE_ENV`. Set it to `production`, which most frameworks, such as Express, expect in production. With this value, npm and Yarn 1 skip the `devDependencies` of your project, while pnpm always skips them. Yarn 3 and 4 install them.
+
+To install them, such as for a build tool, set `CC_NODE_DEV_DEPENDENCIES=install`. Clever Cloud then adds the matching option to the command: `--production=false` for npm and Yarn 1, `--include=dev` for `npm ci`, and `--no-prod` for pnpm.
+
+### Private registries
+
+To install private packages, set your access token in `NPM_TOKEN`: Clever Cloud writes it to `~/.npmrc`, for the host in `CC_NPM_REGISTRY`. Set it to `github` for GitHub Packages, or to the host of another registry, instead of `registry.npmjs.org`.
+
+```bash
+clever env set CC_NPM_REGISTRY github
+clever env set NPM_TOKEN "<your-token>"
+```
+
+npm then still installs the other packages from `registry.npmjs.org`. GitHub Packages only hosts scoped packages: map your scope to it in a `.npmrc` file of your project, as for any scope of another registry:
+
+```ini {filename=".npmrc"}
+@my-organisation:registry=https://npm.pkg.github.com
+```
+
+Instead of a token, `CC_NPM_BASIC_AUTH` sets a user and a password, such as `user:password`, for the registry host. Clever Cloud then makes it the default registry of npm. Use either `NPM_TOKEN` or `CC_NPM_BASIC_AUTH`: the deployment fails with both.
+
+For dependencies on private Git repositories, add a [private SSH key](/doc/manage/#private-ssh-key) to your application.
+
+### Client address and protocol
+
+The requests that reach your application come from the [load balancers](/doc/network/load-balancers/), which set the address of the client in their headers. To read it with Express, trust the addresses that `CC_REVERSE_PROXY_IPS` lists, and `127.0.0.1` for [Request Flow](/doc/manage/request-flow/):
+
+```js {filename="server.js"}
+const proxies = (process.env.CC_REVERSE_PROXY_IPS ?? '').split(',').filter(Boolean);
+app.set('trust proxy', ['loopback', ...proxies]);
+```
+
+`req.ip` then holds the address of the client. Don't rely on `req.protocol` and `req.hostname`: a client can set them with its own headers.
+
+With [Force HTTPS](/doc/manage/#force-https), enabled by default, every request came over HTTPS. Without it, [get the protocol](/doc/network/load-balancers/#get-the-protocol) from the `Forwarded` header.
+
+### Environment variables
+
+Your application reads its [environment variables](/doc/manage/environment-variables/) with `process.env.MY_VARIABLE`, such as the credentials of linked add-ons. They exist during the build too, for your hooks and the scripts of your `package.json` file.
+
+### Monitoring
+
+To monitor your application with the agent of a service, such as [New Relic](/doc/observability/new-relic/), add it to the dependencies of your project.
+
+To send traces to an [OpenTelemetry](https://opentelemetry.io/docs/zero-code/js/) collector, add its packages, then load them in your start script. Don't load them in `NODE_OPTIONS`: this variable also applies to the build, which then fails before their installation:
+
+```json {filename="package.json"}
 {
-  "packageManager": "pnpm@10.14.0"
+  "scripts": {
+    "start": "node --require @opentelemetry/auto-instrumentations-node/register server.js"
+  }
 }
 ```
 
-This is the default way to manage version for pnpm and Yarn when a new project is initialized. It will define the version used for dependency installation during the build phase and in run command. Yarn `1.22.22` remains the default system version included for legacy reasons.
+```bash
+npm install @opentelemetry/api @opentelemetry/auto-instrumentations-node
+clever env set OTEL_SERVICE_NAME my-application
+clever env set OTEL_EXPORTER_OTLP_ENDPOINT https://collector.example.com
+```
 
-- If `CC_NODE_BUILD_TOOL` is set to `yarn-berry`, the latest 4.x packaged version of Yarn becomes the system default
-- If you use Yarn 1.x or Yarn 2.x, a deprecation warning is displayed during deployment as they're not maintained anymore
+### Caches
 
-> [!TIP]
-> If you set `CC_NODE_BUILD_TOOL` to `yarn-berry` in any Clever Cloud runtime, Yarn 4.x becomes the default system version.
-
-## Development Dependencies
-
-Development dependencies aren't automatically installed during the deployment. You can control their installation by setting the `CC_NODE_DEV_DEPENDENCIES` environment variable to `install` or `ignore`.
-
-When set to `install`, an explicit flag forces development dependencies to be included regardless of `NODE_ENV`:
-
-- npm: `--production=false`
-- npm-ci: `--include=dev`
-- pnpm: `--no-prod`
-- yarn: `--production=false`
-- bun: no flag (Bun includes all dependencies by default)
-
-`CC_NODE_DEV_DEPENDENCIES` has no effect when `CC_NODE_BUILD_TOOL` is set to `yarn2` or `yarn-berry`: Clever Cloud runs `yarn install` with no flag and Yarn applies its own default.
-
-When not set or set to `ignore`, default package manager behavior applies:
-
-- For Bun: development dependencies are excluded (`--omit dev` is added by default)
-- For pnpm: development dependencies are excluded (`--prod` is added by default)
-- For npm and Yarn Classic: depends on `NODE_ENV`. If `NODE_ENV=production`, development dependencies are excluded. Otherwise they are included.
-
-## Custom run command
-
-To override the default start behavior (scripts.start or main field from package.json), set the `CC_RUN_COMMAND` environment variable. When defined, it takes priority over all other start methods.
-
-## Use private repositories
-
-### With NPM_TOKEN
-
-Since April 2015, `npm` allows you to have private repositories. If you want to use such a feature, you only need to provide the auth token. Add it to your application through the `NPM_TOKEN` environment variable:
+After a successful build of an application, Clever Cloud keeps a build cache of the commit. Restarting the application without a code change reuses it and skips the build. To build again from scratch, restart without the cache (rebuild):
 
 ```bash
-NPM_TOKEN="00000000-0000-0000-0000-000000000000"
+clever restart --without-cache
 ```
 
-Then, the `.npmrc` file is created automatically for your application, with the registry URL and the token.
+With `CC_CACHE_DEPENDENCIES=true`, Clever Cloud also keeps the packages that your package manager downloads between commits: `~/.npm` for npm, `~/.cache/pnpm` for pnpm, and `~/.cache/yarn` for Yarn 1. The build cache already holds the packages of Yarn 3 and 4.
 
-```txt
-//registry.npmjs.org/:_authToken=00000000-0000-0000-0000-000000000000
-```
+## Node.js applications as Clever Tasks
 
-### With CC_NPM_BASIC_AUTH
+A Node.js application can run as a [Clever Task](/doc/deploy/tasks/), such as a job or a migration. Clever Cloud installs its dependencies, then runs `CC_RUN_COMMAND` from the folder of your project, instead of starting a web server. The task stops when this command ends.
 
-As an alternative to `NPM_TOKEN`, you can set `CC_NPM_BASIC_AUTH` to use basic authentication. The value is Base64-encoded automatically by the platform. You cannot use both `NPM_TOKEN` and `CC_NPM_BASIC_AUTH` at the same time.
+Configure Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks):
 
 ```bash
-CC_NPM_BASIC_AUTH="user:password"
+clever create --type node --task "node migrate.js"
+clever deploy # or clever restart if there is no code change
 ```
-
-### Define the host
-
-To authenticate to another registry (like GitHub), you can use the `CC_NPM_REGISTRY` environment variable to define its host.
-
-```bash
-CC_NPM_REGISTRY="npm.pkg.github.com"
-NPM_TOKEN="00000000-0000-0000-0000-000000000000"
-```
-
-```txt
-//npm.pkg.github.com/:_authToken=00000000-0000-0000-0000-000000000000
-```
-
-## Deployment video
-
-{{< youtube id="9ww_t0o-GmA" >}}
-
-## Automatic HTTPS redirection
-
-[Force HTTPS](/doc/manage/#force-https), enabled by default, redirects HTTP requests to HTTPS. To do it in your application, read the [load balancer headers](/doc/network/load-balancers/#get-the-protocol).
-
-If you are using [Express.js](https://expressjs.com/), you can use [express-sslify](https://www.npmjs.com/package/express-sslify) by adding:
-
-```javascript
-app.use(enforce.HTTPS({
-  trustProtoHeader: true
-}));
-```
-
-{{% include "shared/new-relic" %}}
-
-## Troubleshooting your application
-
-If you are often experiencing auto restart of your Node.js instance, maybe you have an application crashing that we automatically restart. To target this behavior, you can gracefully shut down with events handlers on `uncaughtExeption` `unhandledRejection` `sigint` and `sigterm` and log at this moment, so you can fix the problem.
-
-{{% include "shared/env-injection" %}}
-
-To access environment variables from your code, you can use `process.env.MY_VARIABLE`.
 
 ## Go Further
 
 {{< cards >}}
-  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
-  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+  {{< card link="/developers/doc/deploy/applications/nodejs/bun" title="Bun" subtitle="Install the dependencies and start your application with Bun" icon="simple:bun" >}}
 {{< /cards >}}

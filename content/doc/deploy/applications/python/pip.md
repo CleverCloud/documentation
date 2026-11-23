@@ -11,6 +11,7 @@ keywords:
 - static files
 aliases:
 - /doc/applications/python/servers
+- /doc/deploy/applications/python/servers
 ---
 
 ## uWSGI, Gunicorn and Nginx configuration

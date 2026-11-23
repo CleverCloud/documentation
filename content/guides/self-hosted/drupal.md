@@ -86,13 +86,12 @@ clever domain
 clever domain add your.website.tld
 ```
 
-Set the public directory, PHP version and a stable random salt. Drupal's Composer scaffold is implemented by Composer scripts, so override the PHP runtime's default `--no-scripts` flag:
+Set the public directory, PHP version and a stable random salt. Composer runs the scaffold scripts of Drupal during the build:
 
 ```bash
 clever env set CC_WEBROOT /web
 clever env set CC_PHP_VERSION 8.4
 clever env set DRUPAL_HASH_SALT "$(openssl rand -base64 48)"
-clever env set -- CC_PHP_COMPOSER_FLAGS "--no-interaction --no-progress --optimize-autoloader"
 ```
 
 Do not change `DRUPAL_HASH_SALT` after the site starts using hashes and one-time links.

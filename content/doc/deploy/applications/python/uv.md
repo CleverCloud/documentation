@@ -63,7 +63,7 @@ With native uv deployment:
 - Your application manages its HTTP server and listens on the port provided through `PORT`
 - `CC_PYTHON_MODULE` and `CC_PYTHON_BACKEND` are ignored
 - [Redirection.io, Varnish and custom proxies](/doc/manage/request-flow/) are configured through Request Flow, not Nginx
-- [Server configuration](/doc/deploy/applications/python/servers/) settings do not apply
+- [Server configuration](/doc/deploy/applications/python/pip/) settings do not apply
 
 - [Learn more about uv](https://docs.astral.sh/uv/)
 

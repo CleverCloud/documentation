@@ -75,14 +75,13 @@ clever addon create postgresql-addon mySymfonyDatabase -p dev --link mySymfonyAp
 
 You can also create and link these resources from the [Clever Cloud Console](https://console.clever-cloud.com/).
 
-Set the public directory, PHP version, production environment, and application secret. The Composer flags replace the runtime's default `--no-scripts` flag so Symfony Flex can execute the application's trusted auto-scripts:
+Set the public directory, PHP version, production environment, and application secret:
 
 ```bash
 clever env set CC_WEBROOT /public
 clever env set CC_PHP_VERSION 8.4
 clever env set APP_ENV prod
 clever env set APP_SECRET "$(openssl rand -hex 32)"
-clever env set -- CC_PHP_COMPOSER_FLAGS "--no-interaction --no-progress --optimize-autoloader"
 ```
 
 Generate a different `APP_SECRET` for each application environment and do not change it after the application starts using signed data.

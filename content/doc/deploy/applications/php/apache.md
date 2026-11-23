@@ -2,12 +2,12 @@
 type: docs
 linkTitle: Apache
 title: Apache web server configuration
-description: Configure Apache 2 for PHP applications on Clever Cloud with htaccess, authentication, HTTPS redirection, and FastCGI settings
+description: Configure Apache for PHP applications on Clever Cloud with .htaccess files, HTTP authentication, headers, redirections, timeouts, and the FastCGI module
 keywords:
 - apache
-- htaccess
-- htpasswd
+- basic authentication
 - fastcgi
+- htaccess
 - https redirect
 aliases:
 - /doc/applications/php/apache
@@ -17,127 +17,69 @@ aliases:
 - /doc/runtimes/php/apache
 ---
 
-## Configure Apache
+## Overview
 
-Apache 2 is used as HTTP Server for PHP applications on Clever Cloud. You can configure it with `.htaccess` files and environment variables.
+[Apache](https://httpd.apache.org) 2.4 serves the webroot of your [PHP application](/doc/deploy/applications/php/), and passes the PHP files to PHP-FPM. Configure it with `.htaccess` files and environment variables, for headers, redirections, authentication, or timeouts, as the sections below explain.
 
-### htaccess
+## Configure Apache with .htaccess
 
-The `.htaccess` file can be created anywhere in your app, depending on the part of the application that the directives cover.
+Apache reads the `.htaccess` files of the webroot and of its folders: put the directives of the whole application at the root of the webroot. They can rewrite URLs, set headers, or control access, as the [Apache documentation](https://httpd.apache.org/docs/2.4/howto/htaccess.html) explains:
 
-However, directives that apply to the entire application must be declared in a `.htaccess` file at the application root.
+```apache {filename="public/.htaccess"}
+Header set Access-Control-Allow-Origin "https://www.example.com"
 
-### Basic authentication
-
-You can configure basic authentication using [environment variables](/doc/manage/environment-variables/reference#php). You will need to set `CC_HTTP_BASIC_AUTH` variable to your own `login:password` pair. If you need to allow access to multiple users, you can create additional environment `CC_HTTP_BASIC_AUTH_n` (where `n` is a number) variables.
-
-### HTTP timeout
-
-You can define the timeout of an HTTP request in Apache using the `HTTP_TIMEOUT` [environment variable](/doc/manage/environment-variables).
-
-**By default, the HTTP timeout is set to 3 minutes (180 seconds)**.
-
-### Header size
-
-Default Apache header size is `8k`. If you need to increase it, you can set `CC_APACHE_HEADERS_SIZE` environment variable, between `8` and `256`. Effective value depends on deployment region. [Ask for a dedicated load balancer](https://console.clever-cloud.com/ticket-center-choice) for a specific value.
-
-### Force HTTPS traffic
-
-Load balancers handle HTTPS traffic ahead of your application. You can use the `X-Forwarded-Proto` header to know the original protocol (`http` or `https`).
-
-Place the following snippet in a `.htaccess` file to ensure that your visitors only access your application through HTTPS.
-
-```conf
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
 ```
 
-### Prevent Apache to redirect HTTPS calls to HTTP when adding a trailing slash
+To remove a header that PHP sends, use `Header always unset` in `.htaccess`. To set headers from PHP instead, call `header()`, or prepend a script to every request with `auto_prepend_file` in a `.user.ini` file, which then runs before your code.
 
-`DirectorySlash` is enabled by default on the PHP scalers, therefore Apache will add a trailing slash to a resource when it detects that it is a directory.
+### Redirections of folders
 
-E.g. if foobar is a directory, Apache will automatically redirect `http://example.com/foobar` to `http://example.com/foobar/`.
+Apache adds a trailing slash to the URL of a folder. As the load balancers reach it over HTTP, it redirects an HTTPS request to HTTP: `https://example.com/docs` gets a redirection to `http://example.com/docs/`. Add the trailing slash yourself instead, over HTTPS:
 
-Unfortunately the module is unable to detect if the request comes from a secure connection or not. As a result it will force an HTTPS call to be redirected to HTTP.
-
-In order to prevent this behavior, you can add the following statements in a `.htaccess` file:
-
-```conf
+```apache {filename="public/.htaccess"}
 DirectorySlash Off
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^(.+[^/])$ %{HTTP:X-Forwarded-Proto}://%{HTTP_HOST}/$1/ [R=301,L,QSA]
+RewriteRule ^(.+[^/])$ https://%{HTTP_HOST}/$1/ [R=301,L,QSA]
 ```
 
-These statements will keep the former protocol of the request when issuing the redirect. Assuming that the header `X-Forwarded-Proto` is always filled (which is the case on our platform).
+[Force HTTPS](/doc/manage/#force-https), enabled by default, already redirects HTTP requests to HTTPS: you don't need a rule for it. To read the protocol of the client, see the headers that the [load balancers](/doc/network/load-balancers/#get-the-protocol) add to each request they forward.
 
-If you want to force all redirects to HTTPS, you can replace `%{HTTP:X-Forwarded-Proto}` with `https`.
+## Basic authentication
 
-### Change the FastCGI module
+To ask for a login and a password before any request, set them in `CC_HTTP_BASIC_AUTH`, as `login:password`. Add other users with `CC_HTTP_BASIC_AUTH_1`, `CC_HTTP_BASIC_AUTH_2`, and so on, in the same format:
 
-You can choose between two FastCGI modules, `fastcgi` and `proxy_fcgi`, using the `CC_CGI_IMPLEMENTATION` environment variable. If you don't set it `proxy_fcgi` is used as default value. `proxy_fcgi` is recommended, as `fastcgi` implementation is not maintained anymore.
-
-If you have issues with downloading content, it could be related to the `fastcgi` module not working correctly in combination with the `deflate` module, as the `Content-Length` header is not updated to the new size of the encoded content. To resolve this issue, use `proxy_fcgi`.
-
-## Environment injection
-
-Clever Cloud injects environment variables defined in the Console and by linked add-ons. To access them from PHP, use the `getenv` function. For example, if your application has a PostgreSQL add-on linked:
-
-```php
-$host = getenv("POSTGRESQL_ADDON_HOST");
-$database = getenv("POSTGRESQL_ADDON_DB");
-$username = getenv("POSTGRESQL_ADDON_USER");
-$password = getenv("POSTGRESQL_ADDON_PASSWORD");
-
-$pg = new PDO("pgsql:host={$host};dbname={$database}", $username, $password);
+```bash
+clever env set CC_HTTP_BASIC_AUTH "alice:a-long-password"
 ```
 
-> [!WARNING]
-> Environment variables are displayed in the default output of `phpinfo()`. To use `phpinfo()` without exposing environment variables, call it this way: `phpinfo(INFO_GENERAL | INFO_CREDITS | INFO_CONFIGURATION | INFO_MODULES | INFO_LICENSE)`
+Requests without these credentials get a `401` answer. With them, or with an HTTP authentication of your own, PHP receives the credentials in `$_SERVER['PHP_AUTH_USER']` and `$_SERVER['PHP_AUTH_PW']`, and the header in `$_SERVER['HTTP_AUTHORIZATION']`.
 
-## Header injection
+## Requests and timeouts
 
-### With .htaccess
+Apache waits 180 seconds for the answer of PHP, then returns a `504` error. Lower this delay, in seconds, with `HTTP_TIMEOUT`: the [load balancers](/doc/find-help/troubleshooting/#network) end any request after 180 seconds, whatever its value.
 
-To inject headers on HTTP responses, add this configuration to `.htaccess` file:
-
-```sh
-Header Set Access-Control-Allow-Origin "https://www.example.com"
-Header Set Access-Control-Allow-Headers "Authorization"
+```bash
+clever env set HTTP_TIMEOUT 60
 ```
 
-> [!NOTE]
-> You can use a `.htaccess` file to create or update headers, but you can't delete them.
+PHP also stops a script after 30 seconds of execution, its default `max_execution_time`, which doesn't count waits such as database queries. Raise it in a `.user.ini` file, such as `max_execution_time=120`.
 
-### With PHP
+Apache refuses a request header longer than 8 KB with a `400` error. Raise this limit with `CC_APACHE_HEADERS_SIZE`, in KB, between `8` and `256`. The load balancers of some regions have a lower limit: [ask for a dedicated load balancer](https://console.clever-cloud.com/ticket-center-choice) to go beyond it.
 
-You can also do it from PHP:
+## Change the FastCGI module
 
-```php
-header("Access-Control-Allow-Origin: https://www.example.com");
-header("Access-Control-Allow-Headers: Authorization");
-```
+Apache passes the requests to PHP-FPM with the `proxy_fcgi` module. `CC_CGI_IMPLEMENTATION=fastcgi` selects the former `fastcgi` module instead, which isn't maintained anymore. With it, PHP receives the `Authorization` header only in `$_SERVER['Authorization']`, and the `deflate` module can send a `Content-Length` header that doesn't match the compressed content.
 
-If you want to keep this separate from your application, you can configure the application to execute some code on every request.
+## Go Further
 
-In `.user.ini`, add the following line (you need to create `inject_headers.php` first):
-
-```ini
-auto_prepend_file=./inject_headers.php
-```
-
-- [Learn more about .user.ini directives](https://www.php.net/manual/en/configuration.file.per-user.php)
-
-## Using HTTP authentication
-
-Using basic HTTP authentication, PHP usually handles the values of user and password in variables named `$_SERVER['PHP_AUTH_USER']` and `$_SERVER['PHP_AUTH_PW']`.
-
-At Clever Cloud, an Apache option is enabled to pass directly the Authorization header, even though FastCGI is used; still, the header is not used by PHP, and the aforementioned variables are empty.
-
-You can do this to fill them using the Authorization header:
-
-```php
-list($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) = explode(':' , base64_decode(substr($_SERVER['Authorization'], 6)));
-```
+{{< cards >}}
+  {{< card link="/developers/doc/deploy/applications/php" title="PHP with Apache" subtitle="PHP version, settings, memory, variables, caches, and tasks" icon="php" >}}
+  {{< card link="/developers/doc/deploy/applications/php/composer" title="Composer" subtitle="Install dependencies, choose Composer, reach private repositories" icon="php" >}}
+  {{< card link="/developers/doc/deploy/applications/php/extensions" title="Extensions" subtitle="Enable or disable PHP extensions" icon="puzzle" >}}
+  {{< card link="/developers/doc/deploy/applications/php/sessions-emails" title="Sessions and emails" subtitle="Store sessions on an FS Bucket or Materia KV, send emails" icon="mail" >}}
+{{< /cards >}}

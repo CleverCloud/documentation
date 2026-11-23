@@ -189,6 +189,7 @@ uopz
 Uploadprogress
 URIs
 uv
+Uvicorn
 Vite
 Vlang
 VMs

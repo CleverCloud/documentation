@@ -1,75 +1,72 @@
 ---
 type: docs
-linkTitle: Deploy with uv
+linkTitle: uv
 title: Deploy Python with uv
-description: Deploy Python applications with native uv support on Clever Cloud, using uv.lock for dependency management and direct HTTP server binding
+description: Deploy Python applications with uv on Clever Cloud, from the uv.lock file of your project, with the command that starts your own web server
 keywords:
-- uv
+- astral
 - python uv
+- uv
 - uv deployment
 - uv sync
-- astral
 aliases:
 - /doc/applications/python/uv
 ---
 
 ## Overview
 
-[uv](https://docs.astral.sh/uv/) is a modern package and project manager for Python, built in Rust. Clever Cloud provides native uv deployment support as an alternative to the legacy WSGI-based deployment (uWSGI/Gunicorn + Nginx). With uv, your application manages its own HTTP server.
+[uv](https://docs.astral.sh/uv/) is a package and project manager for Python. It installs the dependencies that `uv.lock` pins. With uv, your application starts its own web server, without NGINX in front of it. The [Python page](/doc/deploy/applications/python/) describes the Python version, the caches, and the tasks.
 
-## Activation
+## Activate the uv mode
 
-Native uv deployment activates when both conditions are met:
+Clever Cloud deploys your application with uv when your project meets both conditions:
 
-- A `uv.lock` file exists at the root of your project
-- The `CC_PYTHON_UV_RUN_COMMAND` environment variable is set to a valid command
+- A `uv.lock` file, at the root of the project or of the folder set in `CC_APP_FOLDER`
+- `CC_PYTHON_UV_RUN_COMMAND`, which sets the command that starts your application
 
-If either condition is missing, the application deploys with the [legacy Python backend](/doc/deploy/applications/python/#select-the-python-backend).
+Otherwise, Clever Cloud deploys it in the [pip mode](/doc/deploy/applications/python/pip/). The `uv lock` command creates `uv.lock`, or updates it after a change of `pyproject.toml`.
 
 ## Build phase
 
-During the build phase, dependencies are installed with:
+On a new build, Clever Cloud runs the pre-build [hook](/doc/manage/build-hooks/), then installs the dependencies of `uv.lock`, without the development ones:
 
 ```bash
 uv sync --locked --no-progress --no-dev
 ```
 
-To install development dependencies, set `ENVIRONMENT=development`. The `--no-dev` flag is then removed.
+`--locked` fails the build when `uv.lock` doesn't match `pyproject.toml`: run `uv lock` and commit the result. To install the development dependencies too, such as for a test or preview application, set `ENVIRONMENT=development`.
 
-The uv cache (`~/.cache/uv`) is included in the build cache to speed up subsequent deployments.
+## Start command
 
-- [Learn more about Deployment hooks](/doc/manage/build-hooks/)
+Clever Cloud runs `CC_PYTHON_UV_RUN_COMMAND` from the folder of your project. Start it with `uv run --no-dev`: without this option, `uv run` installs the development dependencies again when your application starts.
 
-## Run phase
+```bash
+clever env set CC_PYTHON_UV_RUN_COMMAND "uv run --no-dev python main.py"
+```
 
-The application starts with the command defined in `CC_PYTHON_UV_RUN_COMMAND`. It must start an HTTP server listening on `0.0.0.0` and the port provided through `PORT`. Clever Cloud sets `PORT` to `8080` by default. Set `PORT=9000` when you enable at least one [Request Flow middleware](/doc/manage/request-flow/#port-management).
+Your web server listens on `0.0.0.0`, on the port in `PORT`, `8080`. With a [Request Flow](/doc/manage/request-flow/) middleware, set `PORT=9000`. Read `PORT` in your code, as in the [example](/doc/deploy/applications/python/#mandatory-needs), or write the port in the command:
 
-`CC_PYTHON_UV_RUN_COMMAND` is executed directly, without shell variable expansion. If the server doesn't read `PORT` itself, write its value in the command, `8080` or `9000` with Request Flow, for example `uv run uvicorn --host 0.0.0.0 --port 8080 myProject.asgi:application`.
+```bash
+clever env set CC_PYTHON_UV_RUN_COMMAND "uv run --no-dev uvicorn main:app --host 0.0.0.0 --port 8080"
+```
 
-`CC_RUN_COMMAND` takes precedence over `CC_PYTHON_UV_RUN_COMMAND` if both are set.
+Clever Cloud runs this command without a shell: it doesn't expand variables, nor interpret quotes or operators such as `&&`. With `--port $PORT`, the deployment then fails with `'$PORT' is not a valid integer`.
 
-| Name                       | Description                                                    | Required | Default      |
-| -------------------------- | -------------------------------------------------------------- | -------- | ------------ |
-| `CC_PYTHON_UV_RUN_COMMAND` | Command to start the application, without shell expansion      | Yes      | -            |
-| `CC_RUN_COMMAND`           | Overrides `CC_PYTHON_UV_RUN_COMMAND` if set                    | No       | -            |
-| `ENVIRONMENT`              | Set to `development` to include dev dependencies during build  | No       | `production` |
-| `PORT`                     | Port used by your HTTP server                                  | No       | `8080`       |
+## Shell command
 
-## Differences with legacy Python deployment
+`CC_RUN_COMMAND`, when set, replaces `CC_PYTHON_UV_RUN_COMMAND` at start, and runs in a shell, which expands `$PORT`. It starts from the root of the repository, even when `CC_APP_FOLDER` sets another folder, such as `app` here:
 
-With native uv deployment:
+```bash
+clever env set CC_RUN_COMMAND 'cd app && uv run --no-dev uvicorn main:app --host 0.0.0.0 --port $PORT'
+```
 
-- No Nginx, uWSGI, or Gunicorn is involved
-- Your application manages its HTTP server and listens on the port provided through `PORT`
-- `CC_PYTHON_MODULE` and `CC_PYTHON_BACKEND` are ignored
-- [Redirection.io, Varnish and custom proxies](/doc/manage/request-flow/) are configured through Request Flow, not Nginx
-- [Server configuration](/doc/deploy/applications/python/pip/) settings do not apply
-
-- [Learn more about uv](https://docs.astral.sh/uv/)
+The variables of the [pip mode](/doc/deploy/applications/python/pip/), such as `CC_PIP_REQUIREMENTS_FILE`, `CC_PYTHON_BACKEND`, or `CC_PYTHON_MODULE`, don't apply in the uv mode.
 
 ## Go Further
 
 {{< cards >}}
+  {{< card link="/developers/doc/deploy/applications/python" title="Python" subtitle="Python version, caches, and tasks" icon="simple:python" >}}
+  {{< card link="/developers/doc/deploy/applications/python/pip" title="pip" subtitle="Install with pip, and serve a WSGI or ASGI module behind NGINX" icon="server" >}}
   {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
   {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
 {{< /cards >}}

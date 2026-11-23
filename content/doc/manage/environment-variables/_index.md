@@ -219,7 +219,7 @@ Here is a non-exhaustive summary:
   {{< card link="/developers/doc/deploy/applications/golang" title="Go" icon="simple:go" >}}
   {{< card link="/developers/doc/deploy/applications/haskell" title="Haskell" icon="simple:haskell" >}}
   {{< card link="/developers/doc/deploy/applications/java/#environment-variables" title="Java" icon="java" >}}
-  {{< card link="/developers/doc/deploy/applications/nodejs/#environment-injection" title="Node.js" icon="simple:nodedotjs" >}}
+  {{< card link="/developers/doc/deploy/applications/nodejs/#environment-variables" title="Node.js" icon="simple:nodedotjs" >}}
   {{< card link="/developers/doc/deploy/applications/php/#environment-variables" title="PHP" icon="php" >}}
   {{< card link="/developers/doc/deploy/applications/scala/play-framework-1/#configuration-for-clever-cloud" title="Play Framework 1" icon="playframework" >}}
   {{< card link="/developers/doc/deploy/applications/scala/play-framework-2/#application-secret" title="Play Framework 2 and 3" icon="playframework" >}}

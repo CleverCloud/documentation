@@ -281,7 +281,7 @@ Use Linux runtime with [Mise package manager](#install-tools-with-mise-package-m
 | `CC_NODE_BUILD_TOOL`                                                    | Choose your build tool between bun, npm, npm-ci, pnpm, yarn, yarn2, yarn-berry and custom                | npm                |
 | `CC_CUSTOM_BUILD_TOOL`                                                  | A custom command to run (with `CC_NODE_BUILD_TOOL` set to `custom`)                                      |                    |
 | `CC_NPM_REGISTRY`                                                       | The host of your private repository, available values: `github` or the registry host.                    | registry.npmjs.org |
-| `CC_NPM_BASIC_AUTH`                                                     | Private repository credentials, in the form `user:password`. You can't use this if `CC_NPM_TOKEN` is set |                    |
+| `CC_NPM_BASIC_AUTH`                                                     | Private repository credentials, in the form `user:password`. You can't use this if `NPM_TOKEN` is set    |                    |
 | `NPM_TOKEN`                                                             | Private repository token                                                                                 |                    |
 
 ## PHP

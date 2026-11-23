@@ -2,12 +2,14 @@
 type: docs
 linkTitle: PHP with Apache
 title: PHP with Apache application runtime
-description: Deploy PHP applications on Clever Cloud with Apache, PHP-FPM, Composer dependencies, and framework support
+description: Deploy PHP applications on Clever Cloud with Apache and PHP-FPM, Composer, the PHP version of your choice, and frameworks such as Laravel, Symfony, or WordPress
 keywords:
-- php hosting
 - apache
 - composer
 - laravel
+- php
+- php hosting
+- php-fpm
 - symfony
 - wordpress
 aliases:
@@ -35,108 +37,82 @@ aliases:
 
 ## Overview
 
-PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.
-
-The HTTP server is [Apache 2](https://httpd.apache.org/), and the PHP code is executed by [PHP-FPM](https://php-fpm.org/).
+[PHP](https://www.php.net) is a scripting language for the web. Clever Cloud serves your application with [Apache](https://httpd.apache.org) and runs its code with PHP-FPM, after it installs its dependencies with [Composer](/doc/deploy/applications/php/composer/). It works with frameworks and applications such as [Laravel](/guides/frameworks/laravel/), [Symfony](/guides/frameworks/symfony/), [WordPress](/guides/self-hosted/wordpress/), [Drupal](/guides/self-hosted/drupal/), or [Moodle](/guides/self-hosted/moodle/). To run PHP with its own web server and worker mode, see [FrankenPHP](/doc/deploy/applications/frankenphp/).
 
 ## Create your PHP application
 
-To create a new PHP application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](https://github.com/CleverCloud/clever-tools):
+To create a new PHP application, use the [Clever Cloud Console](https://console.clever-cloud.com) or [Clever Tools](/doc/tools/cli/):
 
 ```bash
 clever create --type php
 ```
 
-- [Learn more about Clever Tools](/doc/tools/cli/)
-- [Learn more about Clever Cloud application deployment](/doc/getting-started/)
+The [getting started guide](/doc/getting-started/) describes each step of the creation of an application.
 
 ## Configure your PHP application
 
 ### Mandatory needs
 
-PHP runtime requires a working web application. The HTTP server is Apache 2 with PHP-FPM. If you need to serve files from a specific directory, set the `CC_WEBROOT` environment variable to its absolute path from the root of your project (e.g. `/public`). The deployment fails if this path is relative or contains `..`.
+A PHP application needs its PHP files in the webroot, the folder that Apache serves. The webroot is the root of your repository, or the folder set in `CC_WEBROOT`. Apache listens on the right port for you: your code doesn't open one.
 
-```shell
+For instance, a minimal application:
+
+```php {filename="index.php"}
+<?php
+echo "Hello from PHP on Clever Cloud\n";
+```
+
+Frameworks such as Laravel and Symfony serve a `public` folder. Set its path in `CC_WEBROOT`, from the root of your repository, starting with a `/` and without `..`. Otherwise, the deployment fails with an error:
+
+```bash
 clever env set CC_WEBROOT /public
 ```
 
-- [Learn more about environment variables on Clever Cloud](/doc/manage/environment-variables/reference/)
+A [Clever Task](#php-applications-as-clever-tasks) doesn't need a webroot.
 
 ### Build phase
 
-Composer build is supported out of the box. If a `composer.json` file is present at the root of your repository, dependencies are installed automatically during the build phase.
+After the pre-build [hook](/doc/manage/build-hooks/), Clever Cloud installs the dependencies of your `composer.json` file, without the development ones:
 
-- [Learn more about Composer on Clever Cloud](/doc/deploy/applications/php/composer/)
-- [Learn more about Deployment hooks](/doc/manage/build-hooks/)
+```bash
+composer install --no-dev
+```
+
+The scripts of your `composer.json` run during this install, such as `artisan package:discover` for Laravel. The [Composer page](/doc/deploy/applications/php/composer/) explains how to choose its version, install development dependencies, and reach private repositories.
 
 ### PHP version
 
-Set the `CC_PHP_VERSION` environment variable to one of the following versions.
+Clever Cloud uses PHP {{< runtime_version php >}} by default. The `8` value tracks it, and moves to each new minor release of PHP a few months after it comes out. To stay on a release, set `CC_PHP_VERSION` as `X.Y`, such as `8.4`, not `X.Y.Z`:
 
 {{< runtimes_versions php >}}
 
-All new PHP applications are created with a default `CC_PHP_VERSION`. You can change it whenever you want then redeploy your application to use the version you want. Only values based on the first two digits (`X` or `X.Y`, not `X.Y.Z`) are supported.
+### PHP settings
 
-### Custom PHP configuration
+Most PHP settings work in a `.user.ini` file at the root of the webroot. In one of its folders, it applies to this folder and the ones inside it. Use it for the [directives](https://www.php.net/manual/en/ini.list.php) of the `PHP_INI_USER`, `PHP_INI_PERDIR`, and `PHP_INI_ALL` modes, as the [PHP documentation](https://www.php.net/manual/en/configuration.file.per-user.php) explains:
 
-Most PHP settings can be changed using a `.user.ini` file.
-
-If you want the settings to be applied to the whole application, you should put this file in your `webroot`. If you did not change it, then your `webroot` is the root of the repository.
-
-If you put the `.user.ini` file in a subdirectory, settings will be applied recursively starting from this subdirectory.
-
-You can review the [available directives](https://www.php.net/manual/en/ini.list.php); all the `PHP_INI_USER`, `PHP_INI_PERDIR`, and `PHP_INI_ALL` directives can be set from within `.user.ini`.
-
-- [Learn more about .user.ini](https://www.php.net/manual/en/configuration.file.per-user.php)
-
-#### Same configuration between PHP-CLI and PHP-FPM
-
-`.user.ini` files are not loaded by the PHP CLI by default.
-
-However, some PHP applications may want to check for the PHP-FPM configuration pre-requisites, `post_max_size` or `upload_max_filesize` values for example.
-
-To load the PHP-FPM `.user.ini` file during a PHP-CLI process, in a [hook](/doc/manage/build-hooks/), use the `PHP_INI_SCAN_DIR` environment variable to load the additional file.
-
-Assuming the script runs at the root-folder of the application:
-
-```bash
-#!/usr/bin/env bash
-
-export PHP_INI_SCAN_DIR=":."
-php myscript.php
-```
-
-This appends the current directory while still loading the default configuration.
-
-> [!NOTE]
-> The `:` at the beginning of the string is mandatory. It indicates defaults files must still load.
-
-A specific `.ini` file can be loaded with:
-
-```bash
-#!/usr/bin/env bash
-
-export PHP_INI_SCAN_DIR=":.php-configuration/"
-php myscript.php
-```
-
-This loads every `.ini` files in the `php-configuration/` directory.
-
-#### Timezone configuration
-
-All instances on Clever Cloud run in the UTC time zone. Handle your dates in UTC internally, and convert them to a time zone only when you read or display them.
-
-Additionally, you can set PHP's time zone setting with `.user.ini`. For instance, to use the french time zone, edit `.user.ini` to add this line:
-
-```ini
+```ini {filename="public/.user.ini"}
 date.timezone=Europe/Paris
+post_max_size=72M
+upload_max_filesize=64M
 ```
 
-This setting doesn't change when [CRON jobs](/doc/manage/cron/) run: to schedule them in a local time zone, add a [`CRON_TZ` line](/doc/manage/cron/#choose-the-time-zone) to `clevercloud/cron.json`.
+A request can't exceed `post_max_size`, 8 MB by default, whatever `upload_max_filesize`, 32 MB by default: raise both for large uploads.
 
-#### Memory limit
+The instances run in the UTC time zone: `date.timezone` changes it for PHP only, and [cron jobs](/doc/manage/cron/#choose-the-time-zone) need a `CRON_TZ` line of their own.
 
-Clever Cloud configures PHP's [`memory_limit`](https://www.php.net/manual/en/ini.core.php#ini.memory-limit) directive, which limits how much memory each PHP script can allocate. For web requests, this limit applies independently within each PHP-FPM worker; memory is not reserved when workers start. Both the default limit and the maximum value accepted through `MEMORY_LIMIT` depend on the application's available memory, which excludes memory reserved for the system:
+The command line of PHP doesn't read `.user.ini`: add its folder to `PHP_INI_SCAN_DIR`, after a `:` that keeps the default files. For instance, to run a script with the settings of `public/.user.ini` in a hook or a task:
+
+```bash
+PHP_INI_SCAN_DIR=:public php bin/job.php
+```
+
+### Memory limit
+
+Clever Cloud sets the [`memory_limit`](https://www.php.net/manual/en/ini.core.php#ini.memory-limit) of each PHP script, and the number of PHP-FPM workers, from the memory of the instance. To change the limit, set `MEMORY_LIMIT` in MiB, without a unit:
+
+```bash
+clever env set MEMORY_LIMIT 256
+```
 
 | Flavor | Default `memory_limit` | Maximum `MEMORY_LIMIT` |
 | ------ | ---------------------: | ---------------------: |
@@ -149,103 +125,74 @@ Clever Cloud configures PHP's [`memory_limit`](https://www.php.net/manual/en/ini
 | 2XL    | 1377 MiB               | 23503 MiB              |
 | 3XL    | 1666 MiB               | 31525 MiB              |
 
-To change the limit, set [`MEMORY_LIMIT`](/doc/manage/environment-variables/reference#php) to a positive integer interpreted in MiB, without a unit suffix.
+Each worker uses its limit only when a script needs it. Above the maximum of the flavor, Clever Cloud keeps its own limit and logs a warning.
 
-For example, to allow each PHP script to allocate up to 128 MiB:
+`CC_CONFIGURATION_PM_MAX_CHILDREN` sets the number of workers, except on Nano instances, which run 6 workers. It can lower the default limit of each one, but not the `MEMORY_LIMIT` you set.
 
-```bash
-clever env set MEMORY_LIMIT 128
-```
+The [environment variables reference](/doc/manage/environment-variables/reference/#php) lists the other settings, such as `MAX_INPUT_VARS` for `max_input_vars`, or `CC_OPCACHE_MEMORY` for OPcache. Clever Cloud disables [`session.upload_progress.enabled`](https://www.php.net/manual/en/session.configuration.php#ini.session.upload-progress.enabled), as the [PHP security team recommends](https://www.php.net/archive/2026.php#2026-10-21-5): uploads still work.
 
-If `MEMORY_LIMIT` exceeds the maximum value for the selected flavor, Clever Cloud keeps the automatically calculated limit and logs a warning during deployment. Clever Cloud also calculates the number of PHP-FPM workers automatically.
+### Environment variables
 
-On XS and larger flavors, setting [`CC_CONFIGURATION_PM_MAX_CHILDREN`](/doc/manage/environment-variables/reference#php) can lower the calculated memory limit. On Nano, the platform always uses six workers. If you also set a valid `MEMORY_LIMIT`, it takes precedence over the adjustment based on the number of workers.
-
-#### Session upload progress
-
-Clever Cloud sets [`session.upload_progress.enabled`](https://www.php.net/manual/en/session.configuration.php#ini.session.upload-progress.enabled) to `Off` when it deploys your application, following the [PHP security team recommendations](https://www.php.net/archive/2026.php#2026-10-21-5). This setting only disables upload progress tracking in sessions: file uploads and `multipart/form-data` requests keep working.
-
-### Configuration reference
-
-{{< cards >}}
-  {{< card link="/developers/doc/deploy/applications/php/apache" title="Apache" subtitle="Configure the web server, headers and authentication" icon="feather" >}}
-  {{< card link="/developers/doc/deploy/applications/php/composer" title="Composer" subtitle="Manage PHP dependencies and private repositories" icon="php" >}}
-  {{< card link="/developers/doc/deploy/applications/php/extensions" title="Extensions" subtitle="Review and configure available PHP extensions" icon="puzzle" >}}
-  {{< card link="/developers/doc/deploy/applications/php/sessions-emails" title="Sessions and emails" subtitle="Configure session storage and email delivery" icon="mail" >}}
-{{< /cards >}}
-
-## Frameworks and CMS
-
-The following is the list of tested CMS by our team.
-
-It's quite not exhaustive, so it does not mean that other CMS can't work on the Clever Cloud platform.
-
-{{< cards >}}
-  {{< card link="/developers/guides/self-hosted/drupal" title="Drupal" subtitle="Deploy a Drupal website on Clever Cloud" icon="drupal" >}}
-  {{< card link="/developers/guides/frameworks/laravel" title="Laravel" subtitle="Deploy a Laravel application on Clever Cloud" icon="simple:laravel" >}}
-  {{< card link="/developers/guides/self-hosted/moodle" title="Moodle" subtitle="Deploy and configure a Moodle learning platform on Clever Cloud" icon="moodle" >}}
-  {{< card link="/developers/guides/frameworks/symfony" title="Symfony" subtitle="Deploy a Symfony application on Clever Cloud" icon="simple:symfony" >}}
-  {{< card link="/developers/guides/self-hosted/wordpress" title="WordPress" subtitle="Deploy a WordPress website on Clever Cloud" icon="simple:wordpress" >}}
-
-{{< /cards >}}
-
-Others PHP frameworks tested on Clever Cloud:
-
-- Prestashop
-- Dokuwiki
-- Joomla
-- SugarCRM
-- Drupal
-- Magento
-- Status.net
-- Symfony
-- Thelia
-- Laravel
-- Sylius
-
-## Configure Monolog
-
-A lot of frameworks (including Symfony) use Monolog to handle logging. The default configuration of Monolog doesn't allow to log errors into the console.
-
-Here is a basic configuration of Monolog to send your application's logs into our logging system and access them into the Console:
-
-```yaml
-monolog:
-  handlers:
-    clever_logs:
-      type: error_log
-      level: warning
-```
-
-You can change the level to whatever level you desire. For Symfony, the configuration file is `app/config/config_prod.yml`.
-
-Laravel doesn't need Monolog to retrieve logs via Clever console or Clever CLI. Here, ensure that you have the following line in `config/app.php`:
+Your application reads its [environment variables](/doc/manage/environment-variables/) with `getenv()`, such as the credentials of a linked PostgreSQL add-on:
 
 ```php
-return [
-    // …
-    'log' => env('APP_LOG'),
-    // …
-];
+$pdo = new PDO(
+    sprintf('pgsql:host=%s;port=%s;dbname=%s', getenv('POSTGRESQL_ADDON_HOST'), getenv('POSTGRESQL_ADDON_PORT'), getenv('POSTGRESQL_ADDON_DB')),
+    getenv('POSTGRESQL_ADDON_USER'),
+    getenv('POSTGRESQL_ADDON_PASSWORD')
+);
 ```
 
-Then, set `APP_LOG=syslog` as Clever application environment variable.
+Don't expose a page that calls `phpinfo()`: it shows your environment variables with their secrets, and settings that can hold some, such as `session.save_path` with `SESSION_TYPE=redis`. Remove it once you no longer need it.
 
-{{% include "shared/new-relic" %}}
+### Logs
 
-### Monitor your application with Blackfire
+The PHP errors, and the messages of `error_log()`, appear in the [logs](/doc/observability/logs/) of your application. Point the logger of your framework to them, such as `LOG_CHANNEL=errorlog` for Laravel, or a Monolog handler of the `error_log` type for Symfony.
 
-You can use [Blackfire](https://www.blackfire.io/) to monitor your application on Clever Cloud.
+### Caches
 
-Please refer to our [Blackfire documentation](/doc/observability/blackfire) to configure it for your application.
+After a successful build of an application, Clever Cloud keeps a build cache of the commit, with its `vendor` folder. Restarting the application without a code change reuses it and skips the build. To build again from scratch, restart without the cache (rebuild):
 
-{{% include "shared/proxysql" %}}
+```bash
+clever restart --without-cache
+```
 
-You can learn more about ProxySQL on the [dedicated documentation page](/guides/databases/proxysql)
+With `CC_CACHE_DEPENDENCIES=true`, Clever Cloud also keeps the `vendor` folder between commits: Composer then only installs what changed.
+
+### Monitor and connect your application
+
+To monitor your application, use [New Relic](/doc/observability/new-relic/), [Blackfire](/doc/observability/blackfire/), or another agent of the [Extensions page](/doc/deploy/applications/php/extensions/#enable-specific-extensions).
+
+To send traces to an [OpenTelemetry](https://opentelemetry.io/docs/zero-code/php/) collector, set `ENABLE_OPENTELEMETRY=true`. Add the SDK, its exporter, an HTTP client, and the packages that instrument your libraries, such as PHP Data Objects (PDO). Then configure the SDK with its `OTEL_*` variables:
+
+```bash
+composer require open-telemetry/sdk open-telemetry/exporter-otlp guzzlehttp/guzzle open-telemetry/opentelemetry-auto-pdo
+clever env set ENABLE_OPENTELEMETRY true
+clever env set OTEL_PHP_AUTOLOAD_ENABLED true
+clever env set OTEL_SERVICE_NAME my-application
+clever env set OTEL_EXPORTER_OTLP_ENDPOINT https://collector.example.com
+```
+
+To pool the connections to a MySQL add-on, set `CC_ENABLE_MYSQL_PROXYSQL=true`: [ProxySQL](/guides/databases/proxysql/) then runs on each instance. Connect your application to its socket, in `CC_MYSQL_PROXYSQL_SOCKET_PATH`, instead of the host and port of the add-on.
+
+A [health check](/doc/manage/healthcheck/) checks that your application answers before it gets traffic, and [Request Flow](/doc/manage/request-flow/) chains middleware, such as Varnish, in front of it.
+
+## PHP applications as Clever Tasks
+
+A PHP application can run as a [Clever Task](/doc/deploy/tasks/), such as a job or a migration. Clever Cloud builds it, then runs `CC_RUN_COMMAND` from the root of your repository, instead of serving the webroot. The task stops when this command ends.
+
+Configure Tasks from the `Information` panel in [the Console](https://console.clever-cloud.com) or with [Clever Tools](/doc/tools/cli/applications/#tasks), here for a script of your repository:
+
+```bash
+clever create --type php --task "php bin/job.php"
+clever deploy # or clever restart if there is no code change
+```
 
 ## Go Further
 
 {{< cards >}}
-  {{< card link="/developers/doc/manage/healthcheck" title="Health check" subtitle="Check that your application answers before it gets any traffic" icon="shield-check" >}}
-  {{< card link="/developers/doc/manage/request-flow" title="Request Flow" subtitle="Chain reverse proxies and middleware in front of your application" icon="traffic-light" >}}
+  {{< card link="/developers/doc/deploy/applications/php/apache" title="Apache" subtitle="Configure the web server with .htaccess, authentication, and timeouts" icon="feather" >}}
+  {{< card link="/developers/doc/deploy/applications/php/composer" title="Composer" subtitle="Install dependencies, choose Composer, reach private repositories" icon="php" >}}
+  {{< card link="/developers/doc/deploy/applications/php/extensions" title="Extensions" subtitle="Enable or disable PHP extensions" icon="puzzle" >}}
+  {{< card link="/developers/doc/deploy/applications/php/sessions-emails" title="Sessions and emails" subtitle="Store sessions on an FS Bucket or Materia KV, send emails" icon="mail" >}}
 {{< /cards >}}

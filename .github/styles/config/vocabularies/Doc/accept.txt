@@ -29,6 +29,7 @@ CLI
 commitlint
 Couchbase
 Coraza
+Corepack
 CRDs
 cron
 crontab
@@ -129,6 +130,7 @@ Pekko
 Percona
 phpinfo
 pico
+Plug'n'Play
 pnpm
 Poppler
 precompile

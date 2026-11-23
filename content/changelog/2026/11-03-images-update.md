@@ -78,7 +78,7 @@ clever restart --without-cache
 
 ## Python environment variables renaming
 
-Python applications now accept `CC_` prefixed names for the uWSGI, Gunicorn and `setup.py` [configuration variables](/doc/deploy/applications/python/servers/):
+Python applications now accept `CC_` prefixed names for the uWSGI, Gunicorn and `setup.py` [configuration variables](/doc/deploy/applications/python/pip/):
 
 - `CC_PYTHON_SETUP_PY_GOAL` replaces `PYTHON_SETUP_PY_GOAL`
 - `CC_UWSGI_ASYNC` replaces `UWSGI_ASYNC`

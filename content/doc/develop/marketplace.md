@@ -332,7 +332,7 @@ pip install flask
 PROVIDER_ID=my-service PROVIDER_PASSWORD=local-password-123 PROVIDER_SSO_SALT=local-salt-456 flask --app app run --port 8000
 ```
 
-To deploy it on Clever Cloud as a [Python application](/doc/deploy/applications/python/), commit `app.py` and `requirements.txt` in a Git repository, then create the application, set its variables and the module to start, with the values of your manifest:
+To deploy it on Clever Cloud as a [Python application in the pip mode](/doc/deploy/applications/python/pip/), commit `app.py` and `requirements.txt` in a Git repository, then create the application, set its variables and the module to start, with the values of your manifest:
 
 ```bash
 clever create --type python my-service-provider

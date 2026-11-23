@@ -202,9 +202,11 @@ The load balancers handle TLS and forward requests in plain HTTP: the port of yo
 
 {{% /details %}}
 
-{{% details title="PHP: `$_SERVER` auth variables are always empty, how do I make this work?" closed="true" %}}
+{{% details title="PHP: how do I read the credentials of an HTTP authentication?" closed="true" %}}
 
-- [Learn more about the $_SERVER variable on Clever Cloud](/doc/deploy/applications/php/apache/#using-http-authentication)
+PHP receives them in `$_SERVER['PHP_AUTH_USER']` and `$_SERVER['PHP_AUTH_PW']`, except with the `fastcgi` module.
+
+- [Learn more about basic authentication with PHP](/doc/deploy/applications/php/apache/#basic-authentication)
 {{% /details %}}
 
 {{% details title="How to get the user's IP address?" closed="true" %}}

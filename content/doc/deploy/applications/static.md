@@ -32,7 +32,7 @@ aliases:
 
 A static website is a set of files that a web server sends as they are: HTML pages, style sheets, scripts, and images. Clever Cloud can build them from your sources with a static site generator (SSG), such as Hugo or Astro, then serves them with [Static Web Server](https://static-web-server.net) or [Caddy](https://caddyserver.com).
 
-A Static application needs no application server, and runs on the smallest instance size, `pico`. To use [`.htaccess` files](https://httpd.apache.org/docs/current/howto/htaccess.html) or to run PHP code, use the [Static with Apache](/doc/deploy/applications/static-apache/) runtime or the [PHP](/doc/deploy/applications/php/) runtime instead.
+A Static application needs no application server, and runs on the smallest instance size, `pico`. To use [`.htaccess` files](https://httpd.apache.org/docs/current/howto/htaccess.html), or to send your files over FTP, use the [Static with Apache](/doc/deploy/applications/static-apache/) runtime instead.
 
 ## Create your Static application
 

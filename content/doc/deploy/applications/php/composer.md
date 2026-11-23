@@ -2,92 +2,77 @@
 type: docs
 linkTitle: Composer
 title: Composer and dependencies
-description: Manage PHP dependencies with Composer on Clever Cloud, including version selection, development dependencies, and private repositories
+description: Install the dependencies of PHP applications with Composer on Clever Cloud, choose its version, add development dependencies, and reach private repositories
 keywords:
 - composer
-- php dependencies
-- github rate limit
+- composer.lock
 - dev dependencies
+- github rate limit
+- php dependencies
 aliases:
 - /doc/applications/php/composer
 ---
 
-## Composer
+## Overview
 
-Composer build is supported out of the box. If a `composer.json` file is detected at the root of your project, dependencies are installed during the build phase with `--no-interaction --no-progress --no-scripts --no-dev` flags. To override the base flags (`--no-interaction --no-progress --no-scripts`), set the `CC_PHP_COMPOSER_FLAGS` environment variable.
+When your repository holds a `composer.json` file at its root, Clever Cloud installs the dependencies of your [PHP application](/doc/deploy/applications/php/) with [Composer](https://getcomposer.org). During the build, after the pre-build [hook](/doc/manage/build-hooks/), it runs this command without interaction:
 
-To install development dependencies, set `CC_PHP_DEV_DEPENDENCIES` to `install`. This removes the `--no-dev` flag independently of `CC_PHP_COMPOSER_FLAGS`.
-
-Set `CC_COMPOSER_VERSION` to select the Composer version: `1`, `2` (default) or `lts` (maps to `2.2`).
-
-> [!TIP] Use a local Composer version
-> If you put a `composer.phar` file at the root of your project, it will be used to install dependencies.
-
-You can perform your own `composer.phar install` by using the [Post Build hook](/doc/manage/build-hooks#post-build).
-
-Example of a `composer.json` file:
-
-```json
-{
-    "require": {
-        "laravel/framework": "4.1.*",
-        "ruflin/Elastica": "dev-master",
-        "shift31/laravel-elasticsearch": "dev-master",
-        "natxet/CssMin": "dev-master"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/timothylhuillier/laravel-elasticsearch.git"
-        }
-    ],
-    "autoload": {
-        "classmap": [
-            "app/controllers",
-            "app/models",
-            "app/database/migrations",
-            "app/database/seeds"
-        ],
-        "psr-0": {
-            "SomeApp": "app"
-        }
-    },
-    "config": {
-        "preferred-install": "dist"
-    },
-    "minimum-stability": "dev"
-}
+```bash
+composer install --no-dev
 ```
 
-- [Example: minimalist PHP application using Composer and custom scripts](https://github.com/CleverCloud/php-composer-demo)
+Commit your `composer.lock` file, so that Composer installs the versions it lists, instead of resolving them again at each build.
 
-## Development Dependencies
+### Composer scripts
 
-Development dependencies are not automatically installed during the deployment. Set `CC_PHP_DEV_DEPENDENCIES` to `install` to include them. Set it to `skip` or leave it unset to exclude them.
+The [scripts](https://getcomposer.org/doc/articles/scripts.md) of your `composer.json` run during the install, such as `post-autoload-dump`, or `post-install-cmd` with a `composer.lock` file. Laravel uses them to run `artisan package:discover`, for instance. A failed script fails the build, and the deployment.
 
-## GitHub rate limit
+To run a command after Composer installs the dependencies, such as the migrations of a Laravel application, set it in a post-build [hook](/doc/manage/build-hooks/):
 
-Sometimes, you can encounter the following error when downloading dependencies:
-
-```txt
-Failed to download symfony/symfony from dist: Could not authenticate against GitHub.com
+```bash
+clever env set CC_POST_BUILD_HOOK "php artisan migrate --force"
 ```
 
-To avoid failed dependency downloads caused by GitHub API rate limits during deployment, configure an OAuth token in your Composer configuration file or in a separate file as described in the [Composer FAQ (API rate limit and OAuth tokens)](https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens).
+## Development dependencies
 
-You can find more documentation about Composer configuration in the [Composer schema reference](https://getcomposer.org/doc/04-schema.md).
+Clever Cloud skips the `require-dev` dependencies of your `composer.json`. To install them, set `CC_PHP_DEV_DEPENDENCIES` to `install`:
+
+```bash
+clever env set CC_PHP_DEV_DEPENDENCIES install
+```
+
+## Composer version
+
+Clever Cloud uses the Composer 2 release of its images. For PHP 7.1 and older, set `CC_COMPOSER_VERSION` to `lts`, for Composer 2.2:
+
+```bash
+clever env set CC_COMPOSER_VERSION lts
+```
+
+To use your own version, put its `composer.phar` file at the root of your repository: Clever Cloud runs it instead.
+
+> [!NOTE] Composer 1 needs a lock file
+> Packagist doesn't serve Composer 1 anymore: `CC_COMPOSER_VERSION=1` only works with a `composer.lock` file, and PHP 8.4 or earlier.
 
 {{% include "shared/private-composer-repositories" %}}
 
-## Post-build hook example
+## GitHub rate limit
 
-You use Artisan to manage your project and you want to execute *artisan migrate* before running your app.
+Composer downloads many packages from GitHub, which can limit the anonymous requests and fail the build with `Could not authenticate against GitHub.com`. Add a [GitHub token](https://getcomposer.org/doc/articles/authentication-for-private-packages.md) to `COMPOSER_AUTH`, without any permission for public packages:
 
-To do this, use a post build hook by setting the following environment variable on your Clever application:
-
-```bash
-CC_POST_BUILD_HOOK=php artisan migrate --force
+```json
+{
+  "github-oauth": {
+    "github.com": "GITHUB_TOKEN"
+  }
+}
 ```
 
-> [!NOTE]
-> You must add the *execute* permission to your file (`chmod u+x yourfile`) before pushing it.
+## Go Further
+
+{{< cards >}}
+  {{< card link="/developers/doc/deploy/applications/php" title="PHP with Apache" subtitle="PHP version, settings, memory, variables, caches, and tasks" icon="php" >}}
+  {{< card link="/developers/doc/deploy/applications/php/apache" title="Apache" subtitle="Configure the web server with .htaccess, authentication, and timeouts" icon="feather" >}}
+  {{< card link="/developers/doc/deploy/applications/php/extensions" title="Extensions" subtitle="Enable or disable PHP extensions" icon="puzzle" >}}
+  {{< card link="/developers/doc/deploy/applications/php/sessions-emails" title="Sessions and emails" subtitle="Store sessions on an FS Bucket or Materia KV, send emails" icon="mail" >}}
+{{< /cards >}}

@@ -2,6 +2,7 @@ Actix
 Akka
 allowlist
 allowlists
+APCu
 APIs
 Asciinema
 Astro
@@ -26,6 +27,7 @@ ciphertext
 Clever Cloud
 CLI
 commitlint
+Couchbase
 Coraza
 CRDs
 cron
@@ -112,27 +114,33 @@ OAuth
 oha
 Okta
 Ollama
+OPcache
 Otoroshi
 Otoroshictl
 oTree
 Outline
 OVHcloud
+Packagist
 Pagefind
 Payara
 PDFlib
 Pekko
 Percona
+phpinfo
 pico
 pnpm
 Poppler
 precompile
 precompiled
 precompiles
+profiler
 Protobuf
+Pspell
 psql
 Quarkus
 rackup
 rclone
+rdkafka
 Rebar
 reconnections
 Redict
@@ -172,6 +180,8 @@ toolchains
 tooltip
 tooltips
 unencrypted
+uopz
+Uploadprogress
 URIs
 uv
 Vite
@@ -179,6 +189,7 @@ Vlang
 VMs
 webroot
 WildFly
+Xdebug
 Yesod
 Zabbix
 Zellij

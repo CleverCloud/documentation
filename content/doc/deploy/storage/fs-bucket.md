@@ -116,7 +116,7 @@ FS Buckets favor compatibility over performance. They don't suit applications wi
 - Clever Cloud backs up FS Buckets every 24 hours, and keeps these backups for 72 hours
 
 > [!NOTE] PHP applications include a default FS Bucket for sessions
-> To deploy a PHP application in an HDS region, set [`CC_PHP_DISABLE_APP_BUCKET=true`](/doc/deploy/applications/php/sessions-emails/#speed-up-or-disable-the-session-fs-bucket). Store the sessions in Redis instead.
+> To deploy a PHP application in an HDS region, set [`CC_PHP_DISABLE_APP_BUCKET=true`](/doc/deploy/applications/php/sessions-emails/#configure-or-disable-the-session-fs-bucket). Store the sessions in Redis instead.
 
 ## Monitor your storage usage
 

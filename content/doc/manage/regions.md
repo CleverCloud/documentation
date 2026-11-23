@@ -56,7 +56,7 @@ Each region has its own load balancers, and its own outbound IP addresses. Point
 
 ### Health data hosting
 
-The `parhds`, `rbxhds`, and `grahds` regions are certified for health data hosting (HDS). FS Buckets aren't available in these regions: to deploy a PHP application there, set [`CC_PHP_DISABLE_APP_BUCKET=true`](/doc/deploy/applications/php/sessions-emails/#speed-up-or-disable-the-session-fs-bucket), and store its sessions in Redis.
+The `parhds`, `rbxhds`, and `grahds` regions are certified for health data hosting (HDS). FS Buckets aren't available in these regions: to deploy a PHP application there, set [`CC_PHP_DISABLE_APP_BUCKET=true`](/doc/deploy/applications/php/sessions-emails/#configure-or-disable-the-session-fs-bucket), and store its sessions in Redis.
 
 > [!NOTE] HDS contract
 > To benefit from certified hosting for health data, you need to deploy in an HDS region and to sign up to a specific contract. This begins with [an initial discussion with the Clever Cloud team](https://www.clever.cloud/fr/hebergement-donnees-de-sante/contact-hds/).

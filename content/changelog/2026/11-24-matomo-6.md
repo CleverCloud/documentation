@@ -41,7 +41,7 @@ Matomo [recommends a shared cache such as Redis](https://matomo.org/faq/how-to/f
 
 ## Other improvements
 
-The add-on now installs the official release of Matomo, and checks its signature at each build. If your tracking requests go through a proxy of your own, set `MATOMO_GENERAL_PROXY_IP_READ_LAST_IN_LIST=0` on the PHP application: Matomo then locates your visitors, not your proxy.
+The add-on now installs the official release of Matomo, and checks its signature at each build, so you run exactly what Matomo publishes. If your tracking requests go through a proxy of your own, Matomo can now locate your visitors rather than your proxy. Set `MATOMO_GENERAL_PROXY_IP_READ_LAST_IN_LIST=0` on the PHP application and restart it, with the [safeguards our documentation details](/doc/deploy/services/matomo/#visitors-behind-a-proxy).
 
 ## What changes when you move to Matomo 6
 

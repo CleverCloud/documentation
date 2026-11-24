@@ -160,7 +160,7 @@ clever open
 
 ## Use Cellar as a storage backend
 
-A new Cellar add-on does not contain a bucket. Create one with Cellar Explorer in the [Clever Cloud Console](https://console.clever-cloud.com/), or with an [S3-compatible client](/developers/doc/deploy/storage/cellar/#managing-your-buckets).
+A new Cellar add-on doesn't contain a bucket. Create one with Cellar Explorer in the [Clever Cloud Console](https://console.clever-cloud.com/), or with an [S3-compatible client](/developers/doc/deploy/storage/cellar/#create-a-bucket).
 
 ### Configure Cellar through the SFTPGo web interface
 

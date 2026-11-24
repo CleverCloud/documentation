@@ -26,7 +26,7 @@ Each deployment starts new instances: the files an application writes on its loc
 
 ## Choose between Cellar and FS Bucket
 
-For a new project, use Cellar. Your application reads and writes objects over HTTPS, with any S3 client or SDK, and doesn't depend on the instance it runs on. It can also hand out [temporary signed URLs](/doc/deploy/storage/cellar/#uploading-objects-with-presigned-urls-and-checksum-validation), so that browsers upload or download files directly, without going through your application. Cellar also [hosts static websites](/doc/deploy/storage/cellar/#static-hosting), and keeps former versions of your files when you enable [versioning](/doc/deploy/storage/cellar/#versioning).
+For a new project, use Cellar. Your application reads and writes objects over HTTPS, with any S3 client or SDK, and doesn't depend on the instance it runs on. It can also hand out [temporary signed URLs](/doc/deploy/storage/cellar/#share-and-upload-files-with-presigned-urls), so that browsers upload or download files directly, without going through your application. Cellar also [serves public files](/doc/deploy/storage/cellar/#make-objects-public), such as the images of a website, and keeps former versions of your files when you enable [versioning](/doc/deploy/storage/cellar/#versioning).
 
 Use an FS Bucket for software that writes to its disk and that you can't change, such as a content management system storing its media. Your application sees a folder, mounted over the network and shared by all its instances, so its code doesn't change. This compatibility comes with [limits](/doc/deploy/storage/fs-bucket/#limits): Docker applications can't mount an FS Bucket, an application only mounts the buckets of its region, and file locks only apply within an instance. Don't store a SQLite database in a bucket that several instances use.
 
@@ -39,7 +39,7 @@ clever addon create cellar-addon my-storage --link my-app
 clever addon create fs-bucket my-bucket --region par --link my-app
 ```
 
-Linking Cellar gives the application its credentials in `CELLAR_ADDON_HOST`, `CELLAR_ADDON_KEY_ID`, and `CELLAR_ADDON_KEY_SECRET`: then [create a bucket](/doc/deploy/storage/cellar/#creating-a-bucket) for your files. Linking an FS Bucket gives its host and FTP credentials, but doesn't mount it: [mount it](/doc/deploy/storage/fs-bucket/#mount-the-bucket-in-your-application) with `CC_FS_BUCKET`.
+Linking Cellar gives the application its credentials in `CELLAR_ADDON_HOST`, `CELLAR_ADDON_KEY_ID`, and `CELLAR_ADDON_KEY_SECRET`: then [create a bucket](/doc/deploy/storage/cellar/#create-a-bucket) for your files. Linking an FS Bucket gives its host and FTP credentials, but doesn't mount it: [mount it](/doc/deploy/storage/fs-bucket/#mount-the-bucket-in-your-application) with `CC_FS_BUCKET`.
 
 ## Delete a storage add-on
 

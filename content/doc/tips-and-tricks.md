@@ -119,7 +119,7 @@ clever kv my-cache GET session-status
 ```
 
 - [Learn more about the KV Explorer](/doc/deploy/databases/redis/#clever-cloud-kv-explorer)
-- [Learn more about the Cellar Explorer](/doc/deploy/storage/cellar/)
+- [Learn more about the Cellar Explorer](/doc/deploy/storage/cellar/#manage-your-files-in-the-console)
 
 ### Run an application as a one-time task
 

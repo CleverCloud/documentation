@@ -1,8 +1,8 @@
 ---
 type: docs
-title: Cellar, S3-compatible object storage service
+title: Cellar, S3-compatible object storage
 linkTitle: Cellar Object Storage
-description: Deploy Cellar S3-compatible object storage add-on service on Clever Cloud for scalable file storage and content delivery in your applications
+description: Store the files of your applications in Cellar, the S3-compatible object storage of Clever Cloud, and control their access, versions, retention, and encryption
 keywords:
 - S3
 - amazon
@@ -13,6 +13,8 @@ keywords:
 - aws
 - encryption
 - SSE-C
+- object lock
+- presigned URL
 aliases:
 - /addons/cellar
 - /deploy/addon/cellar
@@ -25,186 +27,253 @@ aliases:
 - /doc/deploy/databases/cellar/
 - /doc/storage/cellar
 ---
-{{< hextra/hero-subtitle >}}
-  Cellar is a S3-compatible online file storage web service. Use it with your favorite S3 client, or download the `s3cmd` configuration file from the add-on dashboard in Clever Cloud console.
 
-{{< /hextra/hero-subtitle >}}
+Cellar is the object storage of Clever Cloud. It keeps the files of your applications, such as user uploads, exports, or backups, out of their instances, so they survive each deployment. Cellar speaks the S3 protocol of Amazon Web Services (AWS). Use it with the S3 SDK of your language, or with S3 clients such as s3cmd, the AWS CLI, the RustFS CLI, or rclone.
 
-## Creating a bucket
+A Cellar add-on is serverless: you don't choose a size, and you pay for the data you store and the outbound traffic. It holds buckets, which hold your files as objects. Create it in the `par` region, or in `parhds` to store [health data](/doc/manage/regions/#health-data-hosting).
 
-Cellar stores files in buckets. When you create a Cellar add-on, no bucket exists yet.
+Cellar serves objects over HTTPS, but doesn't host websites: to serve a static website, deploy it with the [Static](/doc/deploy/applications/static/) runtime. For an application that expects a file system, mount an [FS Bucket](/doc/deploy/storage/fs-bucket/) instead.
 
-### From Clever Cloud Console
+## Create a Cellar add-on
 
-{{% steps %}}
-
-#### Go to Cellar options
-
-Click on your Cellar add-on in your deployed services list to see its menu.
-
-#### Name your bucket
-
-From **Add-on Dashboard**, insert the name of your bucket.
-
-> [!NOTE] Bucket names
-> Bucket names are global to a region: **two buckets of the same region can't have the same name**. Their URL already exists in the Cellar cluster of this region. Bucket names can't contain underscores (`_`).
-
-#### Create bucket
-
-Click on **Create bucket**. Your new bucket should appear in the list below.
-
-{{% /steps %}}
-
-### With s3cmd
-
-{{% steps %}}
-
-#### Install s3cmd
-
-Install s3cmd on your machine following [these recommendations](https://s3tools.org/s3cmd).
-
-#### Download the configuration file
-
-Go to your add-on menu in the Clever Cloud console. Under the **Add-on Dashboard**, click the *Download a pre-filled s3cfg file.* link. This provides you a configuration file that you need to add to your home on your machine.
-
-#### Create a bucket
-
-To create a bucket, you can use this s3cmd command:
+In the [Console](https://console.clever-cloud.com), select **Create** in the sidebar, then **Add-on**, and pick Cellar. Choose its region, its name, and the applications to link it to. With [Clever Tools](/doc/tools/cli/), from a folder linked to your application, set its alias with `--link`:
 
 ```bash
-s3cmd mb s3://bucket-name
+clever addon create cellar-addon my-storage --region par --link my-app
 ```
 
-The bucket is now be available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/`.
+Linking the add-on to an application adds these environment variables to it:
 
-{{% /steps %}}
+- `CELLAR_ADDON_HOST`: the host of Cellar, such as `cellar-c2.services.clever-cloud.com`, without `https://`
+- `CELLAR_ADDON_KEY_ID` and `CELLAR_ADDON_KEY_SECRET`: the access key of the add-on, which grants full access to all its buckets
 
-> [!NOTE] Unavailable commands
-> The `ws-*` and `cf*` commands aren't available with a Cellar add-on.
+The **Add-on dashboard** of the Console shows these credentials, and offers a pre-filled `s3cfg` configuration file for s3cmd. Its **Information** panel shows the number of buckets and objects, the storage used, and the traffic of the last 30 days.
 
-### With AWS CLI
+### Renew the secret
 
-You can use the official [AWS cli](https://aws.amazon.com/cli/) with Cellar. Configure the `aws_access_key_id`, `aws_secret_access_key` and endpoint.
+If your secret leaks, select **Renew secret** in the **Add-on dashboard**. The key ID stays the same, but the old secret and its presigned URLs stop working at once. Clever Cloud updates `CELLAR_ADDON_KEY_SECRET` in the linked applications: restart them, then update your other clients.
 
-```bash
-aws configure set aws_access_key_id $CELLAR_ADDON_KEY_ID
-aws configure set aws_secret_access_key $CELLAR_ADDON_KEY_SECRET
-```
+## Create a bucket
 
-Global endpoint configuration isn't available, so include the parameter each time you use the `aws` cli. Here's an example to create a bucket:
+A new Cellar add-on has no bucket. Bucket names are unique among all the add-ons of a region: if another add-on uses a name, you can't create a bucket with it. Names hold 3 to 63 characters: lowercase letters, numbers, hyphens, and dots, without underscores.
 
-```bash
-aws s3api create-bucket --bucket myBucket --acl public-read --endpoint-url https://cellar-c2.services.clever-cloud.com
-```
-
-To simplify this, you may want to configure an alias like so:
-
-```bash
-alias aws="aws --endpoint-url https://cellar-c2.services.clever-cloud.com"
-```
-
-## Managing your buckets
-
-There are several ways to manage your buckets, find in this section a list of options.
-
-### Cellar Explorer
-
-Browse your buckets, upload, download and inspect objects directly from the [Clever Cloud Console](https://console.clever-cloud.com) with the **Cellar Explorer** tool, part of the all-included Clever Cloud experience.
-
-From the add-on dashboard, the Cellar Explorer lists every bucket of the add-on and lets you navigate objects as folders. You can upload or download an object, copy its public URL and inspect its metadata without installing a third-party S3 client. The tool relies on the new Cellar APIs and will keep gaining features over the coming months.
-
-Share your feedback and feature requests on the [GitHub Community](https://github.com/CleverCloud/Community/discussions/155).
-
-### Using S3 clients
-
-Some clients allow you to upload files, list them, delete them, etc, like:
-
-- [Cyberduck](https://cyberduck.io)
-- [Filestash](https://www.filestash.app/)
-- [MinIO](https://min.io/docs/minio/linux/reference/minio-mc.html)
-- [Rclone Web GUI](https://rclone.org/gui/)
-- [S3 Browser](https://s3browser.com/)
-- [S3 Explorer](https://s3explorer.accessdevops.com/)
-- [WinSCP](https://winscp.net)
-
-This list isn't exhaustive. Feel free to [suggest other clients that you would like to see in this documentation](https://github.com/CleverCloud/documentation/issues/new/choose).
-
-### Using s3cmd command line tools
-
-`s3cmd` allows you to manage your buckets using its commands, after [configuring it on your machine](#with-s3cmd)
+In the Console, open the [Cellar Explorer](#manage-your-files-in-the-console) tab of the add-on, and select **Create bucket**. With an S3 client, once you [configure it](#configure-an-s3-client):
 
 {{< tabs >}}
 
-  {{< tab name="Upload" >}}
-  You can upload files (`--acl-public` makes the file publicly readable) with:
+  {{< tab name="s3cmd" icon="terminal" >}}
 
   ```bash
-  s3cmd put --acl-public image.jpg s3://bucket-name
+  s3cmd mb s3://my-bucket
   ```
 
-  The file is then publicly available at `https://<bucket-name>.cellar-c2.services.clever-cloud.com/image.jpg`.
   {{< /tab >}}
 
-  {{< tab name="Synchronize" >}}
-  You can upload a directory's contents and update only changed files with `sync`. First, preview the operations without changing any objects:
+  {{< tab name="AWS CLI" icon="aws" >}}
 
   ```bash
-  s3cmd sync --dry-run path/to/source/ s3://bucket-name/
+  aws s3 mb s3://my-bucket
   ```
 
-  Then synchronize the directory:
-
-  ```bash
-  s3cmd sync path/to/source/ s3://bucket-name/
-  ```
-
-  Add `--acl-public` to the second command to make the uploaded files publicly readable.
   {{< /tab >}}
 
-  {{< tab name="List" >}}
-  You can list the files in your bucket, you should see the `image.png` file:
+  {{< tab name="RustFS CLI" icon="terminal" >}}
 
   ```bash
-  s3cmd ls s3://bucket-name
+  rc bucket create cellar/my-bucket
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="rclone" icon="terminal" >}}
+
+  ```bash
+  rclone mkdir cellar:my-bucket
   ```
 
   {{< /tab >}}
 
 {{< /tabs >}}
 
-#### Custom domain
+Objects are private: only the add-on credentials can read them. To serve some of them publicly, see [Control access](#control-access).
 
-If you want to use a custom domain, for example `cdn.example.com`, you need to create a bucket named exactly like your domain:
+## Manage your files in the Console
 
-```bash
-s3cmd --host-bucket=cellar-c2.services.clever-cloud.com mb s3://cdn.example.com
-```
+The **Cellar Explorer** tab of the add-on, in the [Console](https://console.clever-cloud.com), lists its buckets with their number of objects, size, and last update. Open a bucket to browse and filter its objects, and see the content type, size, and date of each one. From this tab, you can:
 
-Then, create a CNAME record on your domain pointing to `cellar-c2.services.clever-cloud.com.`.
+- Create a bucket, without versioning
+- Create a directory, which Cellar keeps once you upload an object to it
+- Delete a bucket once it's empty
+- Upload, download, or delete objects
 
-## Using SDKs
+The details of a bucket show whether its versioning is on. To change it, or to set policies, CORS, or Object Lock, use an [S3 client](#configure-an-s3-client).
 
-To use Cellar from your applications, you can use the [AWS SDK](https://aws.amazon.com/tools/#sdk) or any S3-compatible client. You only need to specify a custom endpoint (e.g. `cellar-c2.services.clever-cloud.com`).
+> [!NOTE] The Cellar Explorer is in beta
+> Its features and interface can still change.
+
+- [Share your feedback on the Cellar Explorer](https://github.com/CleverCloud/Community/discussions/155)
+
+## Configure an S3 client
+
+Cellar works with S3 clients that let you set a custom endpoint: use `https://` and the value of `CELLAR_ADDON_HOST`, such as `https://cellar-c2.services.clever-cloud.com`. The s3cmd commands for S3 websites and CloudFront, `ws-*` and `cf*`, don't work with Cellar.
+
+S3 clients also ask for a region, which Cellar ignores: your data stays in the region of the add-on, such as Paris for `par`. Set `us-east-1`: the AWS CLI and the Node.js SDK send any other value as the location of the buckets they create, which Cellar refuses.
+
+{{< tabs >}}
+
+  {{< tab name="s3cmd" icon="terminal" >}}
+
+  Install [s3cmd](https://s3tools.org/s3cmd). In the **Add-on dashboard** of the Console, select **Download a pre-filled s3cfg file**, and save it as `~/.s3cfg`. To use another location, add `-c path/to/s3cfg` to each command. List your buckets to check the configuration:
+
+  ```bash
+  s3cmd ls
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="AWS CLI" icon="aws" >}}
+
+  Install the [AWS CLI](https://aws.amazon.com/cli/), then add a `cellar` profile to `~/.aws/config`. Replace the endpoint with the value of `CELLAR_ADDON_HOST`. Recent versions of the AWS CLI add checksums that Cellar rejects: the last two lines turn them off.
+
+  ```ini {filename="~/.aws/config"}
+  [profile cellar]
+  region = us-east-1
+  endpoint_url = https://cellar-c2.services.clever-cloud.com
+  request_checksum_calculation = when_required
+  response_checksum_validation = when_required
+  ```
+
+  Store the credentials of the add-on in this profile, then select it for the session:
+
+  ```bash
+  aws configure set aws_access_key_id "$CELLAR_ADDON_KEY_ID" --profile cellar
+  aws configure set aws_secret_access_key "$CELLAR_ADDON_KEY_SECRET" --profile cellar
+  export AWS_PROFILE=cellar
+  aws s3 ls
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="RustFS CLI" icon="terminal" >}}
+
+  Install `rc`, the [RustFS CLI](https://github.com/rustfs/cli), with `brew install rustfs/tap/rc` or `cargo install rustfs-cli`, then create a `cellar` alias:
+
+  ```bash
+  rc alias set cellar "https://$CELLAR_ADDON_HOST" "$CELLAR_ADDON_KEY_ID" "$CELLAR_ADDON_KEY_SECRET"
+  rc bucket list cellar
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="rclone" icon="terminal" >}}
+
+  Install [rclone](https://rclone.org), which lists Cellar among its S3 providers. Then create a `cellar` remote with the credentials of the add-on:
+
+  ```bash
+  rclone config create cellar s3 \
+    provider=Cellar \
+    access_key_id="$CELLAR_ADDON_KEY_ID" \
+    secret_access_key="$CELLAR_ADDON_KEY_SECRET" \
+    endpoint="https://$CELLAR_ADDON_HOST"
+  rclone lsd cellar:
+  ```
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+### Desktop clients
+
+These graphical clients, among others, let you set the endpoint of Cellar:
+
+- [Cyberduck](https://cyberduck.io)
+- [Filestash](https://www.filestash.app/)
+- [Rclone Web GUI](https://rclone.org/gui/)
+- [S3 Browser](https://s3browser.com/)
+- [S3 Explorer](https://s3explorer.accessdevops.com/)
+- [WinSCP](https://winscp.net)
+
+## Upload and synchronize files
+
+Synchronizing a folder uploads its new and changed files to a bucket, such as exports or media files. Preview the changes with a dry run first:
+
+{{< tabs >}}
+
+  {{< tab name="s3cmd" icon="terminal" >}}
+
+  `put` uploads files. `sync` uploads the new files of a folder, and those whose size or checksum changed. `--delete-removed` deletes the others:
+
+  ```bash
+  s3cmd put image.jpg s3://my-bucket/images/image.jpg
+  s3cmd sync --dry-run --delete-removed ./public/ s3://my-bucket/
+  s3cmd sync --delete-removed ./public/ s3://my-bucket/
+  s3cmd ls s3://my-bucket/images/
+  ```
+
+  s3cmd guesses the content type of each file, which browsers need to display it. Its guess can return `text/plain` for HTML or CSS files: add `--no-mime-magic` to guess from the extension of the file, or `-m text/html` to set the type yourself.
+
+  {{< /tab >}}
+
+  {{< tab name="AWS CLI" icon="aws" >}}
+
+  `cp` uploads files, and `sync` uploads the new and changed files of a folder. `--delete` also deletes the files the folder no longer holds:
+
+  ```bash
+  aws s3 cp image.jpg s3://my-bucket/images/image.jpg
+  aws s3 sync --dryrun --delete ./public s3://my-bucket/
+  aws s3 sync --delete ./public s3://my-bucket/
+  aws s3 ls --recursive s3://my-bucket/images/
+  ```
+
+  The AWS CLI sets the content type of each file from its extension.
+
+  {{< /tab >}}
+
+  {{< tab name="RustFS CLI" icon="terminal" >}}
+
+  `put` uploads files, and `mirror` uploads the files of a folder that the bucket doesn't hold. Add `--overwrite` to also upload the changed files, and `--remove` to delete the files the folder no longer holds:
+
+  ```bash
+  rc put image.jpg cellar/my-bucket/images/image.jpg
+  rc mirror --dry-run --overwrite --remove ./public cellar/my-bucket
+  rc mirror --overwrite --remove ./public cellar/my-bucket
+  rc object list --recursive cellar/my-bucket/images
+  ```
+
+  The RustFS CLI sets the content type of each file from its extension.
+
+  {{< /tab >}}
+
+  {{< tab name="rclone" icon="terminal" >}}
+
+  `copy` uploads the new and changed files of a folder to the [`cellar` remote](#configure-an-s3-client). `sync` also deletes the files the folder no longer holds:
+
+  ```bash
+  rclone copy ./public cellar:my-bucket
+  rclone sync --dry-run ./public cellar:my-bucket
+  rclone sync ./public cellar:my-bucket
+  rclone ls cellar:my-bucket
+  ```
+
+  rclone sets the content type of each file from its extension.
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+## Use Cellar from your application
+
+Use the S3 SDK of your language, with `https://` and the value of `CELLAR_ADDON_HOST` as endpoint, and the [`us-east-1`](#configure-an-s3-client) region, which Cellar ignores. Recent AWS SDKs add checksums that Cellar rejects: set the checksum options to `when_required`, except with Ruby.
 
 {{< tabs >}}
 
   {{< tab name="Bun" icon="simple:bun" >}}
-  **Bun (native S3 client)**
 
-  [Bun](https://bun.sh) includes a [native S3 client](https://bun.sh/docs/api/s3) with no external dependency. It works with any S3-compatible service, including Cellar.
-
-  **Required environment variables:**
-
-- `CELLAR_ADDON_HOST` - Cellar endpoint (e.g., `cellar-c2.services.clever-cloud.com`)
-- `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
-- `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
-
-  These variables are automatically available in your application when you [link a Cellar add-on](/doc/deploy/storage/cellar/) to it on Clever Cloud, regardless of the runtime (for example in a [Node.js & Bun application](/doc/deploy/applications/nodejs/)).
+  [Bun](https://bun.sh) includes an [S3 client](https://bun.sh/docs/api/s3), without any dependency:
 
   ```typescript
   import { S3Client } from "bun";
 
-  // Create Bun S3 client with Cellar endpoint
   const cellar = new S3Client({
     accessKeyId: process.env.CELLAR_ADDON_KEY_ID,
     secretAccessKey: process.env.CELLAR_ADDON_KEY_SECRET,
@@ -212,428 +281,907 @@ To use Cellar from your applications, you can use the [AWS SDK](https://aws.amaz
     bucket: "my-bucket",
   });
 
-  // Upload a file
   await cellar.write("hello.txt", "Hello from Cellar!");
-
-  // Read a file
-  const file = cellar.file("hello.txt");
-  const text = await file.text();
-
-  // Generate a presigned URL (synchronous, no network request)
-  const url = cellar.presign("hello.txt", {
-    expiresIn: 3600, // 1 hour
-  });
-
-  // Delete a file
+  const text = await cellar.file("hello.txt").text();
   await cellar.delete("hello.txt");
   ```
 
-  You can also use the `s3://` protocol with `fetch` and `Bun.file()`. Set `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY` and `S3_ENDPOINT` environment variables (or their `AWS_*` equivalents) to use this approach:
+  Bun also reads `s3://` URLs with `fetch` and `Bun.file()`. Set `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, and `S3_ENDPOINT` to the credentials and the endpoint of Cellar, then read your objects by their URL, without any client:
 
   ```typescript
   const response = await fetch("s3://my-bucket/hello.txt");
   const content = await response.text();
   ```
 
+  Bun sends its uploads without any checksum, so Cellar can't check their integrity.
+
   {{< /tab >}}
 
   {{< tab name="Node.js" icon="simple:nodedotjs" >}}
-  **Node.js**
 
-  Using AWS SDK for JavaScript v3 (recommended):
+  Install the [AWS SDK for JavaScript](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/s3/) v3:
 
-  **Required environment variables:**
+  ```bash
+  npm install @aws-sdk/client-s3
+  ```
 
-- `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `https://cellar-c2.services.clever-cloud.com`)
-- `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
-- `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
-
-  Some SDKs require a region even with a custom endpoint, so set `region` to the literal value "`default`".
+  Without the checksum options, uploads from a stream fail with a `MissingContentLength` error:
 
   ```javascript
-  import {
-    S3Client,
-    CreateBucketCommand,
-    ListBucketsCommand,
-    GetObjectCommand
-  } from "@aws-sdk/client-s3";
-  import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+  import { S3Client, PutObjectCommand, ListBucketsCommand } from "@aws-sdk/client-s3";
 
-  // Create S3 client with Cellar endpoint
-  // NOTE: If experiencing checksum validation errors with SDK v3.729.0+,
-  // uncomment the two config parameters below (compatibility with our current infrastructure)
-  const s3Client = new S3Client({
-    endpoint: process.env.CELLAR_ADDON_HOST,
-    region: 'default',
+  const s3 = new S3Client({
+    endpoint: `https://${process.env.CELLAR_ADDON_HOST}`,
+    region: "us-east-1",
     credentials: {
       accessKeyId: process.env.CELLAR_ADDON_KEY_ID,
-      secretAccessKey: process.env.CELLAR_ADDON_KEY_SECRET
+      secretAccessKey: process.env.CELLAR_ADDON_KEY_SECRET,
     },
-    // requestChecksumCalculation: 'WHEN_REQUIRED',
-    // responseChecksumValidation: 'WHEN_REQUIRED'
+    requestChecksumCalculation: "WHEN_REQUIRED",
+    responseChecksumValidation: "WHEN_REQUIRED",
   });
 
-  const createParams = {
-    Bucket: '<my-bucket-name>'
-  };
+  const { Buckets } = await s3.send(new ListBucketsCommand({}));
+  console.log(Buckets);
 
-  await s3Client.send(new CreateBucketCommand(createParams));
-
-  // List all buckets
-  const listResponse = await s3Client.send(new ListBucketsCommand({}));
-  console.log(listResponse.Buckets);
-
-  // Generate presigned URL for non-public files
-  // For uploads, use PutObjectCommand instead
-  const getCommand = new GetObjectCommand({
-    Bucket: '<your-bucket>',
-    Key: '<your-key>'
-  });
-  const presignedUrl = await getSignedUrl(s3Client, getCommand, { expiresIn: 3600 });
-  console.log(presignedUrl);
+  await s3.send(new PutObjectCommand({ Bucket: "my-bucket", Key: "hello.txt", Body: "Hello from Cellar!" }));
   ```
 
   {{< /tab >}}
 
   {{< tab name="Java" icon="java" >}}
-  **Java**
 
-  Import the AWS SDK S3 library. Maven uses the following dependency:
+  Add the S3 module of the [AWS SDK for Java](https://github.com/aws/aws-sdk-java-v2) 2.x. With Maven, use the latest version of this dependency:
 
   ```xml
   <dependency>
     <groupId>software.amazon.awssdk</groupId>
     <artifactId>s3</artifactId>
-    <version>2.40.1</version>
+    <version>2.59.8</version>
   </dependency>
   ```
 
-  Make sure to use latest version of the `2.X`, new versions are released regularly. See [the AWS Java SDK Documentation](https://github.com/aws/aws-sdk-java-v2/#using-the-sdk) for more details.
-
-  **Required environment variables:**
-
-- `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `https://cellar-c2.services.clever-cloud.com`)
-- `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
-- `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
-
-  **Optional (for SDK 2.30.0+ checksum compatibility):**
-
-- `AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED`
-- `AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED`
-
-  Some SDKs require a region even with a custom endpoint, so just provide the literal value "`default`" to satisfy that requirement.
-
-  Below is a sample Java class listing the objects of all buckets:
+  Without the checksum options, uploads fail with a `400` error. This class uploads a file, then lists the objects of each bucket:
 
   ```java
   import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
   import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
   import software.amazon.awssdk.core.checksums.RequestChecksumCalculation;
   import software.amazon.awssdk.core.checksums.ResponseChecksumValidation;
+  import software.amazon.awssdk.core.sync.RequestBody;
   import software.amazon.awssdk.regions.Region;
   import software.amazon.awssdk.services.s3.S3Client;
-  import software.amazon.awssdk.services.s3.model.Bucket;
-  import software.amazon.awssdk.services.s3.model.ListObjectsRequest;
+  import software.amazon.awssdk.services.s3.model.ListObjectsV2Request;
 
   import java.net.URI;
-  import java.util.List;
 
-  public class CleverCloudCellarDemoApplication {
+  public class CellarDemo {
 
-      private static final String CELLAR_HOST = System.getenv("CELLAR_ADDON_HOST");
-      private static final String CELLAR_KEY_ID = System.getenv("CELLAR_ADDON_KEY_ID");
-      private static final String CELLAR_KEY_SECRET = System.getenv("CELLAR_ADDON_KEY_SECRET");
-      private static final Region DEFAULT_REGION = Region.of("default");
+      public static void main(String[] args) throws Exception {
+          var credentials = StaticCredentialsProvider.create(AwsBasicCredentials.create(
+              System.getenv("CELLAR_ADDON_KEY_ID"),
+              System.getenv("CELLAR_ADDON_KEY_SECRET")
+          ));
 
-      public static void main(String[] args) {
-          // Initialize credentials with Cellar Key ID and Secret
-          var credentialsProvider = StaticCredentialsProvider.create(
-              AwsBasicCredentials.create(CELLAR_KEY_ID, CELLAR_KEY_SECRET)
-          );
+          try (S3Client s3 = S3Client.builder()
+                  .endpointOverride(URI.create("https://" + System.getenv("CELLAR_ADDON_HOST")))
+                  .region(Region.US_EAST_1)
+                  .credentialsProvider(credentials)
+                  .requestChecksumCalculation(RequestChecksumCalculation.WHEN_REQUIRED)
+                  .responseChecksumValidation(ResponseChecksumValidation.WHEN_REQUIRED)
+                  .build()) {
+              s3.putObject(request -> request.bucket("my-bucket").key("hello.txt"), RequestBody.fromString("Hello from Cellar!"));
 
-          // Create S3 client builder
-          // NOTE: If experiencing checksum validation errors with SDK 2.30.0+,
-          // uncomment the two lines below (compatibility with our current infrastructure)
-          var s3ClientBuilder = S3Client.builder()
-                  .endpointOverride(URI.create(CELLAR_HOST))
-                  .region(DEFAULT_REGION)
-                  .credentialsProvider(credentialsProvider);
-                  // .requestChecksumCalculation(RequestChecksumCalculation.WHEN_REQUIRED)
-                  // .responseChecksumValidation(ResponseChecksumValidation.WHEN_REQUIRED);
-
-          // Initialize the s3 client
-          try (S3Client s3 = s3ClientBuilder.build()) {
-              // List buckets
-              List<Bucket> buckets = s3.listBuckets().buckets();
-              buckets.forEach(bucket -> {
-                  // List bucket objects
-                  var listObjectsRequest = ListObjectsRequest.builder().bucket(bucket.name()).build();
-                  var objects = s3.listObjects(listObjectsRequest).contents();
-                  // Handle results
+              s3.listBuckets().buckets().forEach(bucket -> {
+                  var request = ListObjectsV2Request.builder().bucket(bucket.name()).build();
+                  s3.listObjectsV2(request).contents().forEach(object -> System.out.println(bucket.name() + "/" + object.key()));
               });
           }
       }
   }
   ```
 
-  See the [AWS Java SDK code examples for S3](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/s3) for more example use cases.
+  The [AWS code examples](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/s3) show other uses of the SDK.
+
   {{< /tab >}}
 
   {{< tab name="Python" icon="simple:python" >}}
-  **Python**
 
-  This script uses boto3, the AWS SDK for Python.
-
-  **Required environment variables:**
-
-- `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `https://cellar-c2.services.clever-cloud.com`)
-- `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
-- `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
-
-  Some SDKs require a region even with a custom endpoint, so set the `region_name` to the literal value "`default`" when instantiating the client.
+  Install [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html), the AWS SDK for Python. Without the checksum options, uploads fail with a `MissingContentLength` error:
 
   ```python
-  import boto3
   import os
-  from botocore.client import Config
 
-  # Create S3 client with Cellar endpoint
-  # NOTE: If you experience checksum validation errors during uploads,
-  # uncomment the two config parameters below (compatibility with our current infrastructure)
+  import boto3
+  from botocore.config import Config
+
   s3 = boto3.client(
-      's3',
-      region_name='default',
-      aws_access_key_id=os.environ['CELLAR_ADDON_KEY_ID'],
-      aws_secret_access_key=os.environ['CELLAR_ADDON_KEY_SECRET'],
-      endpoint_url=os.environ['CELLAR_ADDON_HOST'],
+      "s3",
+      region_name="us-east-1",
+      endpoint_url=f"https://{os.environ['CELLAR_ADDON_HOST']}",
+      aws_access_key_id=os.environ["CELLAR_ADDON_KEY_ID"],
+      aws_secret_access_key=os.environ["CELLAR_ADDON_KEY_SECRET"],
       config=Config(
-          signature_version='s3v4'
-          # request_checksum_calculation='WHEN_REQUIRED',
-          # response_checksum_validation='WHEN_REQUIRED'
-      )
+          signature_version="s3v4",
+          request_checksum_calculation="when_required",
+          response_checksum_validation="when_required",
+      ),
   )
 
-  # List all buckets
-  response = s3.list_buckets()
-  buckets = response['Buckets']
-  print(buckets)
+  print(s3.list_buckets()["Buckets"])
 
-  """
-  In order to share access to non-public files via HTTP, you need to get a presigned url for a specific key
-  the example above present a 'getObject' presigned URL. If you want to put an object in the bucket via HTTP,
-  you'll need to use 'put_object' instead.
-  see doc : https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.generate_presigned_url
-  """
-  presigned_url = s3.generate_presigned_url(
-      'get_object',
-      Params={'Bucket': buckets[0]['Name'], 'Key': '<your-key>'},
-      ExpiresIn=3600
-  )
-  print(presigned_url)
+  s3.upload_file("report.pdf", "my-bucket", "reports/report.pdf")
   ```
 
   {{< /tab >}}
 
   {{< tab name="Ruby" icon="ruby" >}}
-  **Active Storage (Ruby On Rails)**
 
-  [Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) can manage various cloud storage services like Amazon S3, Google Cloud Storage, or Microsoft Azure Storage. To use Cellar, you must configure a S3 service with a custom endpoint.
+  Add the `aws-sdk-s3` gem to your `Gemfile`, then create a client:
 
-  **Required environment variables:**
+  ```ruby
+  require "aws-sdk-s3"
 
-- `CELLAR_ADDON_HOST` - Cellar endpoint URL (e.g., `cellar-c2.services.clever-cloud.com`)
-- `CELLAR_ADDON_KEY_ID` - Your Cellar access key ID
-- `CELLAR_ADDON_KEY_SECRET` - Your Cellar secret access key
+  s3 = Aws::S3::Client.new(
+    endpoint: "https://#{ENV.fetch('CELLAR_ADDON_HOST')}",
+    region: "us-east-1",
+    access_key_id: ENV.fetch("CELLAR_ADDON_KEY_ID"),
+    secret_access_key: ENV.fetch("CELLAR_ADDON_KEY_SECRET"),
+  )
 
-  Use this configuration in your `config/storage.yml`:
+  s3.put_object(bucket: "my-bucket", key: "reports/report.pdf", body: File.open("report.pdf"))
+  ```
 
-```yaml {filename="config/storage.yml"}
-cellar:
-  service: S3
-  access_key_id: <%= ENV.fetch('CELLAR_ADDON_KEY_ID') %>
-  secret_access_key: <%= ENV.fetch('CELLAR_ADDON_KEY_SECRET') %>
-  endpoint: https://<%= ENV.fetch('CELLAR_ADDON_HOST') %>
-  region: 'us-west-1'
-  force_path_style: true
-  bucket: mybucket
-  # If experiencing checksum validation errors, add:
-  # request_checksum_calculation: 'when_required'
-  # response_checksum_validation: 'when_required'
-```
+  [Active Storage](https://guides.rubyonrails.org/active_storage_overview.html), the file storage of Ruby on Rails, uses Cellar as an S3 service. Declare Cellar:
 
-  Although the `region` parameter appears, it's not used by Cellar. The region value serves to satisfy ActiveStorage and the aws-sdk-s3 gem. Without a region option, an exception would raise : `missing keyword: region (ArgumentError)`. If region is an empty string you will get the following error: `missing region; use :region option or export region name to ENV['AWS_REGION'] (Aws::Errors::MissingRegionError)`.
+  ```yaml {filename="config/storage.yml"}
+  cellar:
+    service: S3
+    access_key_id: <%= ENV.fetch("CELLAR_ADDON_KEY_ID") %>
+    secret_access_key: <%= ENV.fetch("CELLAR_ADDON_KEY_SECRET") %>
+    endpoint: https://<%= ENV.fetch("CELLAR_ADDON_HOST") %>
+    region: us-east-1
+    bucket: my-bucket
+  ```
 
-  Set `force_path_style` to `true` as described in the [Ruby S3 Client documentation](https://docs.aws.amazon.com/sdkforruby/api/Aws/S3/Client.html).
+  Then select this service for production:
+
+  ```ruby {filename="config/environments/production.rb"}
+  config.active_storage.service = :cellar
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="Rust" icon="simple:rust" >}}
+
+  Add the [AWS SDK for Rust](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/rust_s3_code_examples.html) and Tokio to your project:
+
+  ```bash
+  cargo add aws-sdk-s3 --features behavior-version-latest
+  cargo add tokio --features full
+  ```
+
+  Without the checksum options, uploads fail with an `XAmzContentSHA256Mismatch` error:
+
+  ```rust
+  use std::env;
+
+  use aws_sdk_s3::{
+      config::{Builder, Credentials, Region, RequestChecksumCalculation, ResponseChecksumValidation},
+      primitives::ByteStream,
+      Client,
+  };
+
+  #[tokio::main]
+  async fn main() -> Result<(), Box<dyn std::error::Error>> {
+      let credentials = Credentials::new(
+          env::var("CELLAR_ADDON_KEY_ID")?,
+          env::var("CELLAR_ADDON_KEY_SECRET")?,
+          None,
+          None,
+          "cellar",
+      );
+      let config = Builder::new()
+          .endpoint_url(format!("https://{}", env::var("CELLAR_ADDON_HOST")?))
+          .region(Region::new("us-east-1"))
+          .credentials_provider(credentials)
+          .request_checksum_calculation(RequestChecksumCalculation::WhenRequired)
+          .response_checksum_validation(ResponseChecksumValidation::WhenRequired)
+          .build();
+      let s3 = Client::from_conf(config);
+
+      s3.put_object()
+          .bucket("my-bucket")
+          .key("reports/report.pdf")
+          .body(ByteStream::from_path("report.pdf").await?)
+          .send()
+          .await?;
+
+      let object = s3.get_object().bucket("my-bucket").key("reports/report.pdf").send().await?;
+      let content = object.body.collect().await?.into_bytes();
+      println!("{} bytes", content.len());
+      Ok(())
+  }
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="V" icon="simple:v" >}}
+
+  The [`net.s3` module](https://modules.vlang.io/net.s3.html) of the V standard library reads the variables of Cellar, after the `S3_` and `AWS_` variables if your application sets them. Set the bucket in the client, or in `S3_BUCKET`:
+
+  ```v
+  import net.s3
+
+  fn main() {
+      c := s3.new_client(s3.Credentials{
+          ...s3.Credentials.from_env()
+          bucket: 'my-bucket'
+      })
+
+      c.put('hello.txt', 'Hello from Cellar!'.bytes(), content_type: 'text/plain')!
+      println(c.get_string('hello.txt')!)
+
+      res := c.list()!
+      for object in res.objects {
+          println('${object.key} ${object.size}')
+      }
+      c.delete('hello.txt')!
+  }
+  ```
+
+  Add `hash_payload: true` to `put` to sign the SHA-256 checksum of the content: Cellar then rejects a content that doesn't match it.
+
   {{< /tab >}}
 
 {{< /tabs >}}
 
-## Policies
+### Use Cellar in the scripts of your application
 
-Cellar allows you to create policies to control the actions on your buckets. Find below two policies examples, and [further documentation](https://docs.ceph.com/en/latest/radosgw/bucketpolicy/).
+Scripts such as [hooks](/doc/manage/build-hooks/) or [scheduled tasks](/doc/manage/cron/) use the add-on without any configuration file. A scheduled task needs a login shell to get these variables and tools: start its script with `#!/bin/bash -l`, as [Load your environment variables](/doc/manage/cron/#load-your-environment-variables) details. Clever Cloud instances, except Docker ones, include s3cmd, Bun, and V. They install the other clients with mise or uv at the first use: replace `latest` with a version in production.
+
+These commands upload a backup from a Bash script, with the variables of the add-on:
+
+{{< tabs >}}
+
+  {{< tab name="s3cmd" icon="terminal" >}}
+
+  ```bash
+  s3cmd --access_key="$CELLAR_ADDON_KEY_ID" --secret_key="$CELLAR_ADDON_KEY_SECRET" \
+    --host="$CELLAR_ADDON_HOST" --host-bucket="%(bucket)s.$CELLAR_ADDON_HOST" \
+    put backup.tar.gz s3://my-bucket/backups/backup.tar.gz
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="AWS CLI" icon="aws" >}}
+
+  ```bash
+  export AWS_ACCESS_KEY_ID="$CELLAR_ADDON_KEY_ID" AWS_SECRET_ACCESS_KEY="$CELLAR_ADDON_KEY_SECRET"
+  export AWS_ENDPOINT_URL="https://$CELLAR_ADDON_HOST" AWS_DEFAULT_REGION=us-east-1
+  export AWS_REQUEST_CHECKSUM_CALCULATION=when_required AWS_RESPONSE_CHECKSUM_VALIDATION=when_required
+
+  uvx --from awscli aws s3 cp backup.tar.gz s3://my-bucket/backups/backup.tar.gz
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="RustFS CLI" icon="terminal" >}}
+
+  ```bash
+  mise x github:rustfs/cli@latest -- rc alias set cellar "https://$CELLAR_ADDON_HOST" "$CELLAR_ADDON_KEY_ID" "$CELLAR_ADDON_KEY_SECRET"
+  mise x github:rustfs/cli@latest -- rc put backup.tar.gz cellar/my-bucket/backups/backup.tar.gz
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="rclone" icon="terminal" >}}
+
+  rclone reads the configuration of a remote from variables:
+
+  ```bash
+  export RCLONE_CONFIG_CELLAR_TYPE=s3 RCLONE_CONFIG_CELLAR_PROVIDER=Cellar
+  export RCLONE_CONFIG_CELLAR_ACCESS_KEY_ID="$CELLAR_ADDON_KEY_ID"
+  export RCLONE_CONFIG_CELLAR_SECRET_ACCESS_KEY="$CELLAR_ADDON_KEY_SECRET"
+  export RCLONE_CONFIG_CELLAR_ENDPOINT="https://$CELLAR_ADDON_HOST"
+
+  mise x rclone@latest -- rclone copyto backup.tar.gz cellar:my-bucket/backups/backup.tar.gz
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="Bun" icon="simple:bun" >}}
+
+  ```bash
+  export S3_ACCESS_KEY_ID="$CELLAR_ADDON_KEY_ID" S3_SECRET_ACCESS_KEY="$CELLAR_ADDON_KEY_SECRET"
+  export S3_ENDPOINT="https://$CELLAR_ADDON_HOST"
+
+  bun -e 'await Bun.write(Bun.file("s3://my-bucket/backups/backup.tar.gz"), Bun.file("backup.tar.gz"))'
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="V" icon="simple:v" >}}
+
+  This V script reads the variables of Cellar by itself. Run it with `v run backup.vsh`, or make it executable with `chmod +x backup.vsh`:
+
+  ```v {filename="backup.vsh"}
+  #!/usr/bin/env -S v
+
+  import net.s3
+
+  c := s3.new_client(s3.Credentials{
+      ...s3.Credentials.from_env()
+      bucket: 'my-bucket'
+  })
+  c.upload_file('backups/backup.tar.gz', 'backup.tar.gz')!
+  println('Uploaded ${c.size('backups/backup.tar.gz')!} bytes')
+  ```
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+### Use Cellar in local scripts
+
+On your computer, load the variables of the add-on with Clever Tools, then run the same commands. `clever addon list` shows its ID:
+
+```bash
+source <(clever addon env addon_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -F shell)
+```
+
+Bun and V need no S3 dependency, and suit short scripts, such as an export or a backup.
+
+## Share and upload files with presigned URLs
+
+A presigned URL gives access to one object for a limited time, without your credentials. A download URL shares a private file, and an upload URL lets a client, such as a browser, send a file with a `PUT` request. Clients sign these URLs locally, and renewing the secret invalidates them.
+
+### Create URLs from the command line
+
+These commands create a download URL valid for one hour, once you [configure the client](#configure-an-s3-client):
+
+{{< tabs >}}
+
+  {{< tab name="s3cmd" icon="terminal" >}}
+
+  ```bash
+  s3cmd signurl s3://my-bucket/reports/report.pdf +3600
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="AWS CLI" icon="aws" >}}
+
+  ```bash
+  aws s3 presign s3://my-bucket/reports/report.pdf --expires-in 3600
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="RustFS CLI" icon="terminal" >}}
+
+  The RustFS CLI also creates upload URLs, with `--upload`:
+
+  ```bash
+  rc object share --expire 1h cellar/my-bucket/reports/report.pdf
+  rc object share --upload --expire 15m cellar/my-bucket/uploads/photo.jpg
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="rclone" icon="terminal" >}}
+
+  ```bash
+  rclone link --expire 1h cellar:my-bucket/reports/report.pdf
+  ```
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+### Sign URLs in your application
+
+These examples use the client of [your language](#use-cellar-from-your-application). They create a download URL valid for one hour, and an upload URL valid for 15 minutes:
+
+{{< tabs >}}
+
+  {{< tab name="Bun" icon="simple:bun" >}}
+
+  ```typescript
+  const downloadUrl = cellar.presign("reports/report.pdf", { expiresIn: 3600 });
+  const uploadUrl = cellar.presign("uploads/photo.jpg", { method: "PUT", expiresIn: 900 });
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="Node.js" icon="simple:nodedotjs" >}}
+
+  Install the `@aws-sdk/s3-request-presigner` package of the AWS SDK:
+
+  ```bash
+  npm install @aws-sdk/s3-request-presigner
+  ```
+
+  Then sign the URLs with the `s3` client:
+
+  ```javascript
+  import { GetObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
+  import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+
+  const downloadUrl = await getSignedUrl(
+    s3,
+    new GetObjectCommand({ Bucket: "my-bucket", Key: "reports/report.pdf" }),
+    { expiresIn: 3600 },
+  );
+  const uploadUrl = await getSignedUrl(
+    s3,
+    new PutObjectCommand({ Bucket: "my-bucket", Key: "uploads/photo.jpg" }),
+    { expiresIn: 900 },
+  );
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="Java" icon="java" >}}
+
+  `S3Presigner` signs the URLs with the `credentials` of the S3 client:
+
+  ```java
+  import software.amazon.awssdk.services.s3.presigner.S3Presigner;
+
+  import java.net.URL;
+  import java.time.Duration;
+
+  try (S3Presigner presigner = S3Presigner.builder()
+          .endpointOverride(URI.create("https://" + System.getenv("CELLAR_ADDON_HOST")))
+          .region(Region.US_EAST_1)
+          .credentialsProvider(credentials)
+          .build()) {
+      URL downloadUrl = presigner.presignGetObject(request -> request
+          .signatureDuration(Duration.ofHours(1))
+          .getObjectRequest(object -> object.bucket("my-bucket").key("reports/report.pdf"))).url();
+      URL uploadUrl = presigner.presignPutObject(request -> request
+          .signatureDuration(Duration.ofMinutes(15))
+          .putObjectRequest(object -> object.bucket("my-bucket").key("uploads/photo.jpg"))).url();
+  }
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="Python" icon="simple:python" >}}
+
+  ```python
+  download_url = s3.generate_presigned_url(
+      "get_object",
+      Params={"Bucket": "my-bucket", "Key": "reports/report.pdf"},
+      ExpiresIn=3600,
+  )
+  upload_url = s3.generate_presigned_url(
+      "put_object",
+      Params={"Bucket": "my-bucket", "Key": "uploads/photo.jpg"},
+      ExpiresIn=900,
+  )
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="Ruby" icon="ruby" >}}
+
+  ```ruby
+  presigner = Aws::S3::Presigner.new(client: s3)
+
+  download_url = presigner.presigned_url(:get_object, bucket: "my-bucket", key: "reports/report.pdf", expires_in: 3600)
+  upload_url = presigner.presigned_url(:put_object, bucket: "my-bucket", key: "uploads/photo.jpg", expires_in: 900)
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="Rust" icon="simple:rust" >}}
+
+  ```rust
+  use std::time::Duration;
+
+  use aws_sdk_s3::presigning::PresigningConfig;
+
+  let download_url = s3.get_object()
+      .bucket("my-bucket")
+      .key("reports/report.pdf")
+      .presigned(PresigningConfig::expires_in(Duration::from_secs(3600))?)
+      .await?;
+  let upload_url = s3.put_object()
+      .bucket("my-bucket")
+      .key("uploads/photo.jpg")
+      .presigned(PresigningConfig::expires_in(Duration::from_secs(900))?)
+      .await?;
+  println!("{}\n{}", download_url.uri(), upload_url.uri());
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="V" icon="simple:v" >}}
+
+  ```v
+  download_url := c.presign('reports/report.pdf', expires_in: 3600)!
+  upload_url := c.presign('uploads/photo.jpg', method: .put, expires_in: 900)!
+  ```
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+The client then sends the file to the upload URL, here in `UPLOAD_URL`, with its content type:
+
+```bash
+curl -T photo.jpg -H "Content-Type: image/jpeg" "$UPLOAD_URL"
+```
+
+### Check the integrity of uploads
+
+To check the integrity of an uploaded file, sign the URL with the MD5 checksum of its content. The client must then send this checksum in the `Content-MD5` header, and Cellar rejects the upload with a `BadDigest` error if the content doesn't match it.
+
+{{< tabs >}}
+
+  {{< tab name="Node.js" icon="simple:nodedotjs" >}}
+
+  This script uses the `s3` client of the [Node.js example](#use-cellar-from-your-application). `unhoistableHeaders` keeps `Content-MD5` in the signed headers:
+
+  ```javascript
+  import { createHash } from "node:crypto";
+  import { PutObjectCommand } from "@aws-sdk/client-s3";
+  import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+
+  const content = Buffer.from("hello world");
+  const md5 = createHash("md5").update(content).digest("base64");
+
+  const command = new PutObjectCommand({ Bucket: "my-bucket", Key: "uploads/hello.txt", ContentMD5: md5 });
+  const url = await getSignedUrl(s3, command, {
+    expiresIn: 3600,
+    unhoistableHeaders: new Set(["content-md5"]),
+  });
+  console.log(url);
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="Java" icon="java" >}}
+
+  This code uses the `presigner` of the [Java example](#sign-urls-in-your-application):
+
+  ```java
+  import java.security.MessageDigest;
+  import java.util.Base64;
+
+  byte[] content = "hello world".getBytes();
+  String md5 = Base64.getEncoder().encodeToString(MessageDigest.getInstance("MD5").digest(content));
+
+  URL url = presigner.presignPutObject(request -> request
+      .signatureDuration(Duration.ofHours(1))
+      .putObjectRequest(object -> object.bucket("my-bucket").key("uploads/hello.txt").contentMD5(md5))).url();
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="Python" icon="simple:python" >}}
+
+  This script uses the `s3` client of the [Python example](#use-cellar-from-your-application):
+
+  ```python
+  import base64
+  import hashlib
+
+  content = b"hello world"
+  md5 = base64.b64encode(hashlib.md5(content).digest()).decode()
+
+  url = s3.generate_presigned_url(
+      "put_object",
+      Params={"Bucket": "my-bucket", "Key": "uploads/hello.txt", "ContentMD5": md5},
+      ExpiresIn=3600,
+  )
+  print(url)
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="Ruby" icon="ruby" >}}
+
+  This code uses the `presigner` of the [Ruby example](#sign-urls-in-your-application):
+
+  ```ruby
+  require "digest"
+
+  md5 = Digest::MD5.base64digest("hello world")
+  url = presigner.presigned_url(:put_object, bucket: "my-bucket", key: "uploads/hello.txt", content_md5: md5, expires_in: 3600)
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="Rust" icon="simple:rust" >}}
+
+  Add the `md-5` and `base64` crates with `cargo add md-5 base64`. This code uses the `s3` client of the [Rust example](#use-cellar-from-your-application):
+
+  ```rust
+  use base64::{engine::general_purpose::STANDARD, Engine};
+  use md5::{Digest, Md5};
+
+  let md5 = STANDARD.encode(Md5::digest(b"hello world"));
+  let url = s3.put_object()
+      .bucket("my-bucket")
+      .key("uploads/hello.txt")
+      .content_md5(md5)
+      .presigned(PresigningConfig::expires_in(Duration::from_secs(3600))?)
+      .await?;
+  ```
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+The client then uploads the file with the URL and its checksum. Without the `Content-MD5` header, Cellar rejects the request with a `403` error:
+
+```bash
+printf 'hello world' > hello.txt
+curl -T hello.txt -H "Content-MD5: XrY7u+Ae7tCTyyK7j1rNww==" "$UPLOAD_URL"
+```
+
+Bun, V, and the [command-line clients](#create-urls-from-the-command-line) can't sign a checksum in their upload URLs, which then accept a file without the `Content-MD5` header. Cellar doesn't check the content against an `x-amz-checksum-sha256` checksum either: sign the URL with MD5.
+
+## Control access
+
+The credentials of the add-on grant full access to all its buckets: anyone who holds them can read, change, or delete your objects. Other requests can only read the objects you make public, or use [presigned URLs](#share-and-upload-files-with-presigned-urls).
+
+### Make objects public
+
+A public access control list (ACL) makes an object readable by anyone. Its URL holds the name of its bucket and its key, such as `https://my-bucket.cellar-c2.services.clever-cloud.com/images/logo.png`. These commands make an object public, then private again:
+
+{{< tabs >}}
+
+  {{< tab name="s3cmd" icon="terminal" >}}
+
+  ```bash
+  s3cmd put --acl-public logo.png s3://my-bucket/images/logo.png
+  s3cmd setacl --acl-private s3://my-bucket/images/logo.png
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="AWS CLI" icon="aws" >}}
+
+  ```bash
+  aws s3 cp --acl public-read logo.png s3://my-bucket/images/logo.png
+  aws s3api put-object-acl --bucket my-bucket --key images/logo.png --acl private
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="RustFS CLI" icon="terminal" >}}
+
+  The RustFS CLI sets an ACL with a header at upload. For a folder, it replaces the current [bucket policy](#public-bucket-policy), and `private` deletes it:
+
+  ```bash
+  rc put -H "x-amz-acl: public-read" logo.png cellar/my-bucket/images/logo.png
+  rc bucket anonymous set download cellar/my-bucket/images/
+  rc bucket anonymous set private cellar/my-bucket
+  ```
+
+  The RustFS CLI can't make an object private again: use s3cmd or the AWS CLI.
+
+  {{< /tab >}}
+
+  {{< tab name="rclone" icon="terminal" >}}
+
+  rclone also sends the `--s3-acl` value when it checks the bucket, which Cellar refuses: add `--s3-bucket-acl private`.
+
+  ```bash
+  rclone copyto --s3-acl public-read --s3-bucket-acl private logo.png cellar:my-bucket/images/logo.png
+  ```
+
+  rclone can't make an object private again: use s3cmd or the AWS CLI.
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+Cellar serves the object at its exact key, but doesn't serve `index.html` for a folder or the root of a bucket. To serve a static website with index files, and your domain over HTTPS, deploy it with the [Static](/doc/deploy/applications/static/) runtime.
+
+> [!NOTE] Public buckets
+> A `public-read` ACL on a bucket, such as `aws s3api create-bucket --acl public-read`, lets anyone list the names of its objects, without making them public. `rc bucket anonymous set download` on a whole bucket makes both public.
 
 ### Public bucket policy
 
-You can upload all your objects with a public ACL, but you can also make your whole bucket publicly available in read mode. No one can access the write permission without authentication.
+To make all the objects of a bucket readable by anyone, apply a bucket policy instead of public ACLs. Cellar supports [bucket policies](https://docs.ceph.com/en/latest/radosgw/bucketpolicy/) in the format of AWS S3. Replace `my-bucket` with the name of your bucket in this policy:
 
-> [!WARNING] Public objects
-> This makes all the objects of your bucket publicly readable. Make sure that it holds no object you don't want to expose.
-
-To set your bucket as public, you have to apply the following policy which you can save in a file named `policy.json`:
-
-```json
+```json {filename="policy.json",hl_lines=[8]}
 {
-  "Id": "Policy1587216857769",
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "Stmt1587216727444",
-      "Action": [
-        "s3:GetObject"
-      ],
       "Effect": "Allow",
-      "Resource": "arn:aws:s3:::<bucket-name>/*",
-      "Principal": "*"
+      "Principal": "*",
+      "Action": ["s3:GetObject"],
+      "Resource": "arn:aws:s3:::my-bucket/*"
     }
   ]
 }
 ```
 
-Replace the `<bucket-name>` with your bucket name in the policy file. Don't change the `Version` field to the current date, keep it as is.
+This policy exposes every object of the bucket, so make sure it holds nothing private. A bucket holds a single policy. To combine rules, such as public reads and a [grant to another add-on](#grant-access-to-another-add-on), list their statements in its `Statement` array.
 
-Now, you can set the policy to your bucket using s3cmd:
+These commands apply the policy, show it, and delete it to make the objects private again, except the objects you uploaded with a public ACL:
 
-```bash
-s3cmd setpolicy ./policy.json s3://<bucket-name>
-```
+{{< tabs >}}
 
-💡 If you encounter errors, you might need to specify the [configuration file path](#download-the-configuration-file):
+  {{< tab name="s3cmd" icon="terminal" >}}
 
-```bash
-s3cmd setpolicy ./policy.json -c path/to/s3cfg.txt s3://<bucket-name>
-```
+  ```bash
+  s3cmd setpolicy policy.json s3://my-bucket
+  s3cmd info s3://my-bucket
+  s3cmd delpolicy s3://my-bucket
+  ```
 
-All of your objects should now be publicly accessible.
+  {{< /tab >}}
 
-If needed, you can delete this policy by using:
+  {{< tab name="AWS CLI" icon="aws" >}}
 
-```bash
-s3cmd delpolicy s3://<bucket-name>
-```
+  ```bash
+  aws s3api put-bucket-policy --bucket my-bucket --policy file://policy.json
+  aws s3api get-bucket-policy --bucket my-bucket
+  aws s3api delete-bucket-policy --bucket my-bucket
+  ```
 
-The original ACL should apply to all of your objects after that.
+  {{< /tab >}}
 
-### IP restrictions
+  {{< tab name="RustFS CLI" icon="terminal" >}}
 
-If you need to restrict your S3 Cellar to certain IPs, you can use a policy. To do so, you can use the template below in a `policy.json` file. This example show how to block actions from any IP that isn't `192.168.1.6`.
+  ```bash
+  rc bucket anonymous set-json policy.json cellar/my-bucket
+  rc bucket anonymous get-json cellar/my-bucket
+  rc bucket anonymous set private cellar/my-bucket
+  ```
 
-- Replace the `<bucket-name>` with your bucket name in the policy file.
-- Change the `Effect` to `Allow` or `Deny` depending on your needs.
-- Change the IP address under `Condition` to select which IP should trigger the rule.
+  {{< /tab >}}
 
-```json {filename="IP-restriction-policy.json"}
+{{< /tabs >}}
+
+rclone doesn't manage bucket policies.
+
+### Restrict access to IP addresses
+
+This policy denies the reads, writes, and listings that don't come from `203.0.113.10`, previous versions included. It also applies to the add-on credentials, your applications, and the Cellar Explorer. Replace the address and `my-bucket`, then [apply it](#public-bucket-policy):
+
+```json {filename="ip-policy.json",hl_lines=[11,13]}
 {
-    "Version": "2012-10-17",
-    "Id": "S3PolicyIPRestrict",
-    "Statement": [
-        {
-            "Sid": "IPAllow",
-            "Effect": "Deny",
-            "Principal": {
-                "AWS": "*"
-            },
-            "Action": "s3:*",
-            "Resource": [
-                "arn:aws:s3:::<bucket>",
-                "arn:aws:s3:::<bucket>/*"
-            ],
-            "Condition" : {
-                "IpAddress" : {
-                    "aws:SourceIp": ["0.0.0.0/0"]
-                },
-                "NotIpAddress": {
-                    "aws:SourceIp": ["192.168.1.6/32"]
-                }
-            }
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "s3:GetObject", "s3:GetObjectVersion", "s3:ListBucket", "s3:ListBucketVersions",
+        "s3:PutObject", "s3:DeleteObject", "s3:DeleteObjectVersion"
+      ],
+      "Resource": ["arn:aws:s3:::my-bucket", "arn:aws:s3:::my-bucket/*"],
+      "Condition": {
+        "NotIpAddress": { "aws:SourceIp": ["203.0.113.10/32"] }
+      }
+    }
+  ]
 }
 ```
 
-To apply the policy, use this command:
+> [!TIP] Keep access to the policy
+> A `Deny` on `s3:*` also blocks the changes to the policy, and locks you out of the bucket. List the actions to deny instead, as this policy does: you can then delete the policy from any address.
 
-```text
-s3cmd setpolicy ./policy.json s3://<bucket-name>
-```
+### Grant access to another add-on
 
-To delete the policy, use this command:
+Cellar doesn't create other users for an add-on. To give a person or an application limited access to a bucket, create a second Cellar add-on and give them its credentials. Then grant access to this second add-on in a policy on your bucket.
 
-```text
-s3cmd delpolicy ./policy.json s3://<bucket-name>
-```
+The policy names the second add-on by its ID, which starts with `cellar_`. Clever Tools shows it as `Real ID` when it creates the add-on, and `clever addon list --format json` returns it as `realId`. This policy grants read-only access to `my-bucket`:
 
-### User access
-
-Cellar doesn't natively support creating different user accesses for the same add-on. Granting access to your Cellar add-on grants full access to all of your buckets. To grant limited access to a bucket, do the following:
-
-1. Create your main Cellar add-on (we'll call it `Cellar-1`)
-2. Download `Cellar 1` s3cfg file
-3. Create a second Cellar add-on (we'll call it `Cellar-2`)
-4. Get the `ADDON ID` from `Cellar-2` dashboard (it should look like `cellar_xxx`)
-5. Create a policy for `Cellar-1` and inject the `ADDON ID` from `Cellar-2` as the user.
-
-Now, you can pass `Cellar-2` credentials to a third party to grant read-only access to `Cellar-1` buckets.
-
-#### Read-only policy example
-
-This policy example grants read-only access to a bucket for another user, using the preceding procedure.
-
-```json {filename="read-only-policy.json"}
+```json {filename="read-only-policy.json",hl_lines=[6,8]}
 {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Action": [
-          "s3:GetObject",
-          "s3:ListBucket"
-        ],
-        "Effect": "Allow",
-        "Resource": [
-          "arn:aws:s3:::<bucket-name>",
-          "arn:aws:s3:::<bucket-name>/*"
-        ],
-        "Principal": {"AWS": "arn:aws:iam:::user/<cellar_xxx>"}
-
-      }
-    ]
-  }
-
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": { "AWS": "arn:aws:iam:::user/cellar_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" },
+      "Action": ["s3:GetObject", "s3:ListBucket"],
+      "Resource": ["arn:aws:s3:::my-bucket", "arn:aws:s3:::my-bucket/*"]
+    }
+  ]
+}
 ```
 
-Replace the `<bucket-name>` with your bucket name and `<cellar_xxx>` with the ID of the cellar to which you want to grant read-only access.
+Apply it with the credentials of the first add-on, which owns the bucket. rclone doesn't manage bucket policies:
 
-Set the policy to your bucket using s3cmd:
+{{< tabs >}}
 
-```bash
-s3cmd --config=<path/to/s3cfg-file> setpolicy ./policy.json s3://<bucket-name>
-```
+  {{< tab name="s3cmd" icon="terminal" >}}
 
-💡Download the [configuration file from Clever Cloud](#download-the-configuration-file):
+  ```bash
+  s3cmd setpolicy read-only-policy.json s3://my-bucket
+  ```
 
-```bash
-s3cmd setpolicy ./policy.json -c path/to/s3cfg.txt s3://<bucket-name>
-````
+  {{< /tab >}}
 
-## CORS Configuration
+  {{< tab name="AWS CLI" icon="aws" >}}
 
-You can set a [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) configuration on your buckets if you need to share resources on websites that don't have the same origin as the one you are using.
+  ```bash
+  aws s3api put-bucket-policy --bucket my-bucket --policy file://read-only-policy.json
+  ```
 
-Each CORS configuration can contain multiple rules, defined in an XML document:
+  {{< /tab >}}
 
-```xml
+  {{< tab name="RustFS CLI" icon="terminal" >}}
+
+  ```bash
+  rc bucket anonymous set-json read-only-policy.json cellar/my-bucket
+  ```
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+The second add-on can then list and download the objects of `my-bucket`, but not change them. The bucket doesn't appear in its list of buckets, so name it in each request, such as `s3cmd -c reader.s3cfg ls s3://my-bucket` with the `s3cfg` file of the second add-on.
+
+## Serve a bucket on your domain
+
+To serve public objects on your own domain, such as `cdn.example.com`, create a bucket with this exact name, then a CNAME record from this domain to `cellar-c2.services.clever-cloud.com.`. Cellar serves this domain over HTTP only, without a certificate: for HTTPS, serve your files from an application, such as the [Static](/doc/deploy/applications/static/) runtime.
+
+Bucket names with dots don't match the certificate of Cellar. The AWS CLI, the RustFS CLI, and rclone switch to the path style for them:
+
+{{< tabs >}}
+
+  {{< tab name="s3cmd" icon="terminal" >}}
+
+  s3cmd needs the path style, with `--host-bucket`:
+
+  ```bash
+  s3cmd --host-bucket=cellar-c2.services.clever-cloud.com mb s3://cdn.example.com
+  s3cmd --host-bucket=cellar-c2.services.clever-cloud.com put --acl-public logo.png s3://cdn.example.com/logo.png
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="AWS CLI" icon="aws" >}}
+
+  ```bash
+  aws s3 mb s3://cdn.example.com
+  aws s3 cp --acl public-read logo.png s3://cdn.example.com/logo.png
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="RustFS CLI" icon="terminal" >}}
+
+  Make the objects public with a [bucket policy](#public-bucket-policy) on `cdn.example.com`:
+
+  ```bash
+  rc bucket create cellar/cdn.example.com
+  rc put logo.png cellar/cdn.example.com/logo.png
+  rc bucket anonymous set-json policy.json cellar/cdn.example.com
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="rclone" icon="terminal" >}}
+
+  ```bash
+  rclone mkdir cellar:cdn.example.com
+  rclone copyto --s3-acl public-read --s3-bucket-acl private logo.png cellar:cdn.example.com/logo.png
+  ```
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+## Configure CORS
+
+To let browsers call your bucket from the pages of another origin, such as uploads from your website, set a [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) configuration on it. Each configuration holds one or several rules, in an XML file:
+
+```xml {filename="cors.xml"}
 <CORSConfiguration>
   <CORSRule>
-    <AllowedOrigin>console.clever-cloud.com</AllowedOrigin>
+    <AllowedOrigin>https://www.example.com</AllowedOrigin>
     <AllowedMethod>PUT</AllowedMethod>
     <AllowedMethod>POST</AllowedMethod>
     <AllowedMethod>DELETE</AllowedMethod>
@@ -648,217 +1196,198 @@ Each CORS configuration can contain multiple rules, defined in an XML document:
 </CORSConfiguration>
 ```
 
-Here this configuration has two `CORS` rules:
+The first rule accepts `PUT`, `POST`, and `DELETE` requests from `https://www.example.com`, with any header, and lets the browser read the `ETag` header of the response. The second accepts `GET` requests from any origin, and lets browsers cache their preflight requests for an hour.
 
-- The first rule allows cross-origin requests from the `console.clever-cloud.com` origin. Allowed cross-origin request methods are `PUT`, `POST` and `DELETE`. Using `AllowedHeaders *` allows all headers specified in the preflight `OPTIONS` request in the `Access-Control-Request-Headers` header. At the end, the `ExposeHeader` allows the client to access the `ETag` header in the response it received.
-- The second one allows cross-origin `GET` requests for all origins. The `MaxAgeSeconds` directive tells the browser how much time (in seconds) it should cache the response of a preflight `OPTIONS` request for this particular resource.
-
-> [!WARNING] CORS updates replace the configuration
-> The new CORS configuration replaces the old one. Save the old one before you update it, if you may need to roll back.
-
-{{% steps %}}
-
-### View and save your current CORS configuration
-
-To view and save your current CORS configuration, you can use `s3cmd info`:
-
-```bash
-s3cmd -c s3cfg -s info s3://your-bucket
-```
-
-### Set the CORS configuration
-
-You can then set this CORS configuration using `s3cmd`:
-
-```bash
-s3cmd -c s3cfg -s setcors ./cors.xml s3://your-bucket
-```
-
-If you need to **rollback**, you can either set the old configuration or completely drop it:
-
-```bash
-s3cmd -c s3cfg -s delcors s3://your-bucket
-```
-
-{{% /steps %}}
-
-## Static hosting
-
-You can use a bucket to host your static website, this [blog post](https://www.clever.cloud/blog/engineering/2020/06/24/deploy-cellar-s3-static-site/) describes how to. Be aware that SPA applications won't work because Clever Cloud proxy serving the bucket needs to find an HTML file that match the route.
-
-For example if your path is `/login` you need to have a file `login.html` because the `index.html` isn't the default entrypoint to handle the path.
-
-You may use SSG (Static Site Generated) to  dynamically generate your content during your build.
-
-## Versioning
-
-### What is bucket versioning
-
-Versioning enables you to store multiple versions of an object in your bucket. When you upload a file with the same name as an existing one, Cellar automatically saves the previous version of that object. This safeguards your data against accidental actions, such as deleting a file by mistake.
-
-Only the latest version of a file is visible, while previous versions remain hidden but securely stored in the bucket. This ensures you can easily restore an earlier version if needed.
-
-### How does versioning work
-
-Versioning can't be enabled for a single file: it will cover the entire bucket. A bucket can be in one of three state :
-
-- Unversioned (The default)
-- Versioning-enabled
-- Versioning-suspended
-
-You enable and suspend versioning at the bucket level. Once you enable versioning on a bucket, it can never return to an unversioned state. But you can suspend versioning on that bucket at any time. Once versioning is enabled, any object you add have a unique version ID. Object that were already existing before enabling versioning have a version ID of `null`.
-
-For that reason, we do recommend you to enable versioning when creating a new bucket. It will be easier to navigate through version IDs.
-
-> [!WARNING]
-> Versioning can quickly take up a lot of space since multiple version of an object are stored in the bucket.
+Setting a configuration replaces the previous one, so save the current one first. These commands show, apply, and delete a configuration:
 
 {{< tabs >}}
 
-  {{< tab name="MinIO" icon="simple:minio" >}}
+  {{< tab name="s3cmd" icon="terminal" >}}
 
-  To use [minIO](https://min.io/docs/minio/linux/reference/minio-mc.html#command-mc), you must create an alias.
-
-  ```sh
-  mc alias set <ALIAS_NAME> https://cellar-c2.services.clever-cloud.com <ACCESS_KEY> <SECRET_KEY>
-  ```
-
-### Activate versioning with MinIO
-
-  To activate versioning, you can use MinIO and the following command.
-
-  ```sh
-  mc version enable <alias>/<bucket-name>
-  ```
-
-  If you want to suspend versioning, you can replace `enable` by `suspend`
-
-  You can check that versioning is enabled for your bucket with :
-
-  ```sh
-  mc version info <alias>/<bucket-name> --json
-  ```
-
-### How to use versioning with AWS CLI
-
-When versioning is enabled, the newly added object is automatically provided with a unique identifier. Only the latest version of an object is shown with a `mc ls <alias>/<bucket-name>`.
-
-#### List versioned objects
-
-  If you need to list all the object in your bucket, including the different versions of the files stored in it, you can run :
-
-  ```sh
-  mc ls --versions --recursive <alias>/<bucket-name>
-  ```
-
-  You can list all the version of a specific file with
-
-  ```sh
-  mc ls --versions <alias>/<bucket-name>/<object_name>
-  ```
-
-#### Get a version of an object
-
-  You can get the specific version of an object using its version ID obtained using the previous command.
-
-  ```sh
-  mc get --vid <version_id> <alias>/<bucket-name>/<object_name> <path/to/save/file>
-  ```
-
-#### Delete a version of an object
-
-  You can delete the specific version of an object using its version ID.
-
-  ```sh
-  mc rm --vid <version_id> <alias>/<bucket-name>/<object_name>
+  ```bash
+  s3cmd info s3://my-bucket
+  s3cmd setcors cors.xml s3://my-bucket
+  s3cmd delcors s3://my-bucket
   ```
 
   {{< /tab >}}
 
   {{< tab name="AWS CLI" icon="aws" >}}
 
-  The following command assumes you have configured your AWS CLI and added an alias as shown earlier in the section [Creating a bucket with AWS CLI](/doc/deploy/storage/cellar/#with-aws-cli)
+  The AWS CLI reads the same rules in JSON:
 
-### Activate versioning with AWS CLI
-
-  To activate versioning, you can use AWS CLI. You can use the following command to enable it on a bucket.
-
-  ```sh
-  aws s3api put-bucket-versioning --bucket <bucket_name> --versioning-configuration Status=Enabled
+  ```json {filename="cors.json"}
+  {
+    "CORSRules": [
+      {
+        "AllowedOrigins": ["https://www.example.com"],
+        "AllowedMethods": ["PUT", "POST", "DELETE"],
+        "AllowedHeaders": ["*"],
+        "ExposeHeaders": ["ETag"]
+      },
+      {
+        "AllowedOrigins": ["*"],
+        "AllowedMethods": ["GET"],
+        "MaxAgeSeconds": 3600
+      }
+    ]
+  }
   ```
 
-  If you want to turn off versioning, you can use the following:
-
-  ```sh
-  aws s3api put-bucket-versioning --bucket <bucket_name> --versioning-configuration Status=Suspended
+  ```bash
+  aws s3api get-bucket-cors --bucket my-bucket
+  aws s3api put-bucket-cors --bucket my-bucket --cors-configuration file://cors.json
+  aws s3api delete-bucket-cors --bucket my-bucket
   ```
 
-  You can check if versioning is enabled on your bucket with :
+  {{< /tab >}}
 
-  ```sh
-  aws s3api get-bucket-versioning --bucket <bucket_name>
+  {{< tab name="RustFS CLI" icon="terminal" >}}
+
+  ```bash
+  rc bucket cors list cellar/my-bucket
+  rc bucket cors set cellar/my-bucket cors.xml
+  rc bucket cors remove cellar/my-bucket
   ```
 
-### How to use versioning
-
-  When versioning is enabled, the added object automatically gets a versionID. Only the latest version of an object if shown.
-
-#### List all versioned Object
-
-  If you need to list all the objects in your bucket, including the different versions of the files stored in it, you can use :
-
-  ```sh
-  aws s3api list-object-versions --bucket <bucket_name>
-  ```
-
-#### List all the version of a specific Object
-
-  If you want to check the different versions of a specific object, you can use the following command. In this example, we find the versions of test.txt :
-
-  ```sh
-  aws s3api list-object-versions --bucket <bucket_name> --prefix <file_name>
-  ```
-
-#### Get the version of an Object
-
-  If you want to retrieve the previous version of an object, you need the versionID that you can get with any of the two previous command. You can use :
-
-  ```sh
-  aws s3api get-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name> /path/to/save/file/copy/test.txt
-  ```
-
-#### Delete the version of an object
-
-  To remove a version of an object, you can use this command :
-
-  ```sh
-  aws s3api delete-object --bucket <bucket_name> --version-id '<version_id>' --key <file_name>
-  ```
-
-{{< /tab >}}
+  {{< /tab >}}
 
 {{< /tabs >}}
 
-## Object Lock
+rclone doesn't manage CORS configurations.
 
-Cellar supports [S3 Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html), which protects individual object versions from permanent deletion or modification with a [write-once-read-many (WORM)](https://en.wikipedia.org/wiki/Write_once_read_many) model. It can reduce the risk of accidental or malicious deletion and enforce data-retention policies.
+## Versioning
 
-Using Object Lock requires two steps. First, enable the feature when you create the bucket; Cellar doesn't allow you to add it later. This automatically activates [versioning](#versioning), which you can no longer suspend. Second, choose how to protect object versions:
+Versioning keeps the previous versions of each object, when you replace or delete it, so that you can restore them. It applies to a whole bucket, and Cellar stores each version: they count in the storage of the add-on.
 
-- Set a default retention period for every new version
-- Apply a retention period or legal hold only to selected versions
-
-Until you complete this second step, Object Lock doesn't protect any objects.
-
-### Create a bucket with Object Lock
-
-The following examples create `my-locked-bucket` with Object Lock enabled. Replace the bucket name with your own value.
+A bucket is unversioned when you create it. Once you enable versioning, you can suspend it, but the bucket never becomes unversioned again. Objects stored before you enable it have the `null` version ID.
 
 {{< tabs >}}
 
   {{< tab name="s3cmd" icon="terminal" >}}
 
-  This command assumes you have [configured s3cmd](#with-s3cmd). s3cmd doesn't provide a dedicated option for Object Lock at bucket creation, but you can add a specific header to enable it:
+  s3cmd enables versioning, and `info` shows its status. `disable` suspends it:
+
+  ```bash
+  s3cmd setversioning s3://my-bucket enable
+  s3cmd info s3://my-bucket
+  s3cmd setversioning s3://my-bucket disable
+  ```
+
+  s3cmd can't list, download, or restore the versions of an object: use the RustFS CLI or the AWS CLI for these operations.
+
+  {{< /tab >}}
+
+  {{< tab name="AWS CLI" icon="aws" >}}
+
+  These commands use the [`cellar` profile](#configure-an-s3-client). Enable versioning, suspend it, or check its status:
+
+  ```bash
+  aws s3api put-bucket-versioning --bucket my-bucket --versioning-configuration Status=Enabled
+  aws s3api put-bucket-versioning --bucket my-bucket --versioning-configuration Status=Suspended
+  aws s3api get-bucket-versioning --bucket my-bucket
+  ```
+
+  List the versions of the objects of a bucket, or of the objects with a given prefix:
+
+  ```bash
+  aws s3api list-object-versions --bucket my-bucket
+  aws s3api list-object-versions --bucket my-bucket --prefix report.pdf
+  ```
+
+  Download a version by its ID, here the version before the latest one:
+
+  ```bash
+  VERSION_ID=$(aws s3api list-object-versions --bucket my-bucket --prefix report.pdf \
+    --query 'Versions[?IsLatest==`false`] | [0].VersionId' --output text)
+  aws s3api get-object --bucket my-bucket --key report.pdf --version-id "$VERSION_ID" report-previous.pdf
+  ```
+
+  Deleting an object without a version ID adds a delete marker, which hides the object but keeps its versions. To restore the object, delete this marker by its version ID. Delete a version the same way:
+
+  ```bash
+  MARKER_ID=$(aws s3api list-object-versions --bucket my-bucket --prefix report.pdf \
+    --query 'DeleteMarkers[?IsLatest==`true`] | [0].VersionId' --output text)
+  aws s3api delete-object --bucket my-bucket --key report.pdf --version-id "$MARKER_ID"
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="RustFS CLI" icon="terminal" >}}
+
+  These commands use the [`cellar` alias](#configure-an-s3-client). Enable versioning, check its status, or suspend it:
+
+  ```bash
+  rc bucket version enable cellar/my-bucket
+  rc bucket version info cellar/my-bucket
+  rc bucket version suspend cellar/my-bucket
+  ```
+
+  List the versions of the objects of a bucket, or of one object:
+
+  ```bash
+  rc object list --versions --recursive cellar/my-bucket
+  rc bucket version list cellar/my-bucket/report.pdf
+  ```
+
+  Download a version by its ID, here the version before the latest one, which [jq](https://jqlang.org) extracts from the JSON output:
+
+  ```bash
+  VERSION_ID=$(rc --json bucket version list cellar/my-bucket/report.pdf \
+    | jq -r '[.[] | select(.is_latest | not)][0].version_id')
+  rc get --version-id "$VERSION_ID" cellar/my-bucket/report.pdf report-previous.pdf
+  ```
+
+  Deleting an object adds a delete marker, which hides it but keeps its versions. `undo` removes this marker:
+
+  ```bash
+  rc undo cellar/my-bucket/report.pdf
+  ```
+
+  Delete a version by its ID:
+
+  ```bash
+  rc object remove --version-id "$VERSION_ID" cellar/my-bucket/report.pdf
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="rclone" icon="terminal" >}}
+
+  These commands use the [`cellar` remote](#configure-an-s3-client). Enable versioning, check its status, or suspend it:
+
+  ```bash
+  rclone backend versioning cellar:my-bucket Enabled
+  rclone backend versioning cellar:my-bucket
+  rclone backend versioning cellar:my-bucket Suspended
+  ```
+
+  With `--s3-versions`, rclone lists the previous versions with their date in their name. Download one of them by this name:
+
+  ```bash
+  rclone ls --s3-versions cellar:my-bucket
+  rclone copyto --s3-versions cellar:my-bucket/report-v2026-11-24-083351-569.pdf report-previous.pdf
+  ```
+
+  rclone can't remove a delete marker: restore a deleted object with the RustFS CLI or the AWS CLI.
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+## Object Lock
+
+Cellar supports [S3 Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html), which protects object versions from deletion or replacement with a [write-once-read-many (WORM)](https://en.wikipedia.org/wiki/Write_once_read_many) model. It reduces the risk of accidental or malicious deletion, and enforces retention policies.
+
+Enable Object Lock when you create the bucket: Cellar doesn't accept it on an existing bucket. It enables [versioning](#versioning), which you can't suspend on this bucket. Object Lock protects no object until you set a default retention period, or protect some object versions yourself.
+
+### Create a bucket with Object Lock
+
+{{< tabs >}}
+
+  {{< tab name="s3cmd" icon="terminal" >}}
+
+  s3cmd has no Object Lock option for buckets, but sends the header that enables it:
 
   ```bash
   s3cmd --add-header=x-amz-bucket-object-lock-enabled:true mb s3://my-locked-bucket
@@ -866,30 +1395,27 @@ The following examples create `my-locked-bucket` with Object Lock enabled. Repla
 
   {{< /tab >}}
 
-  {{< tab name="MinIO" icon="simple:minio" >}}
-
-  This command assumes you have [configured a MinIO alias](#activate-versioning-with-minio) named `my-cellar`:
+  {{< tab name="AWS CLI" icon="aws" >}}
 
   ```bash
-  mc mb --with-lock my-cellar/my-locked-bucket
+  aws s3api create-bucket --bucket my-locked-bucket --object-lock-enabled-for-bucket
   ```
-
-  See the MinIO documentation for [`mc mb`](https://docs.min.io/community/minio-object-store/reference/minio-mc/mc-mb.html).
 
   {{< /tab >}}
 
-  {{< tab name="AWS CLI" icon="aws" >}}
-
-  This command assumes you have [configured your AWS CLI credentials](#with-aws-cli):
+  {{< tab name="RustFS CLI" icon="terminal" >}}
 
   ```bash
-  aws s3api create-bucket \
-    --bucket my-locked-bucket \
-    --object-lock-enabled-for-bucket \
-    --endpoint-url https://cellar-c2.services.clever-cloud.com
+  rc bucket create --with-lock cellar/my-locked-bucket
   ```
 
-  See the AWS CLI documentation for [`create-bucket`](https://docs.aws.amazon.com/cli/latest/reference/s3api/create-bucket.html).
+  {{< /tab >}}
+
+  {{< tab name="rclone" icon="terminal" >}}
+
+  ```bash
+  rclone mkdir --s3-bucket-object-lock-enabled cellar:my-locked-bucket
+  ```
 
   {{< /tab >}}
 
@@ -897,50 +1423,91 @@ The following examples create `my-locked-bucket` with Object Lock enabled. Repla
 
 ### Set a default retention period
 
-The following examples complete the configuration by protecting every new object version for 30 days in Governance mode. s3cmd can't configure a default retention period, so use MinIO or AWS CLI for this step.
+These commands protect each new version for 30 days, in governance mode. With s3cmd and rclone, [protect each version](#protect-a-version) instead.
 
 {{< tabs >}}
-
-  {{< tab name="MinIO" icon="simple:minio" >}}
-
-  ```bash
-  mc retention set --default governance 30d my-cellar/my-locked-bucket
-  mc retention info --default my-cellar/my-locked-bucket
-  ```
-
-  See the MinIO documentation for [`mc retention`](https://docs.min.io/community/minio-object-store/reference/minio-mc/mc-retention.html).
-
-  {{< /tab >}}
 
   {{< tab name="AWS CLI" icon="aws" >}}
 
   ```bash
   aws s3api put-object-lock-configuration \
     --bucket my-locked-bucket \
-    --object-lock-configuration '{"ObjectLockEnabled":"Enabled","Rule":{"DefaultRetention":{"Mode":"GOVERNANCE","Days":30}}}' \
-    --endpoint-url https://cellar-c2.services.clever-cloud.com
-
-  aws s3api get-object-lock-configuration \
-    --bucket my-locked-bucket \
-    --endpoint-url https://cellar-c2.services.clever-cloud.com
+    --object-lock-configuration '{"ObjectLockEnabled":"Enabled","Rule":{"DefaultRetention":{"Mode":"GOVERNANCE","Days":30}}}'
+  aws s3api get-object-lock-configuration --bucket my-locked-bucket
   ```
 
-  See the AWS CLI documentation for [`put-object-lock-configuration`](https://docs.aws.amazon.com/cli/latest/reference/s3api/put-object-lock-configuration.html).
+  {{< /tab >}}
+
+  {{< tab name="RustFS CLI" icon="terminal" >}}
+
+  ```bash
+  rc bucket lock set --mode governance --days 30 cellar/my-locked-bucket
+  rc bucket lock info cellar/my-locked-bucket
+  ```
 
   {{< /tab >}}
 
 {{< /tabs >}}
 
-Object Lock provides two retention modes:
+Object Lock has two retention modes:
 
-- **Governance** prevents deletion or retention changes unless a client with the required permission explicitly bypasses the protection. Use it when authorized operators must retain an override capability.
-- **Compliance** can't be bypassed through the S3 API and prevents deletion or retention-period reductions before expiry. Use it only after validating the policy and duration.
+- **Governance**: only requests that bypass this mode can delete a version or shorten its retention
+- **Compliance**: no request can delete a version or shorten its retention before it expires
 
-The default rule applies to object versions uploaded after you configure it. To protect an existing version, set retention directly on that version. Overwriting an object creates another version, while deleting it without a version ID can add a delete marker. The protected version remains stored and recoverable.
+To bypass the governance mode, add these options to your commands. s3cmd can't bypass it.
+
+- AWS CLI: `--bypass-governance-retention`
+- rclone: `--s3-bypass-governance-retention`
+- RustFS CLI: `--bypass`
+
+Replacing an object or deleting it without a version ID keeps the protected version, which you can restore.
+
+### Protect a version
+
+The default retention applies to the versions you upload after setting it. To protect an existing version, set its own retention, until a date of your choice. The RustFS CLI fails on this operation with Cellar.
+
+{{< tabs >}}
+
+  {{< tab name="s3cmd" icon="terminal" >}}
+
+  ```bash
+  s3cmd setobjectretention GOVERNANCE 2027-12-31T00:00:00Z s3://my-locked-bucket/report.pdf
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="AWS CLI" icon="aws" >}}
+
+  Add `--version-id` to protect another version than the latest one:
+
+  ```bash
+  aws s3api put-object-retention \
+    --bucket my-locked-bucket \
+    --key report.pdf \
+    --retention '{"Mode":"GOVERNANCE","RetainUntilDate":"2027-12-31T00:00:00Z"}'
+  aws s3api get-object-retention --bucket my-locked-bucket --key report.pdf
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="rclone" icon="terminal" >}}
+
+  rclone protects the files it uploads, for a duration or until a date:
+
+  ```bash
+  rclone copyto \
+    --s3-object-lock-mode GOVERNANCE \
+    --s3-object-lock-retain-until-date 30d \
+    report.pdf cellar:my-locked-bucket/report.pdf
+  ```
+
+  {{< /tab >}}
+
+{{< /tabs >}}
 
 ### Hold an object without an expiration date
 
-A legal hold protects one object version until an authorized user explicitly removes the hold. It is independent of any fixed retention period. The following examples enable and disable a legal hold on the current version of `report.pdf`.
+A legal hold protects an object version until you remove it, whatever its retention. These commands set and remove a hold on `report.pdf`:
 
 {{< tabs >}}
 
@@ -953,35 +1520,34 @@ A legal hold protects one object version until an authorized user explicitly rem
 
   {{< /tab >}}
 
-  {{< tab name="MinIO" icon="simple:minio" >}}
-
-  ```bash
-  mc legalhold set my-cellar/my-locked-bucket/report.pdf
-  mc legalhold info my-cellar/my-locked-bucket/report.pdf
-  mc legalhold clear my-cellar/my-locked-bucket/report.pdf
-  ```
-
-  Use `--version-id` to target a specific version. See the [`mc legalhold` documentation](https://docs.min.io/community/minio-object-store/reference/minio-mc/mc-legalhold.html) for recursive and version-specific operations.
-
-  {{< /tab >}}
-
   {{< tab name="AWS CLI" icon="aws" >}}
 
   ```bash
-  aws s3api put-object-legal-hold \
-    --bucket my-locked-bucket \
-    --key report.pdf \
-    --legal-hold Status=ON \
-    --endpoint-url https://cellar-c2.services.clever-cloud.com
-
-  aws s3api put-object-legal-hold \
-    --bucket my-locked-bucket \
-    --key report.pdf \
-    --legal-hold Status=OFF \
-    --endpoint-url https://cellar-c2.services.clever-cloud.com
+  aws s3api put-object-legal-hold --bucket my-locked-bucket --key report.pdf --legal-hold Status=ON
+  aws s3api put-object-legal-hold --bucket my-locked-bucket --key report.pdf --legal-hold Status=OFF
   ```
 
-  See the AWS CLI documentation for [`put-object-legal-hold`](https://docs.aws.amazon.com/cli/latest/reference/s3api/put-object-legal-hold.html).
+  {{< /tab >}}
+
+  {{< tab name="RustFS CLI" icon="terminal" >}}
+
+  ```bash
+  rc legalhold set cellar/my-locked-bucket/report.pdf
+  rc legalhold info cellar/my-locked-bucket/report.pdf
+  rc legalhold clear cellar/my-locked-bucket/report.pdf
+  ```
+
+  Add `--version-id` to target another version than the latest one.
+
+  {{< /tab >}}
+
+  {{< tab name="rclone" icon="terminal" >}}
+
+  rclone sets a legal hold on the files it uploads. Remove it with another client:
+
+  ```bash
+  rclone copyto --s3-object-lock-legal-hold-status ON report.pdf cellar:my-locked-bucket/report.pdf
+  ```
 
   {{< /tab >}}
 
@@ -989,15 +1555,17 @@ A legal hold protects one object version until an authorized user explicitly rem
 
 ## Server-side encryption with customer keys (SSE-C)
 
-Cellar supports [server-side encryption with customer-provided keys (SSE-C)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html). You provide a 256-bit AES key when you upload an object with SSE-C, and the same key when you download it. Cellar uses it to encrypt the object before storing it and to decrypt it when you read it back, but doesn't keep the key. Without it, nobody can read the object through the S3 API, even with the add-on credentials.
+Cellar supports [server-side encryption with customer-provided keys (SSE-C)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html). You send a 256-bit key for the Advanced Encryption Standard (AES) with each upload and download of an object. Cellar encrypts the object with it, and decrypts it when you read it back, but doesn't keep the key. Without it, nobody can read the object, even with the add-on credentials.
 
-Encryption applies per object, so a bucket can mix objects encrypted with SSE-C and objects stored without it. Supply the same key to `GetObject`, `HeadObject` and `GetObjectAttributes` requests for an encrypted object. Cellar returns a `400` error if the key is missing or incorrect. For the same reason, a presigned URL alone isn't enough to download an encrypted object.
+Encryption applies per object, so a bucket can mix objects encrypted with SSE-C and objects stored without it. Supply the same key to `GetObject`, `HeadObject`, and `GetObjectAttributes` requests for an encrypted object. Cellar returns a `400` error if the key is missing or incorrect. For the same reason, a presigned URL alone isn't enough to download an encrypted object.
 
-SSE-C protects the content of an object, not the object itself. With the add-on credentials, you can still list, overwrite or delete an encrypted object without its key.
+SSE-C protects the content of an object, not its existence: the add-on credentials still list, overwrite, or delete it without the key.
 
-Cellar only accepts SSE-C requests over HTTPS. It rejects `CopyObject` requests with an SSE-C source, so server-side copies, renames and moves of encrypted objects can fail. Commands such as `aws s3 mv` and `rclone moveto` only succeed on objects large enough to trigger a multipart copy with the same key. A copy request can't change the key of an object either. To rename an encrypted object or change its key, download it and upload it again.
+Cellar only accepts SSE-C requests over HTTPS. It rejects `CopyObject` requests with an SSE-C source, so copies, renames, and moves of encrypted objects can fail. `aws s3 mv` and `rclone moveto` fail on small objects, and only move large ones, which they copy in parts.
 
-> [!WARNING] Keep your key safe
+A copy request can't change the key of an object either. To rename an encrypted object or change its key, download it, then upload it again.
+
+> [!NOTE] Keep your key safe
 > Cellar can't decrypt an object without its key. If you lose the key, you lose access to every object encrypted with it.
 
 Generate a random 32-byte key, encoded in base64:
@@ -1006,9 +1574,58 @@ Generate a random 32-byte key, encoded in base64:
 openssl rand -base64 32
 ```
 
-Store it with your application secrets. The following examples read it from an environment variable named `SSE_C_KEY`, which you define yourself. The rclone and Python examples also read the `CELLAR_ADDON_HOST`, `CELLAR_ADDON_KEY_ID` and `CELLAR_ADDON_KEY_SECRET` variables of your add-on, where the host has no `https://` prefix. s3cmd doesn't support SSE-C: its `--server-side-encryption` option doesn't take a customer key, and `--encrypt` encrypts files with GPG on your machine before upload.
+Store it with your application secrets. The following examples read it from an environment variable named `SSE_C_KEY`, which you define yourself. The Java and Rust SDKs also need the MD5 digest of the key: store it in `SSE_C_KEY_MD5`.
+
+```bash
+echo "$SSE_C_KEY" | base64 -d | openssl md5 -binary | base64
+```
+
+The AWS CLI and the RustFS CLI read the raw key from a file. Decode it into `sse-c.key`, readable only by you, outside your repository:
+
+```bash
+touch sse-c.key
+chmod 600 sse-c.key
+echo "$SSE_C_KEY" | base64 -d > sse-c.key
+```
+
+s3cmd doesn't support SSE-C: its `--server-side-encryption` option doesn't take a customer key, and `--encrypt` encrypts files on your machine before the upload. The S3 clients of Bun and V don't support SSE-C either.
 
 {{< tabs >}}
+
+  {{< tab name="AWS CLI" icon="aws" >}}
+
+  These commands use the [`cellar` profile](#configure-an-s3-client). `aws s3` commands take the key file with `--sse-c` and `--sse-c-key`:
+
+  ```bash
+  aws s3 cp report.pdf s3://my-bucket/reports/report.pdf --sse-c AES256 --sse-c-key fileb://sse-c.key
+  aws s3 cp s3://my-bucket/reports/report.pdf report-downloaded.pdf --sse-c AES256 --sse-c-key fileb://sse-c.key
+  aws s3 sync ./reports s3://my-bucket/reports --sse-c AES256 --sse-c-key fileb://sse-c.key
+  ```
+
+  `aws s3api` commands name these options differently. For example, read the metadata of an encrypted object with:
+
+  ```bash
+  aws s3api head-object \
+    --bucket my-bucket \
+    --key reports/report.pdf \
+    --sse-customer-algorithm AES256 \
+    --sse-customer-key fileb://sse-c.key
+  ```
+
+  See the AWS CLI documentation for [`aws s3 cp`](https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html) and [`aws s3api head-object`](https://docs.aws.amazon.com/cli/latest/reference/s3api/head-object.html).
+
+  {{< /tab >}}
+
+  {{< tab name="RustFS CLI" icon="terminal" >}}
+
+  These commands use the [`cellar` alias](#configure-an-s3-client) and the key file, including for multipart transfers:
+
+  ```bash
+  rc put --enc-c-destination-key-file sse-c.key report.pdf cellar/my-bucket/reports/report.pdf
+  rc get --enc-c-source-key-file sse-c.key cellar/my-bucket/reports/report.pdf report-downloaded.pdf
+  ```
+
+  {{< /tab >}}
 
   {{< tab name="rclone" icon="terminal" >}}
 
@@ -1016,7 +1633,7 @@ Store it with your application secrets. The following examples read it from an e
 
   ```bash
   rclone config create cellar-encrypted s3 \
-    provider=Ceph \
+    provider=Cellar \
     access_key_id="$CELLAR_ADDON_KEY_ID" \
     secret_access_key="$CELLAR_ADDON_KEY_SECRET" \
     endpoint="https://$CELLAR_ADDON_HOST" \
@@ -1032,35 +1649,61 @@ Store it with your application secrets. The following examples read it from an e
   rclone copy cellar-encrypted:my-bucket/reports ./reports-restored
   ```
 
-  Use `--no-update-modtime` to skip timestamp updates when file contents match. Otherwise, rclone may send a `CopyObject` request, which Cellar rejects for SSE-C objects.
+  `--no-update-modtime` avoids updating the timestamps of unchanged files with `CopyObject` requests, which Cellar rejects for SSE-C objects.
 
-  A remote configured without the key can still list encrypted objects, but fails to read them with a `400` error. See the rclone documentation for the [`sse_customer_key_base64` option](https://rclone.org/s3/#s3-sse-customer-key-base64).
+  A remote without the key lists encrypted objects, but fails to read them with a `400` error: see [`sse_customer_key_base64`](https://rclone.org/s3/#s3-sse-customer-key-base64).
+
+  {{< /tab >}}
+
+  {{< tab name="Node.js" icon="simple:nodedotjs" >}}
+
+  This code uses the `s3` client of the [Node.js example](#use-cellar-from-your-application). The SDK takes the key in base64, and computes its MD5 digest:
+
+  ```javascript
+  import { readFileSync } from "node:fs";
+  import { GetObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
+
+  const encryption = { SSECustomerAlgorithm: "AES256", SSECustomerKey: process.env.SSE_C_KEY };
+
+  await s3.send(new PutObjectCommand({
+    Bucket: "my-bucket",
+    Key: "reports/report.pdf",
+    Body: readFileSync("report.pdf"),
+    ...encryption,
+  }));
+  const { Body } = await s3.send(new GetObjectCommand({ Bucket: "my-bucket", Key: "reports/report.pdf", ...encryption }));
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="Java" icon="java" >}}
+
+  This code uses the `s3` client of the [Java example](#use-cellar-from-your-application). Without `sseCustomerKeyMD5`, Cellar rejects the request:
+
+  ```java
+  import software.amazon.awssdk.core.sync.RequestBody;
+
+  import java.nio.file.Path;
+
+  String key = System.getenv("SSE_C_KEY");
+  String keyMd5 = System.getenv("SSE_C_KEY_MD5");
+
+  s3.putObject(request -> request.bucket("my-bucket").key("reports/report.pdf")
+          .sseCustomerAlgorithm("AES256").sseCustomerKey(key).sseCustomerKeyMD5(keyMd5),
+      RequestBody.fromFile(Path.of("report.pdf")));
+  byte[] report = s3.getObjectAsBytes(request -> request.bucket("my-bucket").key("reports/report.pdf")
+          .sseCustomerAlgorithm("AES256").sseCustomerKey(key).sseCustomerKeyMD5(keyMd5))
+      .asByteArray();
+  ```
 
   {{< /tab >}}
 
   {{< tab name="Python" icon="simple:python" >}}
 
-  This script uses boto3 to upload a file encrypted with your key, then download and decrypt it. `upload_file` and `download_file` switch to multipart transfers for large files and send the key with each part.
+  This code uses the `s3` client of the [Python example](#use-cellar-from-your-application). `upload_file` and `download_file` send the key with each part of large files:
 
   ```python
   import base64
-  import os
-
-  import boto3
-  from botocore.config import Config
-
-  s3 = boto3.client(
-      "s3",
-      region_name="default",
-      endpoint_url=f"https://{os.environ['CELLAR_ADDON_HOST']}",
-      aws_access_key_id=os.environ["CELLAR_ADDON_KEY_ID"],
-      aws_secret_access_key=os.environ["CELLAR_ADDON_KEY_SECRET"],
-      config=Config(
-          signature_version="s3v4",
-          request_checksum_calculation="when_required",
-          response_checksum_validation="when_required",
-      ),
-  )
 
   encryption = {
       "SSECustomerAlgorithm": "AES256",
@@ -1071,188 +1714,142 @@ Store it with your application secrets. The following examples read it from an e
   s3.download_file("my-bucket", "reports/report.pdf", "report-downloaded.pdf", ExtraArgs=encryption)
   ```
 
-  Pass the same `encryption` arguments to `put_object`, `get_object` and `head_object`. boto3 computes the key's MD5 digest and encodes the key for you. Without the `when_required` checksum options, recent boto3 versions fail to upload to Cellar with a `MissingContentLength` error.
+  Pass the same `encryption` arguments to `put_object`, `get_object`, and `head_object`: boto3 computes the MD5 digest of the key.
+
+  {{< /tab >}}
+
+  {{< tab name="Ruby" icon="ruby" >}}
+
+  This code uses the `s3` client of the [Ruby example](#use-cellar-from-your-application). The SDK takes the raw key, and computes its MD5 digest:
+
+  ```ruby
+  require "base64"
+
+  encryption = { sse_customer_algorithm: "AES256", sse_customer_key: Base64.decode64(ENV.fetch("SSE_C_KEY")) }
+
+  s3.put_object(bucket: "my-bucket", key: "reports/report.pdf", body: File.open("report.pdf"), **encryption)
+  s3.get_object(bucket: "my-bucket", key: "reports/report.pdf", response_target: "report-downloaded.pdf", **encryption)
+  ```
+
+  {{< /tab >}}
+
+  {{< tab name="Rust" icon="simple:rust" >}}
+
+  This code uses the `s3` client of the [Rust example](#use-cellar-from-your-application). Without `sse_customer_key_md5`, Cellar rejects the request:
+
+  ```rust
+  let key = env::var("SSE_C_KEY")?;
+  let key_md5 = env::var("SSE_C_KEY_MD5")?;
+
+  s3.put_object()
+      .bucket("my-bucket")
+      .key("reports/report.pdf")
+      .body(ByteStream::from_path("report.pdf").await?)
+      .sse_customer_algorithm("AES256")
+      .sse_customer_key(&key)
+      .sse_customer_key_md5(&key_md5)
+      .send()
+      .await?;
+  let report = s3.get_object()
+      .bucket("my-bucket")
+      .key("reports/report.pdf")
+      .sse_customer_algorithm("AES256")
+      .sse_customer_key(&key)
+      .sse_customer_key_md5(&key_md5)
+      .send()
+      .await?;
+  ```
+
+  {{< /tab >}}
+
+{{< /tabs >}}
+
+## Delete buckets and the add-on
+
+Cellar only deletes empty buckets. In the **Cellar Explorer**, delete the objects of a bucket first. S3 clients delete the objects and the bucket in one command, but s3cmd and the AWS CLI fail on a versioned bucket. The RustFS CLI and rclone also delete the versions of its objects:
+
+{{< tabs >}}
+
+  {{< tab name="s3cmd" icon="terminal" >}}
+
+  ```bash
+  s3cmd rb --recursive s3://my-bucket
+  ```
 
   {{< /tab >}}
 
   {{< tab name="AWS CLI" icon="aws" >}}
 
-  These commands assume you have [configured your AWS CLI credentials](#with-aws-cli). Recent AWS CLI versions add checksums that Cellar rejects. Without the following variables, uploads fail with an unclear error, `argument of type 'NoneType' is not a container or iterable`:
-
   ```bash
-  export AWS_REQUEST_CHECKSUM_CALCULATION=when_required
-  export AWS_RESPONSE_CHECKSUM_VALIDATION=when_required
-  ```
-
-  The AWS CLI reads the raw key from a file. Decode your base64 key into `sse-c.key` and restrict access to your user. Keep this file out of your repository:
-
-  ```bash
-  # Create the key file if it doesn't exist yet
-  touch sse-c.key
-  # Allow only your user to read and write it, before it contains the key
-  chmod 600 sse-c.key
-  echo "$SSE_C_KEY" | base64 -d > sse-c.key
-  ```
-
-  For uploads and downloads with `aws s3` commands, pass your key with `--sse-c` and `--sse-c-key`, including multipart transfers:
-
-  ```bash
-  aws s3 cp report.pdf s3://my-bucket/reports/report.pdf \
-    --sse-c AES256 \
-    --sse-c-key fileb://sse-c.key \
-    --endpoint-url https://cellar-c2.services.clever-cloud.com
-
-  aws s3 cp s3://my-bucket/reports/report.pdf report-downloaded.pdf \
-    --sse-c AES256 \
-    --sse-c-key fileb://sse-c.key \
-    --endpoint-url https://cellar-c2.services.clever-cloud.com
-
-  aws s3 sync ./reports s3://my-bucket/reports \
-    --sse-c AES256 \
-    --sse-c-key fileb://sse-c.key \
-    --endpoint-url https://cellar-c2.services.clever-cloud.com
-  ```
-
-  `aws s3api` commands name these options differently. For example, read the metadata of an encrypted object with:
-
-  ```bash
-  aws s3api head-object \
-    --bucket my-bucket \
-    --key reports/report.pdf \
-    --sse-customer-algorithm AES256 \
-    --sse-customer-key fileb://sse-c.key \
-    --endpoint-url https://cellar-c2.services.clever-cloud.com
-  ```
-
-  See the AWS CLI documentation for [`aws s3 cp`](https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html) and [`aws s3api head-object`](https://docs.aws.amazon.com/cli/latest/reference/s3api/head-object.html).
-
-  {{< /tab >}}
-
-{{< /tabs >}}
-
-## Uploading objects with presigned URLs and checksum validation
-
-Pre-signed URLs allow the client to upload files directly to S3 without ever exposing your credentials. You simply generate a temporary, time-limited URL and the client uses it to upload their file to your cellar. To ensure the integrity of the uploaded file, you can add a checksum as part of the URL parameters. This checksum acts as a fingerprint for the expected file.
-
-Cellar supports pre-signed URLs and MD5 checksum validation. If you pre-sign your URL with an MD5 checksum as a parameter, Cellar validates the uploaded file against the expected checksum by verifying both the request headers and the file content. The upload fail if either value doesn't match the expected checksum.
-
-{{< tabs >}}
-
-  {{< tab name="Python" icon="simple:python" >}}
-
-  ```python
-  import boto3
-  import hashlib
-  import base64
-  from botocore.config import Config
-  from botocore.exceptions import ClientError
-
-  # --- Configuration Cellar ---
-  cellar_host = "https://cellar-c2.services.clever-cloud.com"
-  access_key = "<YOUR-ACCESS-KEY>"
-  secret_key = "<YOUR-SECRET-KEY>"
-  bucket_name = "<Your-bucket>"
-  object_key = "<path_on_the_cellar>/<file_name>"
-
-  # --- Client S3 ---
-  s3 = boto3.client(
-      "s3",
-      endpoint_url=cellar_host,
-      aws_access_key_id=access_key,
-      aws_secret_access_key=secret_key,
-      config=Config(
-          signature_version="s3v4",
-          s3={"addressing_style": "path"},
-      )
-  )
-
-  # MD5 de "hello world"
-  md5 = base64.b64encode(hashlib.md5(b"hello world").digest()).decode()
-
-  url = s3.generate_presigned_url(
-      ClientMethod="put_object",
-      Params={
-          "Bucket": bucket_name,
-          "Key": object_key,
-          "ContentMD5": md5,
-      },
-      ExpiresIn=3600,
-  )
-
-  print(url)
+  aws s3 rb --force s3://my-bucket
   ```
 
   {{< /tab >}}
 
-  {{< tab name="Node.js" icon="simple:nodedotjs" >}}
+  {{< tab name="RustFS CLI" icon="terminal" >}}
 
-  ```js
-    import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
-    import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
-    import { createHash } from "crypto";
+  ```bash
+  rc bucket remove --force cellar/my-versioned-bucket
+  ```
 
-    // --- Configuration ---
-    const s3 = new S3Client({
-      endpoint: "https://cellar-c2.services.clever-cloud.com",
-      region: "us-east-1",
-      credentials: {
-        accessKeyId: "<VOTREACCESSKEY>",
-        secretAccessKey: "<VOTRESECRETKEY>",
-      },
-      forcePathStyle: true,
-    });
+  {{< /tab >}}
 
-    const bucket = "<mon-bucket>";
-    const key = "<path_on_the_cellar>/<file_name>";
+  {{< tab name="rclone" icon="terminal" >}}
 
-    // --- Calcul du checksum MD5 (base64) ---
-    const fileContent = Buffer.from("Hello World");
-    const md5Base64 = createHash("md5").update(fileContent).digest("base64");
-
-    // --- Génération de l'URL présignée ---
-    const command = new PutObjectCommand({
-      Bucket: bucket,
-      Key: key,
-      ContentMD5: md5Base64,
-    });
-
-    const presignedUrl = await getSignedUrl(s3, command, {
-      expiresIn: 3600,
-      // ← Force le header Content-MD5 à rester dans la signature (non hoistable)
-      unhoistableHeaders: new Set(["content-md5"]),
-    });
-
-    console.log("URL présignée :", presignedUrl);
+  ```bash
+  rclone purge cellar:my-versioned-bucket
   ```
 
   {{< /tab >}}
 
 {{< /tabs >}}
 
-> [!WARNING] SHA-256 checksums
-> With a SHA-256 checksum, Cellar checks that the checksum in the URL matches the one in the request headers. Unlike MD5, it doesn't check the content of the file against the checksum, so it doesn't verify the integrity of the data during the upload.
+Versions under a retention or a legal hold block the deletion, and versions in compliance mode block it until they expire. Remove the legal holds, then delete the governance versions with the RustFS CLI or rclone:
+
+```bash
+rc object remove --recursive --versions --bypass --force cellar/my-locked-bucket/
+rc bucket remove cellar/my-locked-bucket
+
+rclone purge --s3-versions --s3-bypass-governance-retention cellar:my-locked-bucket
+```
+
+Delete the add-on at the bottom of its **Add-on dashboard**, or with `clever addon delete`. Clever Cloud deletes its buckets and their objects at least three days later: copy the files you want to keep first.
 
 ## Troubleshooting
 
-{{% details title="SSL error with s3cmd" closed="true" %}}
+{{% details title="SSL error with a bucket name that holds dots" closed="true" %}}
 
-If you created a bucket with a [custom domain name](#custom-domain) and use `s3cmd` to manipulate it, you will experience this error:
+s3cmd reaches a bucket at `<bucket-name>.cellar-c2.services.clever-cloud.com` by default. For a name with dots, such as `cdn.example.com`, this host doesn't match the certificate of Cellar, and s3cmd fails with this error:
 
-```log
-[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1125)
+```text
+ERROR: SSL certificate verification failure: [SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name
 ```
 
-The error comes from the host used to make the request, which is build like this `%s.cellar-c2.services.clever-cloud.com`.
-
-For example with a bucket named `blog.mycompany.com`:
-
-Clever Cloud certificate covers `*.cellar-c2.services.clever-cloud.com` but not `blog.mycompany.com.cellar-c2.services.clever-cloud.com`, which triggers the error.
-
-Solve it by **forcing s3cmd to use path style endpoint** with the option `--host-bucket=cellar-c2.services.clever-cloud.com`.
-{{% /details %}}
-
-{{% details title="I can't delete a bucket" closed="true" %}}
-
-A bucket needs to be empty before you can delete it. Delete its content first, with one of the [bucket management options](#managing-your-buckets).
+Add `--host-bucket=cellar-c2.services.clever-cloud.com` to s3cmd commands to use the path style for these buckets. The AWS CLI, the RustFS CLI, and rclone use it by themselves, as do the SDKs of Bun, Node.js, Python, Ruby, and V.
 
 {{% /details %}}
+
+{{% details title="MissingContentLength or 400 errors on uploads" closed="true" %}}
+
+Recent AWS SDKs and AWS CLI versions add checksums that Cellar rejects. Set the checksum options to `when_required`, as the [examples](#use-cellar-from-your-application) show, or set these environment variables, which most AWS SDKs read:
+
+```bash
+export AWS_REQUEST_CHECKSUM_CALCULATION=when_required
+export AWS_RESPONSE_CHECKSUM_VALIDATION=when_required
+```
+
+{{% /details %}}
+
+{{% details title="InvalidBucketName or BucketAlreadyExists when creating a bucket" closed="true" %}}
+
+`InvalidBucketName` means that the name breaks the [naming rules](#create-a-bucket), with uppercase letters or underscores for instance. `BucketAlreadyExists` means that another add-on of the region already uses this name: choose another one.
+
+{{% /details %}}
+
+## Go Further
+
+{{< cards >}}
+  {{< card link="/developers/doc/deploy/storage/fs-bucket" title="FS Buckets" subtitle="Mount a persistent file system in your applications" icon="fsbucket" >}}
+  {{< card link="/developers/guides/static-sites/hugo-cellar" title="Hugo and Cellar" subtitle="Publish the assets of a Hugo website to Cellar" icon="simple:hugo" >}}
+  {{< card link="/developers/doc/deploy/applications/static" title="Static runtime" subtitle="Serve a static website, with index files and your domain over HTTPS" icon="static" >}}
+{{< /cards >}}

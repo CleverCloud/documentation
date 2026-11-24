@@ -23,7 +23,7 @@ Follow the [Hugo deployment guide](/guides/static-sites/hugo/) to create a Stati
 
 ## Publish generated files to Cellar
 
-To expose individual generated objects through Cellar, create a [Cellar add-on and bucket](/doc/deploy/storage/cellar/#creating-a-bucket), install [s3cmd](https://s3tools.org/s3cmd) or another S3-compatible client, then download the add-on's configuration file from the Console.
+To expose individual generated objects through Cellar, create a [Cellar add-on and bucket](/doc/deploy/storage/cellar/#create-a-bucket). Install [s3cmd](https://s3tools.org/s3cmd) or another S3-compatible client, then download the add-on's configuration file from the Console.
 
 Build the site and synchronize its generated files:
 

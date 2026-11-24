@@ -34,10 +34,9 @@ Matomo on Clever Cloud runs the official release of Matomo on the services of th
 
 ### With Clever Tools
 
-Install [Clever Tools](/doc/tools/cli/install/), then create the add-on. Add `--addon-version` to choose the [version of Matomo](#versions-and-updates), `--org` to create it in an organisation, and `--region` to choose its region, `par` by default. Without `--addon-version`, the add-on uses the default version:
+Install [Clever Tools](/doc/tools/cli/install/), then create the add-on. Add `--addon-version` to choose the [version of Matomo](#versions-and-updates), `--org` to create it in an organisation, and `--region` to choose its region, `par` by default. This example creates a Matomo 6 add-on:
 
 ```bash
-clever addon create addon-matomo myMatomo
 clever addon create addon-matomo myMatomo --addon-version 6.0.0
 ```
 
@@ -113,7 +112,9 @@ To change the batch size, edit **Number of requests that are processed in one ba
 
 Matomo reads the IP of a visitor in the `X-Forwarded-For` header, which ends with the IP that reached the Clever Cloud load balancers. By default, Matomo uses this last IP, which a client can't forge. When your tracking requests go through your own proxy, all visitors get its IP.
 
-In this case, set `MATOMO_GENERAL_PROXY_IP_READ_LAST_IN_LIST` to `0` on the PHP application of the add-on, then restart it: Matomo reads the first IP of the header instead. A client can forge this first IP, unless your proxy replaces the header with the IP it receives the request from.
+In this case, set `MATOMO_GENERAL_PROXY_IP_READ_LAST_IN_LIST` to `0` on the PHP application of the add-on, then restart it: Matomo reads the first IP of the header instead. A client can forge this first IP, as the [load balancers keep the header it sends](/doc/network/load-balancers/#get-the-address-of-the-client).
+
+Use this setting only if your proxy replaces the header with the IP it receives the request from. Even then, a client that sends its tracking requests straight to the URL of Matomo, without going through your proxy, can still forge its IP.
 
 ## Plugins
 

@@ -64,6 +64,12 @@ In every runtime where your application manages its own HTTP server, have it lis
 PORT="9000"
 ```
 
+## Client IP headers
+
+Platform proxies provide the original client address through `Forwarded`, `X-Forwarded-For`, or both. Managed Ruby and legacy Python HTTP servers preserve `Forwarded` when it comes directly from a platform proxy. They also preserve the accompanying `X-Forwarded-For` chain when present. Legacy requests with only `X-Forwarded-For` keep standard proxy behavior. The server adds the immediate peer to that chain.
+
+A Request Flow middleware becomes another proxy in this chain. It must keep both headers consistent when it forwards a request. A middleware that appends an address to only one header can make applications reject a valid request. Rails can report this mismatch as `ActionDispatch::RemoteIp::IpSpoofAttackError`.
+
 ## Explicit configuration with CC_REQUEST_FLOW
 
 To control the order or selection of middleware, set `CC_REQUEST_FLOW` to a comma-separated list of services:

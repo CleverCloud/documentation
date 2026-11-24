@@ -74,6 +74,7 @@ exceptions:
   - SDK
   - SFTP
   - SGP
+  - SHA
   - SMTP
   - SQL
   - SSH

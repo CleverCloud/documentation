@@ -1,3 +1,4 @@
+ACLs
 Actix
 Akka
 allowlist
@@ -140,6 +141,7 @@ precompiled
 precompiles
 Prerender
 prerendering
+presigned
 profiler
 Protobuf
 Pspell
@@ -163,6 +165,7 @@ scalers
 Scaleway
 SCMs
 Scotty
+SDKs
 SELinux
 serverless
 Servlet
@@ -183,12 +186,14 @@ Tailscale
 Telegraf
 Temurin
 Tesseract
+Tokio
 tolerations
 toolchain
 toolchains
 tooltip
 tooltips
 unencrypted
+unversioned
 uopz
 Uploadprogress
 URIs

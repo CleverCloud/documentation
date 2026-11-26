@@ -1765,7 +1765,7 @@ s3cmd doesn't support SSE-C: its `--server-side-encryption` option doesn't take 
 {{< /tabs >}}
 
 > [!NOTE] SSE-C encrypted objects aren't readable in the Cellar Explorer
-> The Cellar Explorer can't read objects encrypted with SSE-C. To download them, use the AWS CLI, `mc` or an SDK with the key used at upload.
+> To download them, use a client that supports SSE-C, such as the AWS CLI, the RustFS CLI or an S3 SDK, with the same key used at upload.
 
 ## Delete buckets and the add-on
 

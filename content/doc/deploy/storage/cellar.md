@@ -1764,6 +1764,9 @@ s3cmd doesn't support SSE-C: its `--server-side-encryption` option doesn't take 
 
 {{< /tabs >}}
 
+> [!NOTE] SSE-C encrypted objects aren't readable in the Cellar Explorer
+> The Cellar Explorer can't read objects encrypted with SSE-C. To download them, use the AWS CLI, `mc` or an SDK with the key used at upload.
+
 ## Delete buckets and the add-on
 
 Cellar only deletes empty buckets. In the **Cellar Explorer**, delete the objects of a bucket first. S3 clients delete the objects and the bucket in one command, but s3cmd and the AWS CLI fail on a versioned bucket. The RustFS CLI and rclone also delete the versions of its objects:

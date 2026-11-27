@@ -143,9 +143,15 @@ To choose the key `ssh` offers to the gateway, add a `Host` entry to your SSH co
 
 ## Docker applications
 
-In a Docker application, the SSH session opens a `bash` shell inside the container, in the working directory of the image, with your environment variables set. The image must include `bash`: otherwise the connection fails with `exec: "bash": executable file not found in $PATH`.
+In a Docker application, the SSH session opens a shell inside the container, in the working directory of the image, with your environment variables set: `bash` when the image includes it, `/bin/sh` otherwise. An image without a shell, such as one built `FROM scratch`, doesn't allow it.
 
-`clever ssh --command` doesn't work with Docker applications: it fails with `cannot attach stdin to a TTY-enabled container`. Open an interactive session instead. The `bas-deploy.service` journal and the `/home/bas` folder of other runtimes don't apply inside a container.
+`clever ssh --command` runs a command in the container the same way: it returns its exit code, and keeps its errors apart from its output:
+
+```bash
+clever ssh --command "ls -la"
+```
+
+The `bas-deploy.service` journal and the `/home/bas` folder of other runtimes don't exist in a container, even though `APP_HOME` points to it.
 
 ## Troubleshooting
 

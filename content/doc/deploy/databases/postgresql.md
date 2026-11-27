@@ -146,18 +146,18 @@ PostgreSQL databases managed by Clever Cloud come with these extensions:
 
 In the [Console's Ticket Center](https://console.clever-cloud.com/ticket-center-choice), you can ask our support team to add any of these extensions for you:
 
-| Extension   | Description                                                                                        |
-| ----------- | -------------------------------------------------------------------------------------------------- |
-| http        | HTTP client for PostgreSQL (pgsql-http)                                                            |
-| pg_cron     | Job scheduler for PostgreSQL                                                                       |
-| pg_ivm      | Incremental view maintenance for PostgreSQL                                                        |
-| pg_net      | Enables asynchronous (non-blocking) HTTP/HTTPS requests with SQL                                   |
-| pg_partman  | Extension to manage partitioned tables by time or ID                                               |
-| pg_repack   | Reorganize tables in PostgreSQL databases with minimal locks                                       |
-| pgaudit     | Provides detailed session and/or object audit logging via the standard PostgreSQL logging facility |
-| pgtap       | Unit testing for PostgreSQL                                                                        |
-| rum         | Provides an access method to work with a RUM index                                                 |
-| timescaledb | Enables scalable inserts and complex queries for time-series data (Apache 2 Edition)               |
+| Extension   | Description                                                                                                          |
+| ----------- | -------------------------------------------------------------------------------------------------------------------- |
+| http        | HTTP client for PostgreSQL (pgsql-http)                                                                              |
+| pg_cron     | Job scheduler for PostgreSQL                                                                                         |
+| pg_ivm      | Incremental view maintenance for PostgreSQL                                                                          |
+| pg_net      | Enables asynchronous (non-blocking) HTTP/HTTPS requests with SQL                                                     |
+| pg_partman  | Extension to manage partitioned tables by time or ID                                                                 |
+| pg_repack   | Reorganize tables in PostgreSQL databases with minimal locks                                                         |
+| pgaudit     | Provides detailed session and/or object audit logging via the standard PostgreSQL logging facility                   |
+| pgtap       | Unit testing for PostgreSQL                                                                                          |
+| rum         | Provides an access method to work with a RUM index (not available on PostgreSQL 19)                                  |
+| timescaledb | Enables scalable inserts and complex queries for time-series data (Apache 2 Edition, not available on PostgreSQL 19) |
 
 > [!NOTE] DEV plans
 > On-demand extensions aren't available for DEV plans.

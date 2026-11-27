@@ -1,5 +1,6 @@
 ACLs
 Actix
+Aerospike
 Akka
 allowlist
 allowlists
@@ -35,6 +36,7 @@ Corepack
 CRDs
 cron
 crontab
+cryptsetup
 CVE
 CVEs
 Cyberduck
@@ -60,6 +62,7 @@ FileZilla
 Fluentd
 FSBucket
 Gemfile
+glibc
 Gradle
 Grafana
 Gravelines
@@ -89,7 +92,11 @@ kubeconfig
 kubectl
 Laravel
 Let's Encrypt
+libffi
+libseccomp
+libyaml
 LLMs
+Lua
 Lume
 Magnetar
 Mailparse
@@ -156,6 +163,7 @@ Redict
 redirections
 ripgrep
 rollout
+runc
 runtime's
 runtimes
 rustup
@@ -183,9 +191,11 @@ Symfony
 syslog
 tailnet
 Tailscale
+Tcl
 Telegraf
 Temurin
 Tesseract
+Tk
 Tokio
 tolerations
 toolchain
@@ -208,3 +218,4 @@ Xdebug
 Yesod
 Zabbix
 Zellij
+Zstandard

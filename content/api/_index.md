@@ -41,11 +41,13 @@ The [API Reference](/api/swagger/) lists the endpoints with their parameters, re
 
 ## Request the API
 
-Clever Cloud's REST API offers two authentication mechanisms to meet different integration needs:
+Clever Cloud's REST API offers three authentication mechanisms to meet different integration needs:
 
 - **API tokens** provide a straightforward way to authenticate requests on behalf of a specific user. These tokens operate similarly to passwords and should be handled with appropriate security measures. API tokens are ideal for personal scripts, CLI tools, and scenarios where you're accessing your own resources. Use them to request the API Bridge: <https://api-bridge.clever-cloud.com>
 
 - **OAuth 1** is designed for third-party applications that need to access Clever Cloud resources on behalf of their users. This authentication flow allows applications to request permissions from users without requiring direct access to their credentials. OAuth 1 is recommended for public applications, services that integrate with multiple user accounts, or any scenario where user delegation is required.
+
+- **Service tokens** give an organisation-scoped credential to a pipeline, a monitoring tool, or a script. They carry a role, expire after a delay you set, and apply only to the resources you list. Use them when no user acts on your behalf: [Service tokens](/doc/security/service-tokens/).
 
 Choose the authentication method that best aligns with your specific integration requirements and security considerations.
 

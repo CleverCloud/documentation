@@ -28,5 +28,6 @@ Certifications cover what the infrastructure is audited against. Everything else
   {{< card link="/developers/doc/security/encryption-at-rest" title="Encryption at rest" subtitle="Encrypt add-on data stored on disk" icon="lock-closed" >}}
   {{< card link="/developers/doc/security/iam-roles" title="IAM (Roles)" subtitle="Organisations, members and their privileges" icon="user-group" >}}
   {{< card link="/developers/doc/security/kms" title="Secrets & Transit" subtitle="Serverless secret store on Materia, compatible with Vault and Bao" icon="key" tag="Private access" >}}
+  {{< card link="/developers/doc/security/service-tokens" title="Service tokens" subtitle="Give a pipeline or a script an organisation-scoped API credential" icon="key" >}}
   {{< card link="/developers/doc/security/ssl" title="TLS Certificates" subtitle="Automatic Let's Encrypt certificates, or bring your own" icon="shield-check" >}}
 {{< /cards >}}

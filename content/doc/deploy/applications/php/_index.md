@@ -86,6 +86,8 @@ Clever Cloud uses PHP {{< runtime_version php >}} by default. The `8` value trac
 
 {{< runtimes_versions php >}}
 
+Many extensions don't support PHP 8.6 yet, such as MongoDB or Redis: check the [extensions](/doc/deploy/applications/php/extensions/) available with this version.
+
 ### PHP settings
 
 Most PHP settings work in a `.user.ini` file at the root of the webroot. In one of its folders, it applies to this folder and the ones inside it. Use it for the [directives](https://www.php.net/manual/en/ini.list.php) of the `PHP_INI_USER`, `PHP_INI_PERDIR`, and `PHP_INI_ALL` modes, as the [PHP documentation](https://www.php.net/manual/en/configuration.file.per-user.php) explains:

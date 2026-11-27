@@ -112,6 +112,14 @@ clever env set CC_RAKEGOALS "db:migrate, assets:precompile"
 
 Clever Cloud runs them in this order with `bundle exec rake`, if your project has a `Rakefile`: `bundle exec` runs a command with the gems of your project. If one of them fails, the deployment fails. They run on each new build, not when an application restarts from its [build cache](#caches).
 
+With several instances, each one runs these tasks. To run them on the first one only, set `CC_RAKEGOALS_SINGLE_INSTANCE`:
+
+```bash
+clever env set CC_RAKEGOALS_SINGLE_INSTANCE true
+```
+
+The other instances then skip all these tasks, `assets:precompile` included: use it for database tasks, such as `db:migrate`.
+
 ### Ruby version
 
 Your `Gemfile` can require a Ruby version, such as any Ruby 3.4 release with this line:
@@ -120,15 +128,36 @@ Your `Gemfile` can require a Ruby version, such as any Ruby 3.4 release with thi
 ruby "~> 3.4.0"
 ```
 
-Clever Cloud uses the Ruby version set in `CC_RUBY_VERSION`, or the most recent one installed that matches the `Gemfile`. Without any of them, it uses the most recent Ruby version installed. To use the latest Ruby 3.4 release, for instance:
+Clever Cloud uses the Ruby version set in `CC_RUBY_VERSION`, or the one that the `Gemfile` requires. Without any of them, it uses Ruby 4.0. To use the latest Ruby 3.4 release, for instance:
 
 ```bash
 clever env set CC_RUBY_VERSION 3.4
 ```
 
-`CC_RUBY_VERSION` accepts a major version, such as `4`, a minor version, such as `4.0`, or an exact version, such as `4.0.1`. If no installed version matches, the deployment fails. Keep `CC_RUBY_VERSION` consistent with the `ruby` requirement of your `Gemfile`: when they disagree, the deployment either fails, or uses the version the `Gemfile` requires.
+`CC_RUBY_VERSION` accepts a major version, such as `4`, a minor version, such as `4.0`, or an exact version, such as `4.0.1`. Keep it consistent with the `ruby` requirement of your `Gemfile`: when they disagree, the deployment either fails, or uses the version the `Gemfile` requires.
 
 Clever Cloud doesn't read the `.ruby-version` file: to use it, add `ruby file: ".ruby-version"` to your `Gemfile`.
+
+### Versions built on demand
+
+The images include the latest releases of Ruby 3.3, 3.4, and 4.0. For another version, set an exact version, such as `3.2.11` or `3.4.12`: Clever Cloud compiles it with `rbenv` on each new build, and reuses it when the application restarts from its [build cache](#caches).
+
+Compiling Ruby needs memory, and can fail on an `XS` instance. Use a [dedicated build instance](/doc/manage/#dedicated-build-instance), such as `M`, which takes about two minutes:
+
+```bash
+clever scale --build-flavor M
+```
+
+When it compiles Ruby 2.6, 2.7, 3.1, or 3.2, Clever Cloud applies fixes for the regular expression and string vulnerabilities fixed in Ruby 3.3.13 and 3.3.14. These branches reached their end of life: migrate. An older release of a supported branch, such as `3.4.12`, doesn't get them.
+
+To apply your own patches to a compiled Ruby, for security reasons for instance, set `CC_RUBY_PATCH` to the path of a patch file in your repository, in the format of `patch -p1` or Git. For several files, use `CC_RUBY_PATCH_0`, `CC_RUBY_PATCH_1`, and so on.
+
+To use a precompiled Ruby instead, declare it in a `mise.toml` file: [Mise](/doc/manage/mise/) downloads it in a few seconds, starting with Ruby 3.2. These precompiled builds don't include the fixes of the Ruby that Clever Cloud compiles. Don't set `CC_RUBY_VERSION`, and remove the `ruby` line of your `Gemfile`, or Clever Cloud also compiles this version:
+
+```toml {filename="mise.toml"}
+[tools]
+ruby = "3.4"
+```
 
 ### Environment
 

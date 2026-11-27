@@ -49,7 +49,13 @@ FrankenPHP runtime only requires a working web application, with an `index.php` 
 
 FrankenPHP currently deployed version on Clever Cloud is `{{< runtime_version frankenphp >}}` based on PHP `{{< runtime_version frankenphp php >}}` and Caddy server `{{< runtime_version frankenphp caddy >}}`. Virtual machine image includes multiple tools from the PHP ecosystem such as Composer or Symfony CLI. The `php` command available in hooks and scripts uses `frankenphp php-cli` under the hood.
 
-FrankenPHP uses this version whatever the value of `CC_PHP_VERSION`.
+To use FrankenPHP 1.14, based on PHP 8.6, set `CC_PHP_VERSION` to `8.6`:
+
+```bash
+clever env set CC_PHP_VERSION 8.6
+```
+
+Without this variable, or with `8` or `8.5`, FrankenPHP uses the above version, based on PHP 8.5. With another value, such as `8.4`, it uses FrankenPHP 1.14 and PHP 8.6: set `CC_PHP_VERSION` to `8`, `8.5`, or `8.6`, or remove it.
 
 - [FrankenPHP PHP 8.5 info](https://frankenphpinfo85.cleverapps.io/)
 
@@ -117,6 +123,8 @@ clever deploy # or clever restart if there is no code change
 ## Included extensions
 
 FrankenPHP on Clever Cloud comes with a set included PHP extensions: `amqp`,`apcu`,`ast`,`bcmath`,`brotli`,`bz2`,`calendar`,`ctype`,`curl`,`dba`,`deepclone`,`dom`,`exif`,`fileinfo`,`filter`,`ftp`,`gd`,`gettext`,`gmp`,`iconv`,`igbinary`,`imagick`,`intl`,`ldap`,`lz4`,`mbregex`,`mbstring`,`memcached`,`mysqli`,`mysqlnd`,`opcache`,`openssl`,`parallel`,`password-argon2`,`pcntl`,`pdo`,`pdo_mysql`,`pdo_pgsql`,`pdo_sqlite`,`pgsql`,`phar`,`posix`,`protobuf`,`readline`,`redis`,`session`,`shmop`,`simplexml`,`soap`,`sockets`,`sodium`,`sqlite3`,`ssh2`,`sysvmsg`,`sysvsem`,`sysvshm`,`tidy`,`tokenizer`,`xlswriter`,`xml`,`xmlreader`,`xmlwriter`,`xsl`,`xz`,`yaml`,`zip`,`zlib`,`zstd`
+
+FrankenPHP 1.14 includes the same extensions, except `protobuf`.
 
 ## Go Further
 

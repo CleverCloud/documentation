@@ -112,6 +112,22 @@ FROM nginxinc/nginx-unprivileged:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
 ```
 
+A build argument stays in the history of the image. For a secret, such as a token that reaches a private registry, mount it instead: with Buildx, Clever Cloud also passes each environment variable as a [BuildKit secret](https://docs.docker.com/build/building/secrets/), whose id is the name of the variable. A `RUN` instruction mounts it for its own duration only: the image and its history don't keep it, unless this command prints it or writes it to a file. Don't also declare this variable with an `ARG` instruction, which adds it to the history:
+
+```dockerfile {filename="Dockerfile"}
+# syntax=docker/dockerfile:1
+FROM node:26-alpine
+WORKDIR /app
+COPY package*.json .npmrc ./
+RUN --mount=type=secret,id=NPM_TOKEN,env=NPM_TOKEN npm ci
+```
+
+For instance, npm reads a token from the environment with this `.npmrc` file, which holds no secret itself:
+
+```ini {filename=".npmrc"}
+//registry.npmjs.org/:_authToken=${NPM_TOKEN}
+```
+
 Each new commit builds the image from scratch: Clever Cloud doesn't keep the Docker layers between builds, base image included. Restarting the application without a code change reuses the image of the build cache when it's available, without building it again. Thus, a new value of a build variable, such as `VITE_API_URL` in the above example, only applies after a rebuild.
 
 To build again from scratch, restart without the cache (rebuild):

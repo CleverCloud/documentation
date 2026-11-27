@@ -22,6 +22,8 @@ aliases:
 
 Before PHP 8.4, the Internet Message Access Protocol (IMAP) and Pspell extensions load by default too.
 
+Many extensions don't have a release supporting PHP 8.6 yet: with this version, `amqp`, `imagick`, `mcrypt`, `memcache`, `memcached`, `mongodb`, `redis`, `solr`, and `ssh2` aren't available.
+
 To check the extensions of a PHP version, and their own versions, see its `phpinfo()`:
 
 - [PHP 5.6](https://php56info.cleverapps.io)
@@ -35,6 +37,7 @@ To check the extensions of a PHP version, and their own versions, see its `phpin
 - [PHP 8.3](https://php83info.cleverapps.io)
 - [PHP 8.4](https://php84info.cleverapps.io)
 - [PHP 8.5](https://php85info.cleverapps.io)
+- [PHP 8.6](https://php86info.cleverapps.io)
 
 ## Enable specific extensions
 
@@ -66,13 +69,15 @@ Each extension of this table loads with its own variable, after a restart of you
 | [Pspell](https://www.php.net/manual/en/book.pspell.php)                                             | `ENABLE_PSPELL`                      | Spell checking, on demand starting with PHP 8.4    |
 | [rdkafka](https://pecl.php.net/package/rdkafka)                                                     | `ENABLE_RDKAFKA`                     | Kafka client                                       |
 | [Scout APM](https://scoutapm.com/docs/php)                                                          | `ENABLE_SCOUTAPM`                    | Monitoring agent, up to PHP 8.3                    |
-| [SQL Server](https://learn.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server) | `ENABLE_SQLSRV`, `ENABLE_PDO_SQLSRV` | SQL Server drivers                                 |
+| [SQL Server](https://learn.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server) | `ENABLE_SQLSRV`, `ENABLE_PDO_SQLSRV` | SQL Server drivers, starting with PHP 8.4          |
 | [uopz](https://www.php.net/manual/en/book.uopz.php)                                                 | `ENABLE_UOPZ`                        | Test utilities, up to PHP 8.3                      |
 | [Uploadprogress](https://pecl.php.net/package/uploadprogress)                                       | `ENABLE_UPLOADPROGRESS`              | Progress of file uploads                           |
 | [Xdebug](https://xdebug.org)                                                                        | `ENABLE_XDEBUG`                      | Debugger and profiler                              |
 | [YAML](https://www.php.net/manual/en/book.yaml.php)                                                 | `ENABLE_YAML`                        | YAML parser and emitter                            |
 
 Setting `ELASTIC_APM_SERVER_URLS`, or `ELASTIC_APM_SERVER_URL`, enables the Elastic APM agent too, unless `ENABLE_ELASTIC_APM_AGENT` is `false`. [New Relic](/doc/observability/new-relic/) loads with `NEW_RELIC_LICENSE_KEY`, and Tideways with `CC_TIDEWAYS_API_KEY` and `CC_TIDEWAYS_SERVICE`.
+
+With PHP 8.6, only these extensions of the table are available: Blackfire, Mailparse, MaxMind DB, OAuth, OpenTelemetry, and SQL Server.
 
 For another extension, [contact the support team](https://console.clever-cloud.com/ticket-center-choice).
 
